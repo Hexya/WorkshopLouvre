@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b634048-1547-4531-b5d0-66d35266403d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/scripts/LoaderObj.js" afterPath="" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/model/SabineCut.mtl" />
+      <change beforePath="$PROJECT_DIR$/app/assets/model/Venus.obj" afterPath="" />
       <change beforePath="$PROJECT_DIR$/app/scripts/SabineExp.js" afterPath="$PROJECT_DIR$/app/scripts/SabineExp.js" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
       <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" afterPath="$PROJECT_DIR$/webpack.config.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,8 +29,8 @@
       <file leaf-file-name="SabineExp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/scripts/SabineExp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="118" column="76" lean-forward="false" selection-start-line="118" selection-start-column="76" selection-end-line="118" selection-end-column="76" />
+            <state relative-caret-position="360">
+              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding>
                 <element signature="e#0#78#0" expanded="true" />
                 <element signature="e#256#313#0" expanded="true" />
@@ -254,12 +252,12 @@
       <option name="presentableId" value="Default" />
       <updated>1544608609015</updated>
       <workItem from="1544608611611" duration="7396000" />
-      <workItem from="1544689505940" duration="12890000" />
+      <workItem from="1544689505940" duration="13091000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20286000" />
+    <option name="totallyTimeSpent" value="20487000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -469,8 +467,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/SabineExp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="118" column="76" lean-forward="false" selection-start-line="118" selection-start-column="76" selection-end-line="118" selection-end-column="76" />
+        <state relative-caret-position="360">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
             <element signature="e#0#78#0" expanded="true" />
             <element signature="e#256#313#0" expanded="true" />

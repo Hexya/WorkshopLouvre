@@ -13,7 +13,10 @@ import 'three/examples/js/shaders/DotScreenShader'
 import 'three/examples/js/shaders/LuminosityHighPassShader';
 import 'three/examples/js/postprocessing/UnrealBloomPass';
 
+import TimeLineMax from "gsap/TimeLineMax";
+
 import * as dat from 'dat.gui';
+import { TimelineMax } from 'gsap';
 
 var renderer;
 
@@ -44,12 +47,14 @@ export default class App {
         // Sound
         this.play = new LoadSound();
 
+        //GSAP
+        this.tl = new TimelineMax();
+
         //THREE SCENE
         this.container = document.querySelector( '#main' );
     	document.body.appendChild( this.container );
 
         this.camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.01, 10000 );
-
 
         this.camera.position.z = 20;
         this.controls = new OrbitControls(this.camera)
@@ -62,8 +67,9 @@ export default class App {
             ( modelObj )=> {
                 modelObj.traverse( function (child) {
                     if (child instanceof THREE.Mesh) {
-                        child.material = new THREE.MeshLambertMaterial({color: 0xfafbfc});
+                        child.material = new THREE.MeshPhongMaterial({color: 0xfafbfc});
                         child.castShadow = true; //default is false
+                        child.receiveShadow = true; //default is false
                     }
                 })
                 modelObj.scale.set(0.1,0.1,0.1)
@@ -146,20 +152,13 @@ export default class App {
         );
         //LIGHT
         //Hemisphere
-        this.hemiLight = new THREE.HemisphereLight( 0xffff00, 0x0000ff, 1 );
+        this.hemiLight = new THREE.HemisphereLight( 0xaaa59f, 0x555565, 1 );
         this.scene.add( this.hemiLight );
-
-
-        this.ambientLight = new THREE.AmbientLight( 0x0f0f0f, 1 );
-        // this.scene.add( this.ambientLight );
         //Directional
-        this.dirLight = new THREE.DirectionalLight( 0x0000ff, 0.5 )
+        this.dirLight = new THREE.DirectionalLight( 0x707077, 1 )
         this.dirLight.castShadow = true
         this.dirLight.shadowMapWidth = 1024; // default is 512
         this.dirLight.shadowMapHeight = 1024; // default is 512  
-        this.dirLight.position.x = -1
-        this.dirLight.position.y = 8
-        this.dirLight.position.z = 6
         this.scene.add(this.dirLight)
 
         this.dirLightHelper = new THREE.DirectionalLightHelper( this.dirLight, 10 );
@@ -170,11 +169,18 @@ export default class App {
         //BACKGROUND
         let bgSize = 50;
         let backgroundGeo = new THREE.BoxGeometry( bgSize, bgSize, bgSize );
-        let backgroundMat = new THREE.MeshLambertMaterial( { color: 0xfcfbfa, side: THREE.DoubleSide, shadowSide: THREE.DoubleSide } );
+        let backgroundMat = new THREE.MeshPhongMaterial( { color: 0xfcfbfa, side: THREE.BackSide, shadowSide: THREE.BackSide } );
         this.backgroundMesh = new THREE.Mesh( backgroundGeo, backgroundMat );
         this.backgroundMesh.receiveShadow = true; //default is false
-        this.backgroundMesh.position.y = -bgSize*0.5;
-        this.scene.add( this.backgroundMesh );
+        this.backgroundMesh.position.y = bgSize*0.5;
+        // this.scene.add( this.backgroundMesh );
+
+        let groundGeo = new THREE.CircleGeometry( bgSize*10, 128 );
+        let groundMat = new THREE.MeshPhongMaterial( { color: 0xfcfbfa, side: THREE.BackSide, shadowSide: THREE.BackSide } );
+        this.groundMesh = new THREE.Mesh( groundGeo, groundMat );
+        this.groundMesh.receiveShadow = true; //default is false
+        this.groundMesh.rotation.x = Math.PI*0.5;
+        this.scene.add( this.groundMesh );
 
 
         //RENDERER
@@ -196,6 +202,10 @@ export default class App {
     render(bloomPass) {
         this.stats.begin();
         let time = Date.now()/1000;
+
+        this.dirLight.position.x = Math.sin(time)*6
+        this.dirLight.position.y = 8
+        this.dirLight.position.z = Math.cos(time)*6
 
         //RENDER
     	this.renderer.render( this.scene, this.camera ); //Default
