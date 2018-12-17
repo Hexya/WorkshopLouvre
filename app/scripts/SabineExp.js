@@ -47,17 +47,6 @@ export default class App {
         // Sound
         this.play = new LoadSound();
 
-        //GSAP
-        this.tl = new TimelineMax({
-            delay:0.5,
-            repeat:3,
-            repeatDelay:2,
-            // onUpdate:updateStats,
-            // onRepeat:updateReps,
-            // onComplete:restart
-        });
-        //modelObj.children[2].position
-
         //THREE SCENE
         this.container = document.querySelector( '#main' );
     	document.body.appendChild( this.container );
@@ -83,7 +72,8 @@ export default class App {
                 modelObj.scale.set(0.1,0.1,0.1)
                 modelObj.position.y = 0.5;
                 this.scene.add( modelObj );
-                console.log(modelObj)
+
+                this.initGsap();
 
                 //Gui
                 let gui = new dat.GUI();
@@ -159,20 +149,23 @@ export default class App {
             }
         );
         //LIGHT
-        //Hemisphere
-        this.hemiLight = new THREE.HemisphereLight( 0xaaa59f, 0x555565, 1 );
+        //Hemisphere (subtle ambient)
+        this.hemiLight = new THREE.HemisphereLight( 0xbbbebf, 0x9a9acd, 1 );
         this.scene.add( this.hemiLight );
-        //Directional
+        //Directional (with shadow)
         this.dirLight = new THREE.DirectionalLight( 0x707077, 1 )
         this.dirLight.castShadow = true
-        this.dirLight.shadowMapWidth = 2048; // default is 512
-        this.dirLight.shadowMapHeight = 2048; // default is 512
-        this.dirLight.shadow.camera.near = 0.01;       // default 0.5
+        this.dirLight.shadow.mapSize.height = 2048; // default is 512
+        this.dirLight.shadow.mapSize.width = 2048; // default is 512
+
+        this.dirLight.shadow.camera.near = 0.1;       // default 0.5
         this.dirLight.shadow.camera.far = 500;      // default 500
-        this.dirLight.shadow.camera.top = -18;     
-        this.dirLight.shadow.camera.bottom = 18;      
-        this.dirLight.shadow.camera.left = -18; 
-        this.dirLight.shadow.camera.right = 18;
+
+        this.dirLight.shadow.camera.top *= 2;     // defaults are  top:5 ; bottom:-5 ; left:-5 ; right:5
+        this.dirLight.shadow.camera.bottom *= 2;      
+        this.dirLight.shadow.camera.left *= 2;  
+        this.dirLight.shadow.camera.right *= 2;
+
         this.scene.add(this.dirLight)
 
         this.dirLightHelper = new THREE.DirectionalLightHelper( this.dirLight, 10 );
@@ -201,7 +194,7 @@ export default class App {
     	this.renderer = new THREE.WebGLRenderer( { antialias: true, alpha:true } );
         this.renderer.setClearColor( '#eee' )
         this.renderer.shadowMap.enabled = true;
-        this.renderer.shadowMap.type = THREE.PCFSoftShadowMap; 
+        this.renderer.shadowMap.type = THREE.PCFShadowMap; 
         this.renderer.setPixelRatio( window.devicePixelRatio );
     	this.renderer.setSize( window.innerWidth, window.innerHeight );
     	this.container.appendChild( this.renderer.domElement );
@@ -209,9 +202,30 @@ export default class App {
     	window.addEventListener('resize', this.onWindowResize.bind(this), false);
         this.onWindowResize();
 
-        this.renderer.animate( this.render.bind(this));
+        this.renderer.setAnimationLoop( this.render.bind(this));
+
+        
 
     }
+
+    //GSAP
+    initGsap() {
+        console.log("this in initGsap() :", this)
+        this.tl = new TimelineMax({
+            delay:0.5,
+            repeat:3,
+            repeatDelay:2,
+            // onUpdate:updateStats,
+            // onRepeat:updateReps,
+            // onComplete:restart
+        });
+        this.tl.add( TweenMax.to(this.scene.children[4].position, 0.5, 
+            {
+                y: 2
+            })
+        );     
+    }
+
     //UPDATE
     render(bloomPass) {
         this.stats.begin();
