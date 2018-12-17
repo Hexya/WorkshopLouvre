@@ -48,7 +48,15 @@ export default class App {
         this.play = new LoadSound();
 
         //GSAP
-        this.tl = new TimelineMax();
+        this.tl = new TimelineMax({
+            delay:0.5,
+            repeat:3,
+            repeatDelay:2,
+            // onUpdate:updateStats,
+            // onRepeat:updateReps,
+            // onComplete:restart
+        });
+        //modelObj.children[2].position
 
         //THREE SCENE
         this.container = document.querySelector( '#main' );
@@ -94,9 +102,9 @@ export default class App {
                         hairPos.add(modelObj.children[2].position, 'y', -100, 100).listen();
                         hairPos.add(modelObj.children[2].position, 'z', -100, 100).listen();
                     let hairRotate = hairElem.addFolder('Hair Rotation');
-                        hairRotate.add(modelObj.children[2].rotation, 'x', 0, 10).listen();
-                        hairRotate.add(modelObj.children[2].rotation, 'y', 0, 10).listen();
-                        hairRotate.add(modelObj.children[2].rotation, 'z', 0, 10).listen();
+                        hairRotate.add(modelObj.children[2].rotation, 'x', 0, Math.PI*2).listen();
+                        hairRotate.add(modelObj.children[2].rotation, 'y', 0, Math.PI*2).listen();
+                        hairRotate.add(modelObj.children[2].rotation, 'z', 0, Math.PI*2).listen();
                 let headElem = gui.addFolder('Head');
                     let headPos = headElem.addFolder('Head position');
                         headPos.add(modelObj.children[3].position, 'x', -100, 100).listen();
@@ -157,8 +165,14 @@ export default class App {
         //Directional
         this.dirLight = new THREE.DirectionalLight( 0x707077, 1 )
         this.dirLight.castShadow = true
-        this.dirLight.shadowMapWidth = 1024; // default is 512
-        this.dirLight.shadowMapHeight = 1024; // default is 512  
+        this.dirLight.shadowMapWidth = 2048; // default is 512
+        this.dirLight.shadowMapHeight = 2048; // default is 512
+        this.dirLight.shadow.camera.near = 0.01;       // default 0.5
+        this.dirLight.shadow.camera.far = 500;      // default 500
+        this.dirLight.shadow.camera.top = -18;     
+        this.dirLight.shadow.camera.bottom = 18;      
+        this.dirLight.shadow.camera.left = -18; 
+        this.dirLight.shadow.camera.right = 18;
         this.scene.add(this.dirLight)
 
         this.dirLightHelper = new THREE.DirectionalLightHelper( this.dirLight, 10 );
@@ -204,7 +218,7 @@ export default class App {
         let time = Date.now()/1000;
 
         this.dirLight.position.x = Math.sin(time)*6
-        this.dirLight.position.y = 8
+        this.dirLight.position.y = 15
         this.dirLight.position.z = Math.cos(time)*6
 
         //RENDER
