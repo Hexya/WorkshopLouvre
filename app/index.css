@@ -6,14 +6,26 @@ html, body {
 
     font-family: sans-serif;
 }
-.home-container {
-    position: absolute;
-    top: 39%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
 
 .main-heading {
     color: white;
     text-transform: uppercase;
+}
+
+.prev-btn, .next-btn  {
+    height: 30px;
+    width: 30px;
+    background: black;
+    border-radius: 50px;
+    position: absolute;
+    bottom: 10px;
+    right: 50px;
+    cursor: pointer;
+    border: 1px solid black;
+}
+.prev-btn:hover, .next-btn:hover {
+    background: white;
+}
+.next-btn {
+    right: 10px;
 }

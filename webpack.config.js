@@ -72,12 +72,12 @@ module.exports = function(env) {
                     }
                 }
              },{
-                test: /\.css$/,
+                test: [/\.css$/, /\.less$/],
                 use: ExtractTextPlugin.extract({
                     use: 'css-loader'
                 })
             },{
-                test: [/\.mp3$/, /\.png$/, /\.dae$/, /\.jpg$/, /\.obj$/, /\.mtl$/, /\.fbx$/],
+                test: [/\.mp3$/, /\.png$/, /\.dae$/, /\.jpg$/, /\.obj$/, /\.dae$/, /\.mtl$/, /\.fbx$/],
                 use: ['file-loader?name=[path][name].[hash].[ext]']
             },{
                 test:[/\.vert$/,/\.frag$/],

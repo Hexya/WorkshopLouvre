@@ -1,7 +1,9 @@
 import soundFile from '../assets/sound/AESTHETICS PLEASE - Run From Love.mp3';
 import Sound from './Sound.js';
 let OrbitControls = require('three-orbit-controls')(THREE)
-import objFile from '../assets/model/SabineCut.obj';
+import objFile from '../assets/model/SabineOrigin.obj';
+import daeModel from '../assets/model/try.dae';
+
 let Stats = require('stats-js')
 
 import 'three/examples/js/postprocessing/EffectComposer';
@@ -18,7 +20,9 @@ import TimeLineMax from "gsap/TimeLineMax";
 import * as dat from 'dat.gui';
 import { TimelineMax } from 'gsap';
 
-var renderer;
+let step = 0;
+let timerStep = 0;
+
 
 // TODO : add Dat.GUI
 // TODO : add Stats
@@ -35,6 +39,8 @@ class LoadSound {
 export default class App {
 
     constructor() {
+
+        this.registerEvents();
 
         //Stats
         this.stats = new Stats();
@@ -57,9 +63,16 @@ export default class App {
         this.camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.01, 10000 );
 
         this.camera.position.z = 20;
-        this.controls = new OrbitControls(this.camera)
+        //this.controls = new OrbitControls(this.camera)
 
         this.scene = new THREE.Scene();
+
+        /*var col = new THREE.ColladaLoader();
+        col.load( daeModel, ( collada ) => {
+            console.log('dae model')
+            console.log(collada.scene.children[4]);
+            this.scene.add(collada.scene.children[4])
+        });*/
 
         //this.model = new LoaderObj();
         var loader = new THREE.OBJLoader();
@@ -77,71 +90,7 @@ export default class App {
                 this.scene.add( modelObj );
                 console.log(modelObj)
 
-                //Gui
-                let gui = new dat.GUI();
-                let grpElem = gui.addFolder('Group');
-                    let grpPos = grpElem.addFolder('Group Position');
-                        grpPos.add(modelObj.position, 'x', -10, 10).listen();
-                        grpPos.add(modelObj.position, 'y', -10, 10).listen();
-                        grpPos.add(modelObj.position, 'z', -10, 10).listen();
-                    let grpScale = grpElem.addFolder('Group Scale');
-                        grpScale.add(modelObj.scale, 'x', 0, 1).listen();
-                        grpScale.add(modelObj.scale, 'y', 0, 1).listen();
-                        grpScale.add(modelObj.scale, 'z', 0, 1).listen();
-                let hairElem = gui.addFolder('Hair');
-                    let hairPos = hairElem.addFolder('Hair position');
-                        hairPos.add(modelObj.children[2].position, 'x', -100, 100).listen();
-                        hairPos.add(modelObj.children[2].position, 'y', -100, 100).listen();
-                        hairPos.add(modelObj.children[2].position, 'z', -100, 100).listen();
-                    let hairRotate = hairElem.addFolder('Hair Rotation');
-                        hairRotate.add(modelObj.children[2].rotation, 'x', 0, 10).listen();
-                        hairRotate.add(modelObj.children[2].rotation, 'y', 0, 10).listen();
-                        hairRotate.add(modelObj.children[2].rotation, 'z', 0, 10).listen();
-                let headElem = gui.addFolder('Head');
-                    let headPos = headElem.addFolder('Head position');
-                        headPos.add(modelObj.children[3].position, 'x', -100, 100).listen();
-                        headPos.add(modelObj.children[3].position, 'y', -100, 100).listen();
-                        headPos.add(modelObj.children[3].position, 'z', -100, 100).listen();
-                    let headRotate = headElem.addFolder('Head Rotation');
-                        headRotate.add(modelObj.children[3].rotation, 'x', 0, 10).listen();
-                        headRotate.add(modelObj.children[3].rotation, 'y', 0, 10).listen();
-                        headRotate.add(modelObj.children[3].rotation, 'z', 0, 10).listen();
-                let chestElem = gui.addFolder('Chest');
-                    let chestPos = chestElem.addFolder('Chest position');
-                        chestPos.add(modelObj.children[0].position, 'x', -100, 100).listen();
-                        chestPos.add(modelObj.children[0].position, 'y', -100, 100).listen();
-                        chestPos.add(modelObj.children[0].position, 'z', -100, 100).listen();
-                    let chestRotate = chestElem.addFolder('Chest Rotation');
-                        chestRotate.add(modelObj.children[0].rotation, 'x', 0, 10).listen();
-                        chestRotate.add(modelObj.children[0].rotation, 'y', 0, 10).listen();
-                        chestRotate.add(modelObj.children[0].rotation, 'z', 0, 10).listen();
-                let hipElem = gui.addFolder('Hip');
-                    let hipPos = hipElem.addFolder('Hip position');
-                        hipPos.add(modelObj.children[4].position, 'x', -100, 100).listen();
-                        hipPos.add(modelObj.children[4].position, 'y', -100, 100).listen();
-                        hipPos.add(modelObj.children[4].position, 'z', -100, 100).listen();
-                    let hipRotate = hipElem.addFolder('Hip Rotation');
-                        hipRotate.add(modelObj.children[4].rotation, 'x', 0, 10).listen();
-                        hipRotate.add(modelObj.children[4].rotation, 'y', 0 , 10).listen();
-                        hipRotate.add(modelObj.children[4].rotation, 'z', 0, 10).listen();
-                let legElem = gui.addFolder('Leg');
-                    let legPos = legElem.addFolder('Leg position');
-                        legPos.add(modelObj.children[5].position, 'x', -100, 100).listen();
-                        legPos.add(modelObj.children[5].position, 'y', -100, 100).listen();
-                        legPos.add(modelObj.children[5].position, 'z', -100, 100).listen();
-                    let legRotate = legElem.addFolder('Leg Rotation');
-                        legRotate.add(modelObj.children[5].rotation, 'x', 0, 10).listen();
-                        legRotate.add(modelObj.children[5].rotation, 'y', 0, 10).listen();
-                        legRotate.add(modelObj.children[5].rotation, 'z', 0, 10).listen();
-                let footElem = gui.addFolder('Foot');
-                    let footPos = footElem.addFolder('Foot position');
-                        footPos.add(modelObj.children[1].position, 'x', -100, 100).listen();
-                        footPos.add(modelObj.children[1].position, 'y', -100, 100).listen();
-                        footPos.add(modelObj.children[1].position, 'z', -100, 100).listen();
-                    let footRotate = footElem.addFolder('Foot Rotation');
-                        footRotate.add(modelObj.children[1].rotation, 'x', 0, 10).listen();
-                        footRotate.add(modelObj.children[1].rotation, 'y', 0, 10).listen();
-                        footRotate.add(modelObj.children[1].rotation, 'z', 0, 10).listen();
+                this.parameters(modelObj);
             },
             (xhr) => {
                 console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
@@ -150,6 +99,8 @@ export default class App {
                 console.log( 'An error happened' );
             }
         );
+
+
         //LIGHT
         //Hemisphere
         this.hemiLight = new THREE.HemisphereLight( 0xaaa59f, 0x555565, 1 );
@@ -198,6 +149,61 @@ export default class App {
         this.renderer.animate( this.render.bind(this));
 
     }
+
+    registerEvents() {
+        window.addEventListener('mousewheel', this.mouseWheel.bind(this))
+        document.querySelector('.prev-btn').addEventListener('click', this.scrollDownStep.bind(this));
+        document.querySelector('.next-btn').addEventListener('click', this.scrollUpStep.bind(this));
+    }
+
+    mouseWheel(e) {
+        console.log(timerStep)
+        if(timerStep == 1) {
+            setTimeout(()=>{
+                timerStep = 0;
+            },1000)
+        }
+        if(timerStep == 0) {
+            if (e.wheelDelta > 100) {
+                this.scrollDownStep();
+                timerStep = 1;
+            }
+            if (e.wheelDelta < -100) {
+                this.scrollUpStep();
+                timerStep = 1;
+            }
+        }
+    }
+
+    scrollUpStep() {
+        if(step != 7) {
+            step += 1;
+            console.log(step);
+            this.updateScene(step);
+        }
+    }
+    scrollDownStep() {
+        if(step != 0) {
+            step -= 1;
+            console.log(step);
+            this.updateScene(step);
+        }
+    }
+
+    updateScene() {
+        switch (step) {
+            case 0:
+                console.log('init scene');
+                break;
+            case 1:
+                console.log('first scene');
+                break;
+            case 2:
+                console.log('second scene');
+                break;
+        }
+    }
+
     //UPDATE
     render(bloomPass) {
         this.stats.begin();
@@ -217,5 +223,73 @@ export default class App {
     	this.camera.aspect = window.innerWidth / window.innerHeight;
     	this.camera.updateProjectionMatrix();
     	this.renderer.setSize( window.innerWidth, window.innerHeight );
+    }
+
+    parameters(modelObj) {
+        //Gui
+        let gui = new dat.GUI();
+        let grpElem = gui.addFolder('Group');
+        let grpPos = grpElem.addFolder('Group Position');
+        grpPos.add(modelObj.position, 'x', -10, 10).listen();
+        grpPos.add(modelObj.position, 'y', -10, 10).listen();
+        grpPos.add(modelObj.position, 'z', -10, 10).listen();
+        let grpScale = grpElem.addFolder('Group Scale');
+        grpScale.add(modelObj.scale, 'x', 0, 1).listen();
+        grpScale.add(modelObj.scale, 'y', 0, 1).listen();
+        grpScale.add(modelObj.scale, 'z', 0, 1).listen();
+        let hairElem = gui.addFolder('Hair');
+        let hairPos = hairElem.addFolder('Hair position');
+        hairPos.add(modelObj.children[2].position, 'x', -100, 100).listen();
+        hairPos.add(modelObj.children[2].position, 'y', -100, 100).listen();
+        hairPos.add(modelObj.children[2].position, 'z', -100, 100).listen();
+        let hairRotate = hairElem.addFolder('Hair Rotation');
+        hairRotate.add(modelObj.children[2].rotation, 'x', 0, 10).listen();
+        hairRotate.add(modelObj.children[2].rotation, 'y', 0, 10).listen();
+        hairRotate.add(modelObj.children[2].rotation, 'z', 0, 10).listen();
+        let headElem = gui.addFolder('Head');
+        let headPos = headElem.addFolder('Head position');
+        headPos.add(modelObj.children[3].position, 'x', -100, 100).listen();
+        headPos.add(modelObj.children[3].position, 'y', -100, 100).listen();
+        headPos.add(modelObj.children[3].position, 'z', -100, 100).listen();
+        let headRotate = headElem.addFolder('Head Rotation');
+        headRotate.add(modelObj.children[3].rotation, 'x', 0, 10).listen();
+        headRotate.add(modelObj.children[3].rotation, 'y', 0, 10).listen();
+        headRotate.add(modelObj.children[3].rotation, 'z', 0, 10).listen();
+        let chestElem = gui.addFolder('Chest');
+        let chestPos = chestElem.addFolder('Chest position');
+        chestPos.add(modelObj.children[0].position, 'x', -100, 100).listen();
+        chestPos.add(modelObj.children[0].position, 'y', -100, 100).listen();
+        chestPos.add(modelObj.children[0].position, 'z', -100, 100).listen();
+        let chestRotate = chestElem.addFolder('Chest Rotation');
+        chestRotate.add(modelObj.children[0].rotation, 'x', 0, 10).listen();
+        chestRotate.add(modelObj.children[0].rotation, 'y', 0, 10).listen();
+        chestRotate.add(modelObj.children[0].rotation, 'z', 0, 10).listen();
+        let hipElem = gui.addFolder('Hip');
+        let hipPos = hipElem.addFolder('Hip position');
+        hipPos.add(modelObj.children[4].position, 'x', -100, 100).listen();
+        hipPos.add(modelObj.children[4].position, 'y', -100, 100).listen();
+        hipPos.add(modelObj.children[4].position, 'z', -100, 100).listen();
+        let hipRotate = hipElem.addFolder('Hip Rotation');
+        hipRotate.add(modelObj.children[4].rotation, 'x', 0, 10).listen();
+        hipRotate.add(modelObj.children[4].rotation, 'y', 0 , 10).listen();
+        hipRotate.add(modelObj.children[4].rotation, 'z', 0, 10).listen();
+        let legElem = gui.addFolder('Leg');
+        let legPos = legElem.addFolder('Leg position');
+        legPos.add(modelObj.children[5].position, 'x', -100, 100).listen();
+        legPos.add(modelObj.children[5].position, 'y', -100, 100).listen();
+        legPos.add(modelObj.children[5].position, 'z', -100, 100).listen();
+        let legRotate = legElem.addFolder('Leg Rotation');
+        legRotate.add(modelObj.children[5].rotation, 'x', 0, 10).listen();
+        legRotate.add(modelObj.children[5].rotation, 'y', 0, 10).listen();
+        legRotate.add(modelObj.children[5].rotation, 'z', 0, 10).listen();
+        let footElem = gui.addFolder('Foot');
+        let footPos = footElem.addFolder('Foot position');
+        footPos.add(modelObj.children[1].position, 'x', -100, 100).listen();
+        footPos.add(modelObj.children[1].position, 'y', -100, 100).listen();
+        footPos.add(modelObj.children[1].position, 'z', -100, 100).listen();
+        let footRotate = footElem.addFolder('Foot Rotation');
+        footRotate.add(modelObj.children[1].rotation, 'x', 0, 10).listen();
+        footRotate.add(modelObj.children[1].rotation, 'y', 0, 10).listen();
+        footRotate.add(modelObj.children[1].rotation, 'z', 0, 10).listen();
     }
 }
