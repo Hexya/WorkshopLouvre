@@ -15,12 +15,12 @@ import 'three/examples/js/shaders/DotScreenShader'
 import 'three/examples/js/shaders/LuminosityHighPassShader';
 import 'three/examples/js/postprocessing/UnrealBloomPass';
 
-import TimeLineMax from "gsap/TimeLineMax";
-
 import * as dat from 'dat.gui';
-import { TimelineMax } from 'gsap';
+import { TimelineMax, Power4 } from 'gsap';
 
 let step = 0;
+let currentStep = 0;
+let nextStep = 0;
 let timerStep = 0;
 
 
@@ -53,15 +53,11 @@ export default class App {
         // Sound
         this.play = new LoadSound();
 
-        //GSAP
-        this.tl = new TimelineMax();
-
         //THREE SCENE
         this.container = document.querySelector( '#main' );
     	document.body.appendChild( this.container );
 
         this.camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.01, 10000 );
-
         this.camera.position.z = 20;
         //this.controls = new OrbitControls(this.camera)
 
@@ -85,10 +81,8 @@ export default class App {
                         child.receiveShadow = true; //default is false
                     }
                 })
-                modelObj.scale.set(0.1,0.1,0.1)
-                modelObj.position.y = 0.5;
+                modelObj.scale.set(0.1,0.1,0.1);
                 this.scene.add( modelObj );
-                console.log(modelObj)
 
                 this.parameters(modelObj);
             },
@@ -102,14 +96,23 @@ export default class App {
 
 
         //LIGHT
-        //Hemisphere
-        this.hemiLight = new THREE.HemisphereLight( 0xaaa59f, 0x555565, 1 );
+        //Hemisphere (subtle ambient)
+        this.hemiLight = new THREE.HemisphereLight( 0xbbbebf, 0x9a9acd, 1 );
         this.scene.add( this.hemiLight );
-        //Directional
+        //Directional (with shadow)
         this.dirLight = new THREE.DirectionalLight( 0x707077, 1 )
         this.dirLight.castShadow = true
-        this.dirLight.shadowMapWidth = 1024; // default is 512
-        this.dirLight.shadowMapHeight = 1024; // default is 512  
+        this.dirLight.shadow.mapSize.height = 2048; // default is 512
+        this.dirLight.shadow.mapSize.width = 2048; // default is 512
+
+        this.dirLight.shadow.camera.near = 0.1;       // default 0.5
+        this.dirLight.shadow.camera.far = 500;      // default 500
+
+        this.dirLight.shadow.camera.top *= 2;     // defaults are  top:5 ; bottom:-5 ; left:-5 ; right:5
+        this.dirLight.shadow.camera.bottom *= 2;      
+        this.dirLight.shadow.camera.left *= 2;  
+        this.dirLight.shadow.camera.right *= 2;
+
         this.scene.add(this.dirLight)
 
         this.dirLightHelper = new THREE.DirectionalLightHelper( this.dirLight, 10 );
@@ -118,27 +121,27 @@ export default class App {
 
 
         //BACKGROUND
-        let bgSize = 50;
-        let backgroundGeo = new THREE.BoxGeometry( bgSize, bgSize, bgSize );
-        let backgroundMat = new THREE.MeshPhongMaterial( { color: 0xfcfbfa, side: THREE.BackSide, shadowSide: THREE.BackSide } );
-        this.backgroundMesh = new THREE.Mesh( backgroundGeo, backgroundMat );
-        this.backgroundMesh.receiveShadow = true; //default is false
-        this.backgroundMesh.position.y = bgSize*0.5;
-        // this.scene.add( this.backgroundMesh );
+        let bgSize = 500;
 
-        let groundGeo = new THREE.CircleGeometry( bgSize*10, 128 );
+        let groundGeo = new THREE.CircleGeometry( bgSize, 128 );
         let groundMat = new THREE.MeshPhongMaterial( { color: 0xfcfbfa, side: THREE.BackSide, shadowSide: THREE.BackSide } );
         this.groundMesh = new THREE.Mesh( groundGeo, groundMat );
         this.groundMesh.receiveShadow = true; //default is false
         this.groundMesh.rotation.x = Math.PI*0.5;
         this.scene.add( this.groundMesh );
 
+        // Ref Sphere
+        let refGeo = new THREE.SphereGeometry( 0.08, 16, 16 );
+        let refMat = new THREE.MeshBasicMaterial( { color: 0xff2020} );
+        this.refMesh = new THREE.Mesh( refGeo, refMat );
+        this.scene.add( this.refMesh );
+
 
         //RENDERER
     	this.renderer = new THREE.WebGLRenderer( { antialias: true, alpha:true } );
         this.renderer.setClearColor( '#eee' )
         this.renderer.shadowMap.enabled = true;
-        this.renderer.shadowMap.type = THREE.PCFSoftShadowMap; 
+        this.renderer.shadowMap.type = THREE.PCFShadowMap; 
         this.renderer.setPixelRatio( window.devicePixelRatio );
     	this.renderer.setSize( window.innerWidth, window.innerHeight );
     	this.container.appendChild( this.renderer.domElement );
@@ -146,7 +149,7 @@ export default class App {
     	window.addEventListener('resize', this.onWindowResize.bind(this), false);
         this.onWindowResize();
 
-        this.renderer.animate( this.render.bind(this));
+        this.renderer.setAnimationLoop( this.render.bind(this));
 
     }
 
@@ -177,31 +180,81 @@ export default class App {
 
     scrollUpStep() {
         if(step != 7) {
+            currentStep = step;
             step += 1;
-            console.log(step);
-            this.updateScene(step);
+            //console.log(step);
+            nextStep = step;
+            this.updateScene(step, currentStep, nextStep);
         }
     }
     scrollDownStep() {
         if(step != 0) {
+            currentStep = step;
             step -= 1;
-            console.log(step);
-            this.updateScene(step);
+            //console.log(step);
+            nextStep = step;
+            this.updateScene(step, currentStep, nextStep);
         }
     }
 
-    updateScene() {
+    updateScene(currentStep, nextStep) {
         switch (step) {
             case 0:
                 console.log('init scene');
                 break;
             case 1:
+                this.initGsap();
+                this.tl.pause();
+                //if(currentStep - nextStep = -1) {}
+                console.log(this.tl)
+                this.tl.tweenFromTo('test','test2')
                 console.log('first scene');
                 break;
             case 2:
+                this.tl.tweenFromTo('test2','test3')
                 console.log('second scene');
                 break;
+            case 3:
+                this.tl.tweenFromTo('test3','test')
+                console.log('third scene');
+                break;
+            case 4:
+                console.log('fourth scene');
+                break;
+            case 5:
+                console.log('fifth scene');
+                break;
+            case 6:
+                console.log('sixth scene');
+                break;
+            case 7:
+                console.log('seventh scene');
+                break;
         }
+    }
+    //GSAP
+    initGsap() {
+        console.log("this in initGsap() :", this)
+        this.tl = new TimelineMax({
+            delay:0.1,
+            repeat:0,
+            // onUpdate:updateStats,
+            // onRepeat:updateReps,
+            // onComplete:restart
+        });
+        this.tl
+                .to(this.scene.children[5].position,  0.5, { y: 0, x: 4, ease:Power4.easeInOut })
+                .add('test')
+                .to(this.camera.position,             1.5, { y: 8, z: 5, ease:Bounce.easeOut }, 'test')  
+                .to(this.refMesh.position,            1.5, { x: 3, y: 5, ease:Power1.easeOut }, 'test')
+                .to(this.refMesh.position,            1.5, { x: this.scene.children[4].position.x, y: this.scene.children[4].position.y, ease:Power4.easeInOut })
+                .add('test2')
+                .to(this.camera.position,             1.5, { y: 18, z: 15, ease:Bounce.easeOut }, 'test2')
+                .to(this.refMesh.position,            1.5, { x: 13, y: 15, ease:Power1.easeOut }, 'test2')
+                .add('test3')
+                .to(this.camera.position,             1.5, { y: 18, z: 15, ease:Bounce.easeOut }, 'test2')
+                .to(this.refMesh.position,            1.5, { x: 13, y: 15, ease:Power1.easeOut }, 'test2')
+
     }
 
     //UPDATE
@@ -210,8 +263,10 @@ export default class App {
         let time = Date.now()/1000;
 
         this.dirLight.position.x = Math.sin(time)*6
-        this.dirLight.position.y = 8
+        this.dirLight.position.y = 15
         this.dirLight.position.z = Math.cos(time)*6
+
+        this.camera.lookAt(this.refMesh.position);
 
         //RENDER
     	this.renderer.render( this.scene, this.camera ); //Default
