@@ -13,10 +13,8 @@ import 'three/examples/js/shaders/DotScreenShader'
 import 'three/examples/js/shaders/LuminosityHighPassShader';
 import 'three/examples/js/postprocessing/UnrealBloomPass';
 
-import TimeLineMax from "gsap/TimeLineMax";
-
 import * as dat from 'dat.gui';
-import { TimelineMax } from 'gsap';
+import { TimelineMax, Power4 } from 'gsap';
 
 var renderer;
 
@@ -52,7 +50,6 @@ export default class App {
     	document.body.appendChild( this.container );
 
         this.camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.01, 10000 );
-
         this.camera.position.z = 20;
         this.controls = new OrbitControls(this.camera)
 
@@ -69,8 +66,7 @@ export default class App {
                         child.receiveShadow = true; //default is false
                     }
                 })
-                modelObj.scale.set(0.1,0.1,0.1)
-                modelObj.position.y = 0.5;
+                modelObj.scale.set(0.1,0.1,0.1);
                 this.scene.add( modelObj );
 
                 this.initGsap();
@@ -174,20 +170,20 @@ export default class App {
 
 
         //BACKGROUND
-        let bgSize = 50;
-        let backgroundGeo = new THREE.BoxGeometry( bgSize, bgSize, bgSize );
-        let backgroundMat = new THREE.MeshPhongMaterial( { color: 0xfcfbfa, side: THREE.BackSide, shadowSide: THREE.BackSide } );
-        this.backgroundMesh = new THREE.Mesh( backgroundGeo, backgroundMat );
-        this.backgroundMesh.receiveShadow = true; //default is false
-        this.backgroundMesh.position.y = bgSize*0.5;
-        // this.scene.add( this.backgroundMesh );
+        let bgSize = 500;
 
-        let groundGeo = new THREE.CircleGeometry( bgSize*10, 128 );
+        let groundGeo = new THREE.CircleGeometry( bgSize, 128 );
         let groundMat = new THREE.MeshPhongMaterial( { color: 0xfcfbfa, side: THREE.BackSide, shadowSide: THREE.BackSide } );
         this.groundMesh = new THREE.Mesh( groundGeo, groundMat );
         this.groundMesh.receiveShadow = true; //default is false
         this.groundMesh.rotation.x = Math.PI*0.5;
         this.scene.add( this.groundMesh );
+
+        // Ref Sphere
+        let refGeo = new THREE.SphereGeometry( 0.08, 16, 16 );
+        let refMat = new THREE.MeshBasicMaterial( { color: 0xff2020} );
+        this.refMesh = new THREE.Mesh( refGeo, refMat );
+        this.scene.add( this.refMesh );
 
 
         //RENDERER
@@ -204,26 +200,25 @@ export default class App {
 
         this.renderer.setAnimationLoop( this.render.bind(this));
 
-        
-
     }
 
     //GSAP
     initGsap() {
         console.log("this in initGsap() :", this)
         this.tl = new TimelineMax({
-            delay:0.5,
-            repeat:3,
-            repeatDelay:2,
+            delay:0.1,
+            repeat:0,
             // onUpdate:updateStats,
             // onRepeat:updateReps,
             // onComplete:restart
         });
-        this.tl.add( TweenMax.to(this.scene.children[4].position, 0.5, 
-            {
-                y: 2
-            })
-        );     
+        this.tl
+                .to(this.scene.children[5].position,  0.5, { y: 0, x: 4, ease:Power4.easeInOut })
+                .add('test')
+                .to(this.camera.position,             1.5, { y: 8, z: 5, ease:Bounce.easeOut }, 'test')  
+                .to(this.refMesh.position,            1.5, { x: 3, y: 5, ease:Power1.easeOut }, 'test')
+                .to(this.refMesh.position,            1.5, { x: this.scene.children[4].position.x, y: this.scene.children[4].position.y, ease:Power4.easeInOut });
+
     }
 
     //UPDATE
@@ -234,6 +229,8 @@ export default class App {
         this.dirLight.position.x = Math.sin(time)*6
         this.dirLight.position.y = 15
         this.dirLight.position.z = Math.cos(time)*6
+
+        this.camera.lookAt(this.refMesh.position);
 
         //RENDER
     	this.renderer.render( this.scene, this.camera ); //Default
