@@ -2,7 +2,17 @@ import soundFile from '../assets/sound/AESTHETICS PLEASE - Run From Love.mp3';
 import Sound from './Sound.js';
 let OrbitControls = require('three-orbit-controls')(THREE)
 import objFile from '../assets/model/SabineXp.obj';
+import imgSprite from '../assets/img/spriteAqua.png';
 import daeModel from '../assets/model/try.dae';
+
+let firstSceneTemplate = require('./Templates/firstSceneTemplate.tpl');
+let secSceneTemplate = require('./Templates/secSceneTemplate.tpl');
+let thirdSceneTemplate = require('./Templates/thirdSceneTemplate.tpl');
+let fourthSceneTemplate = require('./Templates/fourthSceneTemplate.tpl');
+let fifthSceneTemplate = require('./Templates/fifthSceneTemplate.tpl');
+let sixthSceneTemplate = require('./Templates/sixthSceneTemplate.tpl');
+let seventhSceneTemplate = require('./Templates/seventhSceneTemplate.tpl');
+
 
 let Stats = require('stats-js')
 
@@ -21,6 +31,8 @@ import { TimelineMax, Power4 } from 'gsap';
 let step = 0;
 let currentStep = 0;
 let timerStep = 0;
+let spriteAnime;
+let clock = new THREE.Clock();
 
 
 // TODO : add Dat.GUI
@@ -79,7 +91,7 @@ export default class App {
                         child.material = new THREE.MeshPhongMaterial({color: 0xfafbfc});
                         child.castShadow = true; //default is false
                         child.receiveShadow = true; //default is false
-                        console.log(child.name)
+                        //console.log(child.name)
 
                         child.scale.set(0.1,0.1,0.1);
                         child.position.x = Math.random()*20-10;
@@ -91,6 +103,9 @@ export default class App {
                 this.tl.pause();
 
                 this.parameters(modelObj);
+
+                // Remove Loader
+                this.loaded()
             },
             (xhr) => {
                 console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
@@ -124,6 +139,21 @@ export default class App {
         this.dirLightHelper = new THREE.DirectionalLightHelper( this.dirLight, 10 );
         this.scene.add( this.dirLightHelper );
 
+        /*let spriteMap = new THREE.TextureLoader().load( imgSprite );
+        let spriteMaterial = new THREE.SpriteMaterial( { map: spriteMap, color: 0xffffff } );
+        let sprite = new THREE.Sprite( spriteMaterial );
+        sprite.scale.set(5, 5, 1)
+        sprite.position.z = -2;
+        sprite.center = new THREE.Vector2( 0.5, 0 );
+        this.scene.add( sprite );*/
+
+        let runnerTexture = new THREE.ImageUtils.loadTexture( imgSprite );
+        spriteAnime = new this.textureAnimator( runnerTexture, 20, 11, 190, 1000/24 ); // texture, #horiz, #vert, #total, duration.
+        console.log('HEY', spriteAnime)
+        let runnerMaterial = new THREE.MeshBasicMaterial( { color: 0xffffff, alphaMap: runnerTexture, side:THREE.DoubleSide, transparent:true } );
+        let runnerGeometry = new THREE.PlaneGeometry(9, 6, 32);
+        let runner = new THREE.Mesh(runnerGeometry, runnerMaterial);
+        this.scene.add(runner);
 
 
         //BACKGROUND
@@ -142,10 +172,15 @@ export default class App {
         this.targetMesh = new THREE.Mesh( targetGeo, targetMat );
         this.scene.add( this.targetMesh );
 
+        /*let planeGeo = new THREE.PlaneBufferGeometry(5, 20, 32)
+        let planeMat = new THREE.MeshBasicMaterial({color: 0xff2020})
+        this.planeVisu = new THREE.Mesh(planeGeo, planeMat);
+        this.scene.add( this.planeVisu )*/
+
 
         //RENDERER
     	this.renderer = new THREE.WebGLRenderer( { antialias: true, alpha:true } );
-        this.renderer.setClearColor( '#eee' )
+        this.renderer.setClearColor( '#BBFFFF' )
         this.renderer.shadowMap.enabled = true;
         this.renderer.shadowMap.type = THREE.PCFShadowMap; 
         this.renderer.setPixelRatio( window.devicePixelRatio );
@@ -159,10 +194,43 @@ export default class App {
 
     }
 
+    textureAnimator(texture, tilesHoriz, tilesVert, numTiles, tileDispDuration) {
+        // note: texture passed by reference, will be updated by the update function.
+        this.tilesHorizontal = tilesHoriz;
+        this.tilesVertical = tilesVert;
+        // how many images does this spritesheet contain?
+        // usually equals tilesHoriz * tilesVert, but not necessarily,
+        // if there at blank tiles at the bottom of the spritesheet.
+        this.numberOfTiles = numTiles;
+        texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+        texture.repeat.set(1 / this.tilesHorizontal, 1 / this.tilesVertical);
+
+        // how long should each image be displayed?
+        this.tileDisplayDuration = tileDispDuration;
+
+        // how long has the current image been displayed?
+        this.currentDisplayTime = 0;
+
+        // which image is currently being displayed?
+        this.currentTile = 0;
+
+        this.update = function (milliSec) {
+            this.currentDisplayTime += milliSec;
+            while (this.currentDisplayTime > this.tileDisplayDuration) {
+                this.currentDisplayTime -= this.tileDisplayDuration;
+                this.currentTile++;
+                if (this.currentTile == this.numberOfTiles)
+                    this.currentTile = 0;
+                var currentColumn = this.currentTile % this.tilesHorizontal;
+                texture.offset.x = currentColumn / this.tilesHorizontal;
+                var currentRow = Math.floor(this.currentTile / this.tilesHorizontal);
+                texture.offset.y = currentRow / this.tilesVertical;
+            }
+        };
+    }
+
     registerEvents() {
         window.addEventListener('mousewheel', this.mouseWheel.bind(this))
-        document.querySelector('.prev-btn').addEventListener('click', this.scrollPrevious.bind(this));
-        document.querySelector('.next-btn').addEventListener('click', this.scrollNext.bind(this));
     }
 
     mouseWheel(e) {
@@ -218,29 +286,36 @@ export default class App {
                 break;
             case 1:
                 this.tl.play()
+                this.toggleTpl('init-scene', 'first-scene', firstSceneTemplate)
                 console.log('first step')
                 break;
             case 2:
                 this.tl.play()
+                this.toggleTpl('first-scene', 'sec-scene', secSceneTemplate)
                 console.log('sec step')
                 break;
             case 3:
                 this.tl.play()
+                this.toggleTpl('sec-scene', 'third-scene', thirdSceneTemplate)
                 console.log('third step')
                 break;
             case 4:
                 this.tl.play()
+                this.toggleTpl('third-scene', 'fourth-scene', fourthSceneTemplate)
                 console.log('fourth scene');
                 break;
             case 5:
                 this.tl.play()
+                this.toggleTpl('fourth-scene', 'fifth-scene', fifthSceneTemplate)
                 console.log('fifth step');
                 break;
             case 6:
                 this.tl.play()
+                this.toggleTpl('fifth-scene', 'sixth-scene', sixthSceneTemplate)
                 console.log('sixth step');
                 break;
             case 7:
+                this.toggleTpl('sixth-scene', 'seventh-scene', seventhSceneTemplate)
                 console.log('seventh step');
                 break;
         }
@@ -252,36 +327,42 @@ export default class App {
                 break;
             case 1:
                 this.tl.reverse();
+                this.toggleTpl('init-scene', 'first-scene', firstSceneTemplate)
                 console.log('first step')
                 break;
             case 2:
                 this.tl.reverse();
+                this.toggleTpl('first-scene', 'sec-scene', secSceneTemplate)
                 console.log('sec step')
                 break;
             case 3:
                 this.tl.reverse();
+                this.toggleTpl('sec-scene', 'third-scene', thirdSceneTemplate)
                 console.log('third step')
                 break;
             case 4:
                 this.tl.reverse();
+                this.toggleTpl('third-scene', 'fourth-scene', fourthSceneTemplate)
                 console.log('fourth scene');
                 break;
             case 5:
                 this.tl.reverse();
+                this.toggleTpl('fourth-scene', 'fifth-scene', fifthSceneTemplate)
                 console.log('fifth step');
                 break;
             case 6:
                 this.tl.reverse();
+                this.toggleTpl('fifth-scene', 'sixth-scene', sixthSceneTemplate)
                 console.log('sixth step');
                 break;
             case 7:
+                this.toggleTpl('sixth-scene', 'seventh-scene', seventhSceneTemplate)
                 console.log('seventh step');
                 break;
         }
     }
     //GSAP
     initGsap() {
-        console.log("'this' in initGsap() :", this)
         this.tl = new TimelineMax({
             delay:0,
             repeat:0,
@@ -312,58 +393,88 @@ export default class App {
                     'intro')
                 .add('step1')
                 .to(this.targetMesh.position,1.5,{
-                    x: this.scene.children[5].children[2].position.x,
-                    z: this.scene.children[5].children[2].position.z,
+                    x: this.scene.children[6].children[2].position.x,
+                    z: this.scene.children[6].children[2].position.z,
                     ease:Power1.easeOut
                     },
                     'step1')
                 .addPause()
                 .add('step2')
                 .to(this.targetMesh.position,1.5,{
-                    x: this.scene.children[5].children[3].position.x,
-                    z: this.scene.children[5].children[3].position.z,
+                    x: this.scene.children[6].children[3].position.x,
+                    z: this.scene.children[6].children[3].position.z,
                     ease:Power1.easeOut
                     },
                     'step2')
                 .addPause()
                 .add('step3')
                 .to(this.targetMesh.position,1.5,{
-                    x: this.scene.children[5].children[0].position.x,
-                    z: this.scene.children[5].children[0].position.z,
+                    x: this.scene.children[6].children[0].position.x,
+                    z: this.scene.children[6].children[0].position.z,
                     ease:Power1.easeOut
                     },
                     'step3')     
                 .addPause()
                 .add('step4')
                 .to(this.targetMesh.position,1.5,{
-                    x: this.scene.children[5].children[4].position.x,
-                    z: this.scene.children[5].children[4].position.z,
+                    x: this.scene.children[6].children[4].position.x,
+                    z: this.scene.children[6].children[4].position.z,
                     ease:Power1.easeOut
                     },
                     'step4')     
                 .addPause()
                 .add('step5')
                 .to(this.targetMesh.position,1.5,{
-                    x: this.scene.children[5].children[5].position.x,
-                    z: this.scene.children[5].children[5].position.z,
+                    x: this.scene.children[6].children[5].position.x,
+                    z: this.scene.children[6].children[5].position.z,
                     ease:Power1.easeOut
                     },
                     'step5')
                 .addPause()
                 .add('step6')
+                .to(this.scene.children[6].children[1].position,1.5,{
+                        x: 0,
+                        y: 0,
+                        z: 0,
+                        ease:Power1.easeOut
+                    },
+                    'step6')
+                .add('end')
+                /*.add('step6')
                 .to(this.targetMesh.position,1.5,{
                     x: this.scene.children[5].children[1].position.x,
                     z: this.scene.children[5].children[1].position.z,
                     ease:Power1.easeOut
                     },
                     'step6')
-                .add('end')
+                .add('end')*/
+    }
+
+    toggleTpl(latestScene, activeScene, template) {
+        document.querySelector(".scene-cont").classList.add('remove-scene');
+        setTimeout(()=> {
+            document.querySelector(".scene-cont").classList.remove(latestScene);
+            document.querySelector(".scene-cont").classList.remove('remove-scene');
+            document.querySelector(".scene-cont").classList.add(activeScene);
+            document.querySelector(".scene-cont").innerHTML = template;
+        },1000)
+    }
+
+    loaded() {
+        document.querySelector('.loader').classList.add('remove-scene')
+        setTimeout(()=> {
+            document.querySelector('.loader').remove();
+            document.querySelector('.scene-cont').style.display = 'block';
+        },500)
     }
 
     //UPDATE
     render() {
         this.stats.begin();
         let time = Date.now()/1000;
+
+        var delta = clock.getDelta();
+        spriteAnime.update(1000 * delta);
 
         this.dirLight.position.x = Math.sin(time)*6
         this.dirLight.position.y = 15
