@@ -20,7 +20,6 @@ import { TimelineMax, Power4 } from 'gsap';
 
 let step = 0;
 let currentStep = 0;
-let nextStep = 0;
 let timerStep = 0;
 
 
@@ -81,10 +80,15 @@ export default class App {
                         child.castShadow = true; //default is false
                         child.receiveShadow = true; //default is false
                         console.log(child.name)
+
+                        child.scale.set(0.1,0.1,0.1);
+                        child.position.x = Math.random()*20-10;
+                        child.position.z = Math.random()*20-10;
                     }
                 })
-                modelObj.scale.set(0.1,0.1,0.1);
                 this.scene.add( modelObj );
+                this.initGsap();
+                this.tl.pause();
 
                 this.parameters(modelObj);
             },
@@ -110,10 +114,10 @@ export default class App {
         this.dirLight.shadow.camera.near = 0.1;       // default 0.5
         this.dirLight.shadow.camera.far = 500;      // default 500
 
-        this.dirLight.shadow.camera.top *= 2;     // defaults are  top:5 ; bottom:-5 ; left:-5 ; right:5
-        this.dirLight.shadow.camera.bottom *= 2;      
-        this.dirLight.shadow.camera.left *= 2;  
-        this.dirLight.shadow.camera.right *= 2;
+        this.dirLight.shadow.camera.top *= 2.1;     // defaults are  top:5 ; bottom:-5 ; left:-5 ; right:5
+        this.dirLight.shadow.camera.bottom *= 2.1;      
+        this.dirLight.shadow.camera.left *= 2.1;  
+        this.dirLight.shadow.camera.right *= 2.1;
 
         this.scene.add(this.dirLight)
 
@@ -126,17 +130,17 @@ export default class App {
         let bgSize = 500;
 
         let groundGeo = new THREE.CircleGeometry( bgSize, 128 );
-        let groundMat = new THREE.MeshPhongMaterial( { color: 0xfcfbfa, side: THREE.BackSide, shadowSide: THREE.BackSide } );
+        let groundMat = new THREE.MeshPhongMaterial( { color: 0x9de7f0, side: THREE.BackSide, shadowSide: THREE.BackSide } );
         this.groundMesh = new THREE.Mesh( groundGeo, groundMat );
         this.groundMesh.receiveShadow = true; //default is false
         this.groundMesh.rotation.x = Math.PI*0.5;
         this.scene.add( this.groundMesh );
 
-        // Ref Sphere
-        let refGeo = new THREE.SphereGeometry( 0.08, 16, 16 );
-        let refMat = new THREE.MeshBasicMaterial( { color: 0xff2020} );
-        this.refMesh = new THREE.Mesh( refGeo, refMat );
-        this.scene.add( this.refMesh );
+        // Target Sphere
+        let targetGeo = new THREE.SphereGeometry( 0.08, 16, 16 );
+        let targetMat = new THREE.MeshBasicMaterial( { color: 0xff2020} );
+        this.targetMesh = new THREE.Mesh( targetGeo, targetMat );
+        this.scene.add( this.targetMesh );
 
 
         //RENDERER
@@ -173,7 +177,7 @@ export default class App {
                 if(step != 0) {
                     step -= 1;
                     //console.log(step);
-                    this.updateScene(step);
+                    this.reverseScene(step);
                 }
                 timerStep = 1;
             }
@@ -207,60 +211,85 @@ export default class App {
         }
     }
 
-    updateScene(currentStep) {
+    updateScene() {
         switch (step) {
             case 0:
                 console.log('init scene');
                 break;
             case 1:
-                console.log('currentStep:',currentStep, '/ step:',step)
-                this.initGsap();
-                this.tl.pause();
-                if(currentStep - step == -1) {
-                    this.tl.tweenFromTo('test','test2')
-                    console.log('first step')
-                } else {
-                    console.log('reverse first step')
-                }
+                this.tl.play()
+                console.log('first step')
                 break;
             case 2:
-                if(currentStep - step == -1) {
-                    this.tl.tweenFromTo('test2','test3')
-                    console.log('second step')
-                } else {
-                    console.log('reverse sec step')
-                }
+                this.tl.play()
+                console.log('sec step')
                 break;
             case 3:
-                this.tl.reverse()
+                this.tl.play()
                 console.log('third step')
                 break;
             case 4:
-                this.tl.tweenFromTo('test3','test4')
+                this.tl.play()
                 console.log('fourth scene');
                 break;
             case 5:
-                console.log('fifth scene');
+                this.tl.play()
+                console.log('fifth step');
                 break;
             case 6:
-                console.log('sixth scene');
+                this.tl.play()
+                console.log('sixth step');
                 break;
             case 7:
-                console.log('seventh scene');
+                console.log('seventh step');
+                break;
+        }
+    }
+    reverseScene() {
+        switch (step) {
+            case 0:
+                console.log('init scene');
+                break;
+            case 1:
+                this.tl.reverse();
+                console.log('first step')
+                break;
+            case 2:
+                this.tl.reverse();
+                console.log('sec step')
+                break;
+            case 3:
+                this.tl.reverse();
+                console.log('third step')
+                break;
+            case 4:
+                this.tl.reverse();
+                console.log('fourth scene');
+                break;
+            case 5:
+                this.tl.reverse();
+                console.log('fifth step');
+                break;
+            case 6:
+                this.tl.reverse();
+                console.log('sixth step');
+                break;
+            case 7:
+                console.log('seventh step');
                 break;
         }
     }
     //GSAP
     initGsap() {
-        console.log("this in initGsap() :", this)
+        console.log("'this' in initGsap() :", this)
         this.tl = new TimelineMax({
-            delay:0.1,
+            delay:0,
             repeat:0,
             // onUpdate:updateStats,
             // onRepeat:updateReps,
             // onComplete:restart
         });
-        this.tl.to(this.scene.children[5].position,  0.5, { y: 0, x: 4, ease:Power4.easeInOut })
+        /*this.tl.to(this.scene.children[5].position,  0.5, { y: 0, x: 4, ease:Power4.easeInOut })
                .add('test')
                .to(this.camera.position,             1.5, { y: 8, z: 5, ease:Bounce.easeOut }, 'test')
                .to(this.refMesh.position,            1.5, { x: 3, y: 5, ease:Power1.easeOut }, 'test')
@@ -272,7 +301,63 @@ export default class App {
                .to(this.refMesh.position,            1.5, { x: 15, y: 16, ease:Power1.easeOut }, 'test3')
                .add('test4')
                .to(this.camera.position,             1.5, { y: 14, z: 13, ease:Bounce.easeOut }, 'test4')
-               .to(this.refMesh.position,            1.5, { x: 13, y: 14, ease:Power1.easeOut }, 'test4')
+               .to(this.refMesh.position,            1.5, { x: 13, y: 14, ease:Power1.easeOut }, 'test4')*/
+        this.tl
+                .add('intro')
+                .to(this.targetMesh.position,1.5,{
+                    x: 0,
+                    z: 0,
+                    ease:Power1.easeOut
+                    },
+                    'intro')
+                .add('step1')
+                .to(this.targetMesh.position,1.5,{
+                    x: this.scene.children[5].children[2].position.x,
+                    z: this.scene.children[5].children[2].position.z,
+                    ease:Power1.easeOut
+                    },
+                    'step1')
+                .addPause()
+                .add('step2')
+                .to(this.targetMesh.position,1.5,{
+                    x: this.scene.children[5].children[3].position.x,
+                    z: this.scene.children[5].children[3].position.z,
+                    ease:Power1.easeOut
+                    },
+                    'step2')
+                .addPause()
+                .add('step3')
+                .to(this.targetMesh.position,1.5,{
+                    x: this.scene.children[5].children[0].position.x,
+                    z: this.scene.children[5].children[0].position.z,
+                    ease:Power1.easeOut
+                    },
+                    'step3')     
+                .addPause()
+                .add('step4')
+                .to(this.targetMesh.position,1.5,{
+                    x: this.scene.children[5].children[4].position.x,
+                    z: this.scene.children[5].children[4].position.z,
+                    ease:Power1.easeOut
+                    },
+                    'step4')     
+                .addPause()
+                .add('step5')
+                .to(this.targetMesh.position,1.5,{
+                    x: this.scene.children[5].children[5].position.x,
+                    z: this.scene.children[5].children[5].position.z,
+                    ease:Power1.easeOut
+                    },
+                    'step5')
+                .addPause()
+                .add('step6')
+                .to(this.targetMesh.position,1.5,{
+                    x: this.scene.children[5].children[1].position.x,
+                    z: this.scene.children[5].children[1].position.z,
+                    ease:Power1.easeOut
+                    },
+                    'step6')
+                .add('end')
     }
 
     //UPDATE
@@ -284,7 +369,7 @@ export default class App {
         this.dirLight.position.y = 15
         this.dirLight.position.z = Math.cos(time)*6
 
-        this.camera.lookAt(this.refMesh.position);
+        this.camera.lookAt(this.targetMesh.position);
 
         //RENDER
     	this.renderer.render( this.scene, this.camera ); //Default
