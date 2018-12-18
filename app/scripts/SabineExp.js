@@ -2,7 +2,7 @@ import soundFile from '../assets/sound/AESTHETICS PLEASE - Run From Love.mp3';
 import Sound from './Sound.js';
 let OrbitControls = require('three-orbit-controls')(THREE)
 import objFile from '../assets/model/SabineXp.obj';
-import daeModel from '../assets/model/try.dae';
+import pngSequence from '../assets/img/atlas01_front.png';
 
 let Stats = require('stats-js')
 
@@ -103,7 +103,7 @@ export default class App {
 
         //LIGHT
         //Hemisphere (subtle ambient)
-        this.hemiLight = new THREE.HemisphereLight( 0xbbbebf, 0x9a9acd, 1 );
+        this.hemiLight = new THREE.HemisphereLight( 0xbbbebf, 0x3c4849, 1 );
         this.scene.add( this.hemiLight );
         //Directional (with shadow)
         this.dirLight = new THREE.DirectionalLight( 0x707077, 1 )
@@ -130,17 +130,29 @@ export default class App {
         let bgSize = 500;
 
         let groundGeo = new THREE.CircleGeometry( bgSize, 128 );
-        let groundMat = new THREE.MeshPhongMaterial( { color: 0x9de7f0, side: THREE.BackSide, shadowSide: THREE.BackSide } );
+        let groundMat = new THREE.MeshPhongMaterial( { color: 0x81b6bc, side: THREE.BackSide, shadowSide: THREE.BackSide } );
         this.groundMesh = new THREE.Mesh( groundGeo, groundMat );
         this.groundMesh.receiveShadow = true; //default is false
         this.groundMesh.rotation.x = Math.PI*0.5;
         this.scene.add( this.groundMesh );
 
         // Target Sphere
-        let targetGeo = new THREE.SphereGeometry( 0.08, 16, 16 );
+        let targetGeo = new THREE.SphereGeometry( 0.02, 16, 16 );
         let targetMat = new THREE.MeshBasicMaterial( { color: 0xff2020} );
         this.targetMesh = new THREE.Mesh( targetGeo, targetMat );
         this.scene.add( this.targetMesh );
+
+        
+        //ANIM PLANE
+        let animGeo = new THREE.PlaneGeometry( 16, 9, 1 );
+        let pngSequenceTexture = new THREE.TextureLoader().load( pngSequence );
+        // let video = document.getElementById( 'video' );
+        // let videotexture = new THREE.MeshPhongMaterial( video );
+        // videotexture.minFilter = THREE.LinearFilter;
+        // videotexture.magFilter = THREE.LinearFilter;
+        let animMat = new THREE.MeshBasicMaterial( { color: 0xffffff, transparent: true, alphaMap: pngSequenceTexture, side: THREE.DoubleSide } );
+        this.anim = new THREE.Mesh( animGeo, animMat );
+        this.scene.add( this.anim );
 
 
         //RENDERER
@@ -161,8 +173,6 @@ export default class App {
 
     registerEvents() {
         window.addEventListener('mousewheel', this.mouseWheel.bind(this))
-        document.querySelector('.prev-btn').addEventListener('click', this.scrollPrevious.bind(this));
-        document.querySelector('.next-btn').addEventListener('click', this.scrollNext.bind(this));
     }
 
     mouseWheel(e) {
@@ -170,7 +180,7 @@ export default class App {
         if(timerStep == 1) {
             setTimeout(()=>{
                 timerStep = 0;
-            },1000)
+            }, 1500)
         }
         if(timerStep == 0) {
             if (e.wheelDelta > 100) {
@@ -192,91 +202,60 @@ export default class App {
         }
     }
 
-    scrollNext() {
-        if(step != 7) {
-            currentStep = step;
-            step += 1;
-            //console.log(step);
-            console.log('currentStep:',currentStep, '/ step:',step)
-
-            this.updateScene(step, currentStep);
-        }
-    }
-    scrollPrevious() {
-        if(step != 0) {
-            currentStep = step;
-            step -= 1;
-            //console.log(step);
-            this.updateScene(step, currentStep);
-        }
-    }
-
     updateScene() {
+        console.log("step:", step);
         switch (step) {
             case 0:
-                console.log('init scene');
                 break;
             case 1:
                 this.tl.play()
-                console.log('first step')
                 break;
             case 2:
                 this.tl.play()
-                console.log('sec step')
                 break;
             case 3:
                 this.tl.play()
-                console.log('third step')
                 break;
             case 4:
                 this.tl.play()
-                console.log('fourth scene');
                 break;
             case 5:
                 this.tl.play()
-                console.log('fifth step');
                 break;
             case 6:
                 this.tl.play()
-                console.log('sixth step');
                 break;
             case 7:
-                console.log('seventh step');
+                this.tl.play()
                 break;
         }
     }
     reverseScene() {
+        console.log("step:", step);
         switch (step) {
             case 0:
-                console.log('init scene');
+                this.tl.reverse()
                 break;
             case 1:
-                this.tl.reverse();
-                console.log('first step')
+                this.tl.reverse()
                 break;
             case 2:
-                this.tl.reverse();
-                console.log('sec step')
+                this.tl.reverse()
                 break;
             case 3:
-                this.tl.reverse();
-                console.log('third step')
+                this.tl.reverse()
                 break;
             case 4:
-                this.tl.reverse();
-                console.log('fourth scene');
+                this.tl.reverse()
                 break;
             case 5:
-                this.tl.reverse();
-                console.log('fifth step');
+                this.tl.reverse()
                 break;
             case 6:
-                this.tl.reverse();
-                console.log('sixth step');
+                this.tl.reverse()
                 break;
             case 7:
-                console.log('seventh step');
-                break;
+                    break;
         }
     }
     //GSAP
@@ -289,74 +268,110 @@ export default class App {
             // onRepeat:updateReps,
             // onComplete:restart
         });
-        /*this.tl.to(this.scene.children[5].position,  0.5, { y: 0, x: 4, ease:Power4.easeInOut })
-               .add('test')
-               .to(this.camera.position,             1.5, { y: 8, z: 5, ease:Bounce.easeOut }, 'test')
-               .to(this.refMesh.position,            1.5, { x: 3, y: 5, ease:Power1.easeOut }, 'test')
-               .add('test2')
-               .to(this.camera.position,             1.5, { y: 18, z: 15, ease:Bounce.easeOut }, 'test2')
-               .to(this.refMesh.position,            1.5, { x: 13, y: 15, ease:Power1.easeOut }, 'test2')
-               .add('test3')
-               .to(this.camera.position,             1.5, { y: 20, z: 16, ease:Bounce.easeOut }, 'test3')
-               .to(this.refMesh.position,            1.5, { x: 15, y: 16, ease:Power1.easeOut }, 'test3')
-               .add('test4')
-               .to(this.camera.position,             1.5, { y: 14, z: 13, ease:Bounce.easeOut }, 'test4')
-               .to(this.refMesh.position,            1.5, { x: 13, y: 14, ease:Power1.easeOut }, 'test4')*/
+
         this.tl
                 .add('intro')
-                .to(this.targetMesh.position,1.5,{
+                .to(this.targetMesh.position, 0,{
                     x: 0,
                     z: 0,
-                    ease:Power1.easeOut
+                    ease:Power1.easeInOut
                     },
                     'intro')
+
                 .add('step1')
-                .to(this.targetMesh.position,1.5,{
-                    x: this.scene.children[5].children[2].position.x,
-                    z: this.scene.children[5].children[2].position.z,
-                    ease:Power1.easeOut
+                .to(this.targetMesh.position, 1.0,{
+                    x: this.scene.children[6].children[2].position.x,
+                    z: this.scene.children[6].children[2].position.z,
+                    ease:Power1.easeInOut
                     },
                     'step1')
+                .to(this.camera.position, 1.5,{
+                    x: this.scene.children[6].children[2].position.x,
+                    z: this.scene.children[6].children[2].position.z+2,
+                    y: 3,
+                    ease:Power1.easeInOut
+                    },
+                    'step1+=0.5')
                 .addPause()
+
                 .add('step2')
-                .to(this.targetMesh.position,1.5,{
-                    x: this.scene.children[5].children[3].position.x,
-                    z: this.scene.children[5].children[3].position.z,
-                    ease:Power1.easeOut
+                .to(this.targetMesh.position,1.0,{
+                    x: this.scene.children[6].children[3].position.x,
+                    z: this.scene.children[6].children[3].position.z,
+                    ease:Power1.easeInOut
                     },
                     'step2')
-                .addPause()
-                .add('step3')
-                .to(this.targetMesh.position,1.5,{
-                    x: this.scene.children[5].children[0].position.x,
-                    z: this.scene.children[5].children[0].position.z,
-                    ease:Power1.easeOut
+                .to(this.camera.position, 1.5,{
+                    x: this.scene.children[6].children[3].position.x,
+                    z: this.scene.children[6].children[3].position.z+2,
+                    y: 3,
+                    ease:Power1.easeInOut
                     },
-                    'step3')     
+                    'step2+=0.5')
                 .addPause()
+
+                .add('step3')
+                .to(this.targetMesh.position,1.0,{
+                    x: this.scene.children[6].children[0].position.x,
+                    z: this.scene.children[6].children[0].position.z,
+                    ease:Power1.easeInOut
+                    },
+                    'step3')
+                .to(this.camera.position, 1.5,{
+                    x: this.scene.children[6].children[0].position.x,
+                    z: this.scene.children[6].children[0].position.z+2,
+                    y: 3,
+                    ease:Power1.easeInOut
+                    },
+                    'step3+=0.5')     
+                .addPause()
+
                 .add('step4')
-                .to(this.targetMesh.position,1.5,{
-                    x: this.scene.children[5].children[4].position.x,
-                    z: this.scene.children[5].children[4].position.z,
-                    ease:Power1.easeOut
+                .to(this.targetMesh.position,1.0,{
+                    x: this.scene.children[6].children[4].position.x,
+                    z: this.scene.children[6].children[4].position.z,
+                    ease:Power1.easeInOut
                     },
                     'step4')     
+                .to(this.camera.position, 1.5,{
+                    x: this.scene.children[6].children[4].position.x,
+                    z: this.scene.children[6].children[4].position.z+2,
+                    y: 3,
+                    ease:Power1.easeInOut
+                    },
+                    'step4+=0.5')
                 .addPause()
+
                 .add('step5')
-                .to(this.targetMesh.position,1.5,{
-                    x: this.scene.children[5].children[5].position.x,
-                    z: this.scene.children[5].children[5].position.z,
-                    ease:Power1.easeOut
+                .to(this.targetMesh.position,1.0,{
+                    x: this.scene.children[6].children[5].position.x,
+                    z: this.scene.children[6].children[5].position.z,
+                    ease:Power1.easeInOut
                     },
                     'step5')
+                .to(this.camera.position, 1.5,{
+                    x: this.scene.children[6].children[5].position.x,
+                    z: this.scene.children[6].children[5].position.z+2,
+                    y: 3,
+                    ease:Power1.easeInOut
+                    },
+                    'step5+=0.5')
                 .addPause()
+                
                 .add('step6')
-                .to(this.targetMesh.position,1.5,{
-                    x: this.scene.children[5].children[1].position.x,
-                    z: this.scene.children[5].children[1].position.z,
-                    ease:Power1.easeOut
+                .to(this.targetMesh.position,1.0,{
+                    x: this.scene.children[6].children[1].position.x,
+                    z: this.scene.children[6].children[1].position.z,
+                    ease:Power1.easeInOut
                     },
                     'step6')
+                .to(this.camera.position, 1.5,{
+                    x: this.scene.children[6].children[1].position.x,
+                    z: this.scene.children[6].children[1].position.z+2,
+                    y: 3,
+                    ease:Power1.easeInOut
+                    },
+                    'step6+=0.5')
                 .add('end')
     }
 
@@ -389,7 +404,7 @@ export default class App {
         let grpElem = gui.addFolder('Group');
         let grpPos = grpElem.addFolder('Group Position');
         grpPos.add(modelObj.position, 'x', -10, 10).listen();
-        grpPos.add(modelObj.position, 'y', -10, 10).listen();
+        grpPos.add(modelObj.position, 'y', -4, 4).listen();
         grpPos.add(modelObj.position, 'z', -10, 10).listen();
         let grpScale = grpElem.addFolder('Group Scale');
         grpScale.add(modelObj.scale, 'x', 0, 1).listen();
@@ -397,54 +412,54 @@ export default class App {
         grpScale.add(modelObj.scale, 'z', 0, 1).listen();
         let hairElem = gui.addFolder('Hair');
         let hairPos = hairElem.addFolder('Hair position');
-        hairPos.add(modelObj.children[2].position, 'x', -100, 100).listen();
-        hairPos.add(modelObj.children[2].position, 'y', -100, 100).listen();
-        hairPos.add(modelObj.children[2].position, 'z', -100, 100).listen();
+        hairPos.add(modelObj.children[2].position, 'x', -10, 10).listen();
+        hairPos.add(modelObj.children[2].position, 'y', -4, 4).listen();
+        hairPos.add(modelObj.children[2].position, 'z', -10, 10).listen();
         let hairRotate = hairElem.addFolder('Hair Rotation');
         hairRotate.add(modelObj.children[2].rotation, 'x', 0, 10).listen();
         hairRotate.add(modelObj.children[2].rotation, 'y', 0, 10).listen();
         hairRotate.add(modelObj.children[2].rotation, 'z', 0, 10).listen();
         let headElem = gui.addFolder('Head');
         let headPos = headElem.addFolder('Head position');
-        headPos.add(modelObj.children[3].position, 'x', -100, 100).listen();
-        headPos.add(modelObj.children[3].position, 'y', -100, 100).listen();
-        headPos.add(modelObj.children[3].position, 'z', -100, 100).listen();
+        headPos.add(modelObj.children[3].position, 'x', -10, 10).listen();
+        headPos.add(modelObj.children[3].position, 'y', -4, 4).listen();
+        headPos.add(modelObj.children[3].position, 'z', -10, 10).listen();
         let headRotate = headElem.addFolder('Head Rotation');
         headRotate.add(modelObj.children[3].rotation, 'x', 0, 10).listen();
         headRotate.add(modelObj.children[3].rotation, 'y', 0, 10).listen();
         headRotate.add(modelObj.children[3].rotation, 'z', 0, 10).listen();
         let chestElem = gui.addFolder('Chest');
         let chestPos = chestElem.addFolder('Chest position');
-        chestPos.add(modelObj.children[0].position, 'x', -100, 100).listen();
-        chestPos.add(modelObj.children[0].position, 'y', -100, 100).listen();
-        chestPos.add(modelObj.children[0].position, 'z', -100, 100).listen();
+        chestPos.add(modelObj.children[0].position, 'x', -10, 10).listen();
+        chestPos.add(modelObj.children[0].position, 'y', -4, 4).listen();
+        chestPos.add(modelObj.children[0].position, 'z', -10, 10).listen();
         let chestRotate = chestElem.addFolder('Chest Rotation');
         chestRotate.add(modelObj.children[0].rotation, 'x', 0, 10).listen();
         chestRotate.add(modelObj.children[0].rotation, 'y', 0, 10).listen();
         chestRotate.add(modelObj.children[0].rotation, 'z', 0, 10).listen();
         let hipElem = gui.addFolder('Hip');
         let hipPos = hipElem.addFolder('Hip position');
-        hipPos.add(modelObj.children[4].position, 'x', -100, 100).listen();
-        hipPos.add(modelObj.children[4].position, 'y', -100, 100).listen();
-        hipPos.add(modelObj.children[4].position, 'z', -100, 100).listen();
+        hipPos.add(modelObj.children[4].position, 'x', -10, 10).listen();
+        hipPos.add(modelObj.children[4].position, 'y', -4, 4).listen();
+        hipPos.add(modelObj.children[4].position, 'z', -10, 10).listen();
         let hipRotate = hipElem.addFolder('Hip Rotation');
         hipRotate.add(modelObj.children[4].rotation, 'x', 0, 10).listen();
         hipRotate.add(modelObj.children[4].rotation, 'y', 0 , 10).listen();
         hipRotate.add(modelObj.children[4].rotation, 'z', 0, 10).listen();
         let legElem = gui.addFolder('Leg');
         let legPos = legElem.addFolder('Leg position');
-        legPos.add(modelObj.children[5].position, 'x', -100, 100).listen();
-        legPos.add(modelObj.children[5].position, 'y', -100, 100).listen();
-        legPos.add(modelObj.children[5].position, 'z', -100, 100).listen();
+        legPos.add(modelObj.children[5].position, 'x', -10, 10).listen();
+        legPos.add(modelObj.children[5].position, 'y', -4, 4).listen();
+        legPos.add(modelObj.children[5].position, 'z', -10, 10).listen();
         let legRotate = legElem.addFolder('Leg Rotation');
         legRotate.add(modelObj.children[5].rotation, 'x', 0, 10).listen();
         legRotate.add(modelObj.children[5].rotation, 'y', 0, 10).listen();
         legRotate.add(modelObj.children[5].rotation, 'z', 0, 10).listen();
         let footElem = gui.addFolder('Foot');
         let footPos = footElem.addFolder('Foot position');
-        footPos.add(modelObj.children[1].position, 'x', -100, 100).listen();
-        footPos.add(modelObj.children[1].position, 'y', -100, 100).listen();
-        footPos.add(modelObj.children[1].position, 'z', -100, 100).listen();
+        footPos.add(modelObj.children[1].position, 'x', -10, 10).listen();
+        footPos.add(modelObj.children[1].position, 'y', -4, 4).listen();
+        footPos.add(modelObj.children[1].position, 'z', -10, 10).listen();
         let footRotate = footElem.addFolder('Foot Rotation');
         footRotate.add(modelObj.children[1].rotation, 'x', 0, 10).listen();
         footRotate.add(modelObj.children[1].rotation, 'y', 0, 10).listen();
