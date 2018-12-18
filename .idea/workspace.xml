@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7b634048-1547-4531-b5d0-66d35266403d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/scripts/SabineExp.js" afterPath="$PROJECT_DIR$/app/scripts/SabineExp.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -47,7 +46,7 @@
       <file leaf-file-name="SabineExp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/scripts/SabineExp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-463">
+            <state relative-caret-position="1907">
               <caret line="312" column="0" lean-forward="false" selection-start-line="312" selection-start-column="0" selection-end-line="312" selection-end-column="0" />
               <folding>
                 <element signature="e#0#78#0" expanded="true" />
@@ -240,12 +239,12 @@
       <workItem from="1544608611611" duration="7396000" />
       <workItem from="1544689505940" duration="15346000" />
       <workItem from="1545038430082" duration="17410000" />
-      <workItem from="1545126529781" duration="323000" />
+      <workItem from="1545126529781" duration="422000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40475000" />
+    <option name="totallyTimeSpent" value="40574000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -549,7 +548,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/SabineExp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-463">
+        <state relative-caret-position="1907">
           <caret line="312" column="0" lean-forward="false" selection-start-line="312" selection-start-column="0" selection-end-line="312" selection-end-column="0" />
           <folding>
             <element signature="e#0#78#0" expanded="true" />
