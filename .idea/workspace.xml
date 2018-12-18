@@ -2,6 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b634048-1547-4531-b5d0-66d35266403d" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/model/SabineUpdate.mtl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/model/SabineUpdate.obj" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/model/SabineUpdated.mtl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/model/SabineUpdated.obj" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/model/SabineXp.mtl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/model/SabineXp.obj" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/scripts/SabineExp.js" afterPath="$PROJECT_DIR$/app/scripts/SabineExp.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,7 +33,7 @@
       <file leaf-file-name="webpack.config.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webpack.config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
+            <state relative-caret-position="1080">
               <caret line="72" column="17" lean-forward="false" selection-start-line="72" selection-start-column="17" selection-end-line="72" selection-end-column="17" />
               <folding />
             </state>
@@ -46,13 +53,13 @@
       <file leaf-file-name="SabineExp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/scripts/SabineExp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="200" column="36" lean-forward="true" selection-start-line="200" selection-start-column="36" selection-end-line="200" selection-end-column="36" />
+            <state relative-caret-position="471">
+              <caret line="218" column="37" lean-forward="true" selection-start-line="218" selection-start-column="37" selection-end-line="218" selection-end-column="37" />
               <folding>
                 <element signature="e#0#78#0" expanded="true" />
-                <element signature="e#170#225#0" expanded="true" />
-                <element signature="e#308#365#0" expanded="true" />
-                <element signature="e#9229#13547#0" expanded="false" />
+                <element signature="e#170#221#0" expanded="true" />
+                <element signature="e#304#361#0" expanded="true" />
+                <element signature="e#10356#14674#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -74,11 +81,11 @@
       <find>obj</find>
       <find>mtl</find>
       <find>index.css</find>
-      <find>css</find>
       <find>index.less</find>
       <find>tempo</find>
       <find>nextStep</find>
       <find>initGsap</find>
+      <find>css</find>
     </findStrings>
     <replaceStrings>
       <replace>timerStep</replace>
@@ -235,12 +242,12 @@
       <updated>1544608609015</updated>
       <workItem from="1544608611611" duration="7396000" />
       <workItem from="1544689505940" duration="15346000" />
-      <workItem from="1545038430082" duration="10843000" />
+      <workItem from="1545038430082" duration="15910000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33585000" />
+    <option name="totallyTimeSpent" value="38652000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -292,9 +299,9 @@
           <caret line="150" column="36" lean-forward="true" selection-start-line="150" selection-start-column="36" selection-end-line="150" selection-end-column="36" />
           <folding>
             <element signature="e#0#78#0" expanded="true" />
-            <element signature="e#170#225#0" expanded="true" />
-            <element signature="e#308#365#0" expanded="true" />
-            <element signature="e#9229#13547#0" expanded="false" />
+            <element signature="e#170#221#0" expanded="true" />
+            <element signature="e#304#361#0" expanded="true" />
+            <element signature="e#10356#14674#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -322,9 +329,9 @@
           <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
           <folding>
             <element signature="e#0#78#0" expanded="true" />
-            <element signature="e#170#225#0" expanded="true" />
-            <element signature="e#308#365#0" expanded="true" />
-            <element signature="e#9229#13547#0" expanded="false" />
+            <element signature="e#170#221#0" expanded="true" />
+            <element signature="e#304#361#0" expanded="true" />
+            <element signature="e#10356#14674#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -470,26 +477,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="55" lean-forward="false" selection-start-line="5" selection-start-column="55" selection-end-line="5" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="72" column="17" lean-forward="false" selection-start-line="72" selection-start-column="17" selection-end-line="72" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -510,15 +501,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="61" lean-forward="true" selection-start-line="4" selection-start-column="61" selection-end-line="4" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="72" column="17" lean-forward="false" selection-start-line="72" selection-start-column="17" selection-end-line="72" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/model/SabineUpdate.mtl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/model/SabineUpdated.mtl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/model/SabineXp.mtl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/SabineExp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="200" column="36" lean-forward="true" selection-start-line="200" selection-start-column="36" selection-end-line="200" selection-end-column="36" />
+        <state relative-caret-position="471">
+          <caret line="218" column="37" lean-forward="true" selection-start-line="218" selection-start-column="37" selection-end-line="218" selection-end-column="37" />
           <folding>
             <element signature="e#0#78#0" expanded="true" />
-            <element signature="e#170#225#0" expanded="true" />
-            <element signature="e#308#365#0" expanded="true" />
-            <element signature="e#9229#13547#0" expanded="false" />
+            <element signature="e#170#221#0" expanded="true" />
+            <element signature="e#304#361#0" expanded="true" />
+            <element signature="e#10356#14674#0" expanded="false" />
           </folding>
         </state>
       </provider>

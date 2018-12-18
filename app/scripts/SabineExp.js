@@ -1,7 +1,7 @@
 import soundFile from '../assets/sound/AESTHETICS PLEASE - Run From Love.mp3';
 import Sound from './Sound.js';
 let OrbitControls = require('three-orbit-controls')(THREE)
-import objFile from '../assets/model/SabineOrigin.obj';
+import objFile from '../assets/model/SabineXp.obj';
 import daeModel from '../assets/model/try.dae';
 
 let Stats = require('stats-js')
@@ -19,6 +19,8 @@ import * as dat from 'dat.gui';
 import { TimelineMax, Power4 } from 'gsap';
 
 let step = 0;
+let currentStep = 0;
+let nextStep = 0;
 let timerStep = 0;
 
 
@@ -56,7 +58,8 @@ export default class App {
     	document.body.appendChild( this.container );
 
         this.camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.01, 10000 );
-        this.camera.position.z = 20;
+        this.camera.position.z = 10;
+        this.camera.position.y = 5;
         //this.controls = new OrbitControls(this.camera)
 
         this.scene = new THREE.Scene();
@@ -77,6 +80,7 @@ export default class App {
                         child.material = new THREE.MeshPhongMaterial({color: 0xfafbfc});
                         child.castShadow = true; //default is false
                         child.receiveShadow = true; //default is false
+                        console.log(child.name)
                     }
                 })
                 modelObj.scale.set(0.1,0.1,0.1);
@@ -166,11 +170,19 @@ export default class App {
         }
         if(timerStep == 0) {
             if (e.wheelDelta > 100) {
-                this.scrollDownStep();
+                if(step != 0) {
+                    step -= 1;
+                    //console.log(step);
+                    this.updateScene(step);
+                }
                 timerStep = 1;
             }
             if (e.wheelDelta < -100) {
-                this.scrollUpStep();
+                if(step != 7) {
+                    step += 1;
+                    //console.log(step);
+                    this.updateScene(step);
+                }
                 timerStep = 1;
             }
         }
@@ -178,39 +190,53 @@ export default class App {
 
     scrollNext() {
         if(step != 7) {
+            currentStep = step;
             step += 1;
             //console.log(step);
-            this.updateScene(step);
+            console.log('currentStep:',currentStep, '/ step:',step)
+
+            this.updateScene(step, currentStep);
         }
     }
     scrollPrevious() {
         if(step != 0) {
+            currentStep = step;
             step -= 1;
             //console.log(step);
-            this.updateScene(step);
+            this.updateScene(step, currentStep);
         }
     }
 
-    updateScene() {
+    updateScene(currentStep) {
         switch (step) {
             case 0:
                 console.log('init scene');
                 break;
             case 1:
-                    this.initGsap();
-                    this.tl.pause();
+                console.log('currentStep:',currentStep, '/ step:',step)
+                this.initGsap();
+                this.tl.pause();
+                if(currentStep - step == -1) {
                     this.tl.tweenFromTo('test','test2')
                     console.log('first step')
+                } else {
+                    console.log('reverse first step')
+                }
                 break;
             case 2:
+                if(currentStep - step == -1) {
                     this.tl.tweenFromTo('test2','test3')
                     console.log('second step')
+                } else {
+                    console.log('reverse sec step')
+                }
                 break;
             case 3:
-                    this.tl.tweenFromTo('test','test3')
-                    console.log('third step')
+                this.tl.reverse()
+                console.log('third step')
                 break;
             case 4:
+                this.tl.tweenFromTo('test3','test4')
                 console.log('fourth scene');
                 break;
             case 5:
@@ -234,22 +260,23 @@ export default class App {
             // onRepeat:updateReps,
             // onComplete:restart
         });
-        this.tl
-                .to(this.scene.children[5].position,  0.5, { y: 0, x: 4, ease:Power4.easeInOut })
-                .add('test')
-                .to(this.camera.position,             1.5, { y: 8, z: 5, ease:Bounce.easeOut }, 'test')
-                .to(this.refMesh.position,            1.5, { x: 3, y: 5, ease:Power1.easeOut }, 'test')
-                .add('test2')
-                .to(this.camera.position,             1.5, { y: 18, z: 15, ease:Bounce.easeOut }, 'test2')
-                .to(this.refMesh.position,            1.5, { x: 13, y: 15, ease:Power1.easeOut }, 'test2')
-                .add('test3')
-                .to(this.camera.position,             1.5, { y: 18, z: 15, ease:Bounce.easeOut }, 'test2')
-                .to(this.refMesh.position,            1.5, { x: 13, y: 15, ease:Power1.easeOut }, 'test2')
-
+        this.tl.to(this.scene.children[5].position,  0.5, { y: 0, x: 4, ease:Power4.easeInOut })
+               .add('test')
+               .to(this.camera.position,             1.5, { y: 8, z: 5, ease:Bounce.easeOut }, 'test')
+               .to(this.refMesh.position,            1.5, { x: 3, y: 5, ease:Power1.easeOut }, 'test')
+               .add('test2')
+               .to(this.camera.position,             1.5, { y: 18, z: 15, ease:Bounce.easeOut }, 'test2')
+               .to(this.refMesh.position,            1.5, { x: 13, y: 15, ease:Power1.easeOut }, 'test2')
+               .add('test3')
+               .to(this.camera.position,             1.5, { y: 20, z: 16, ease:Bounce.easeOut }, 'test3')
+               .to(this.refMesh.position,            1.5, { x: 15, y: 16, ease:Power1.easeOut }, 'test3')
+               .add('test4')
+               .to(this.camera.position,             1.5, { y: 14, z: 13, ease:Bounce.easeOut }, 'test4')
+               .to(this.refMesh.position,            1.5, { x: 13, y: 14, ease:Power1.easeOut }, 'test4')
     }
 
     //UPDATE
-    render(bloomPass) {
+    render() {
         this.stats.begin();
         let time = Date.now()/1000;
 
