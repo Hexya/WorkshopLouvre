@@ -4,6 +4,18 @@ let OrbitControls = require('three-orbit-controls')(THREE)
 import objFile from '../assets/model/SabineXp.obj';
 import pngSequence from '../assets/img/atlas01_front.png';
 
+import imgSprite from '../assets/img/spriteAqua.png';
+import daeModel from '../assets/model/try.dae';
+
+let firstSceneTemplate = require('./Templates/firstSceneTemplate.tpl');
+let secSceneTemplate = require('./Templates/secSceneTemplate.tpl');
+let thirdSceneTemplate = require('./Templates/thirdSceneTemplate.tpl');
+let fourthSceneTemplate = require('./Templates/fourthSceneTemplate.tpl');
+let fifthSceneTemplate = require('./Templates/fifthSceneTemplate.tpl');
+let sixthSceneTemplate = require('./Templates/sixthSceneTemplate.tpl');
+let seventhSceneTemplate = require('./Templates/seventhSceneTemplate.tpl');
+
+
 let Stats = require('stats-js')
 
 import 'three/examples/js/postprocessing/EffectComposer';
@@ -21,6 +33,8 @@ import { TimelineMax, Power4 } from 'gsap';
 let step = 0;
 let currentStep = 0;
 let timerStep = 0;
+let spriteAnime;
+let clock = new THREE.Clock();
 
 
 // TODO : add Dat.GUI
@@ -79,7 +93,7 @@ export default class App {
                         child.material = new THREE.MeshPhongMaterial({color: 0xfafbfc});
                         child.castShadow = true; //default is false
                         child.receiveShadow = true; //default is false
-                        console.log(child.name)
+                        //console.log(child.name)
 
                         child.scale.set(0.1,0.1,0.1);
                         child.position.x = Math.random()*20-10;
@@ -91,6 +105,9 @@ export default class App {
                 this.tl.pause();
 
                 this.parameters(modelObj);
+
+                // Remove Loader
+                this.loaded()
             },
             (xhr) => {
                 console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
@@ -125,7 +142,6 @@ export default class App {
         this.scene.add( this.dirLightHelper );
 
 
-
         //BACKGROUND
         let bgSize = 500;
 
@@ -141,23 +157,20 @@ export default class App {
         let targetMat = new THREE.MeshBasicMaterial( { color: 0xff2020} );
         this.targetMesh = new THREE.Mesh( targetGeo, targetMat );
         this.scene.add( this.targetMesh );
-
         
         //ANIM PLANE
-        let animGeo = new THREE.PlaneGeometry( 16, 9, 1 );
-        let pngSequenceTexture = new THREE.TextureLoader().load( pngSequence );
-        // let video = document.getElementById( 'video' );
-        // let videotexture = new THREE.MeshPhongMaterial( video );
-        // videotexture.minFilter = THREE.LinearFilter;
-        // videotexture.magFilter = THREE.LinearFilter;
-        let animMat = new THREE.MeshBasicMaterial( { color: 0xffffff, transparent: true, alphaMap: pngSequenceTexture, side: THREE.DoubleSide } );
-        this.anim = new THREE.Mesh( animGeo, animMat );
-        this.scene.add( this.anim );
+        let runnerTexture = new THREE.ImageUtils.loadTexture( imgSprite );
+        spriteAnime = new this.textureAnimator( runnerTexture, 20, 11, 190, 1000/24 ); // texture, #horiz, #vert, #total, duration.
+        console.log('HEY', spriteAnime)
+        let runnerMaterial = new THREE.MeshBasicMaterial( { color: 0xffffff, alphaMap: runnerTexture, side:THREE.DoubleSide, transparent:true } );
+        let runnerGeometry = new THREE.PlaneGeometry(9, 6, 32);
+        let runner = new THREE.Mesh(runnerGeometry, runnerMaterial);
+        this.scene.add(runner);
 
 
         //RENDERER
     	this.renderer = new THREE.WebGLRenderer( { antialias: true, alpha:true } );
-        this.renderer.setClearColor( '#eee' )
+        this.renderer.setClearColor( '#BBFFFF' )
         this.renderer.shadowMap.enabled = true;
         this.renderer.shadowMap.type = THREE.PCFShadowMap; 
         this.renderer.setPixelRatio( window.devicePixelRatio );
@@ -169,6 +182,41 @@ export default class App {
 
         this.renderer.setAnimationLoop( this.render.bind(this));
 
+    }
+
+    textureAnimator(texture, tilesHoriz, tilesVert, numTiles, tileDispDuration) {
+        // note: texture passed by reference, will be updated by the update function.
+        this.tilesHorizontal = tilesHoriz;
+        this.tilesVertical = tilesVert;
+        // how many images does this spritesheet contain?
+        // usually equals tilesHoriz * tilesVert, but not necessarily,
+        // if there at blank tiles at the bottom of the spritesheet.
+        this.numberOfTiles = numTiles;
+        texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+        texture.repeat.set(1 / this.tilesHorizontal, 1 / this.tilesVertical);
+
+        // how long should each image be displayed?
+        this.tileDisplayDuration = tileDispDuration;
+
+        // how long has the current image been displayed?
+        this.currentDisplayTime = 0;
+
+        // which image is currently being displayed?
+        this.currentTile = 0;
+
+        this.update = function (milliSec) {
+            this.currentDisplayTime += milliSec;
+            while (this.currentDisplayTime > this.tileDisplayDuration) {
+                this.currentDisplayTime -= this.tileDisplayDuration;
+                this.currentTile++;
+                if (this.currentTile == this.numberOfTiles)
+                    this.currentTile = 0;
+                var currentColumn = this.currentTile % this.tilesHorizontal;
+                texture.offset.x = currentColumn / this.tilesHorizontal;
+                var currentRow = Math.floor(this.currentTile / this.tilesHorizontal);
+                texture.offset.y = currentRow / this.tilesVertical;
+            }
+        };
     }
 
     registerEvents() {
@@ -209,24 +257,37 @@ export default class App {
                 break;
             case 1:
                 this.tl.play()
+                this.toggleTpl('init-scene', 'first-scene', firstSceneTemplate)
+                console.log('first step')
                 break;
             case 2:
                 this.tl.play()
+                this.toggleTpl('first-scene', 'sec-scene', secSceneTemplate)
+                console.log('sec step')
                 break;
             case 3:
                 this.tl.play()
+                this.toggleTpl('sec-scene', 'third-scene', thirdSceneTemplate)
+                console.log('third step')
                 break;
             case 4:
                 this.tl.play()
+                this.toggleTpl('third-scene', 'fourth-scene', fourthSceneTemplate)
+                console.log('fourth scene');
                 break;
             case 5:
                 this.tl.play()
+                this.toggleTpl('fourth-scene', 'fifth-scene', fifthSceneTemplate)
+                console.log('fifth step');
                 break;
             case 6:
                 this.tl.play()
+                this.toggleTpl('fifth-scene', 'sixth-scene', sixthSceneTemplate)
+                console.log('sixth step');
                 break;
             case 7:
-                this.tl.play()
+                this.toggleTpl('sixth-scene', 'seventh-scene', seventhSceneTemplate)
+                console.log('seventh step');
                 break;
         }
     }
@@ -237,30 +298,43 @@ export default class App {
                 this.tl.reverse()
                 break;
             case 1:
-                this.tl.reverse()
+                this.tl.reverse();
+                this.toggleTpl('init-scene', 'first-scene', firstSceneTemplate)
+                console.log('first step')
                 break;
             case 2:
-                this.tl.reverse()
+                this.tl.reverse();
+                this.toggleTpl('first-scene', 'sec-scene', secSceneTemplate)
+                console.log('sec step')
                 break;
             case 3:
-                this.tl.reverse()
+                this.tl.reverse();
+                this.toggleTpl('sec-scene', 'third-scene', thirdSceneTemplate)
+                console.log('third step')
                 break;
             case 4:
-                this.tl.reverse()
+                this.tl.reverse();
+                this.toggleTpl('third-scene', 'fourth-scene', fourthSceneTemplate)
+                console.log('fourth scene');
                 break;
             case 5:
-                this.tl.reverse()
+                this.tl.reverse();
+                this.toggleTpl('fourth-scene', 'fifth-scene', fifthSceneTemplate)
+                console.log('fifth step');
                 break;
             case 6:
-                this.tl.reverse()
+                this.tl.reverse();
+                this.toggleTpl('fifth-scene', 'sixth-scene', sixthSceneTemplate)
+                console.log('sixth step');
                 break;
             case 7:
-                    break;
+                this.toggleTpl('sixth-scene', 'seventh-scene', seventhSceneTemplate)
+                console.log('seventh step');
+                break;
         }
     }
     //GSAP
     initGsap() {
-        console.log("'this' in initGsap() :", this)
         this.tl = new TimelineMax({
             delay:0,
             repeat:0,
@@ -283,6 +357,7 @@ export default class App {
                     x: this.scene.children[6].children[2].position.x,
                     z: this.scene.children[6].children[2].position.z,
                     ease:Power1.easeInOut
+
                     },
                     'step1')
                 .to(this.camera.position, 1.5,{
@@ -375,10 +450,31 @@ export default class App {
                 .add('end')
     }
 
+    toggleTpl(latestScene, activeScene, template) {
+        document.querySelector(".scene-cont").classList.add('remove-scene');
+        setTimeout(()=> {
+            document.querySelector(".scene-cont").classList.remove(latestScene);
+            document.querySelector(".scene-cont").classList.remove('remove-scene');
+            document.querySelector(".scene-cont").classList.add(activeScene);
+            document.querySelector(".scene-cont").innerHTML = template;
+        },1000)
+    }
+
+    loaded() {
+        document.querySelector('.loader').classList.add('remove-scene')
+        setTimeout(()=> {
+            document.querySelector('.loader').remove();
+            document.querySelector('.scene-cont').style.display = 'block';
+        },500)
+    }
+
     //UPDATE
     render() {
         this.stats.begin();
         let time = Date.now()/1000;
+
+        var delta = clock.getDelta();
+        spriteAnime.update(1000 * delta);
 
         this.dirLight.position.x = Math.sin(time)*6
         this.dirLight.position.y = 15

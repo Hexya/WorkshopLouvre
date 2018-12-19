@@ -1,9 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
-
     background: #000;
-
     font-family: sans-serif;
 }
 
@@ -11,21 +9,62 @@ html, body {
     color: white;
     text-transform: uppercase;
 }
-
-.prev-btn, .next-btn  {
-    height: 30px;
-    width: 30px;
-    background: black;
-    border-radius: 50px;
+.loader {
     position: absolute;
-    bottom: 10px;
-    right: 50px;
-    cursor: pointer;
-    border: 1px solid black;
+    height: 100vh;
+    width: 100%;
+    background: rgba(255,0,255,0.4);
 }
-.prev-btn:hover, .next-btn:hover {
-    background: white;
+.scene-cont {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    display: none;
 }
-.next-btn {
-    right: 10px;
+
+.init-scene, .first-scene, .sec-scene, .third-scene, .fourth-scene, .fifth-scene, sixth-scene, seventh-scene {
+    animation: appearScene .5s ease-out forwards;
+
+}
+@keyframes appearScene {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.init-scene svg {
+    position: absolute;
+    width: 70%;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: visible;
+}
+.cls-1 {
+    fill:#fff;
+}
+.top-letter {
+    animation: bottomAppear 2s ease-out forwards;
+}
+.bot-letter {
+    animation: topAppear 2s ease-out forwards;
+}
+
+@keyframes bottomAppear {
+    from { opacity: 0; transform: translateY(-100px); }
+    to { opacity: 1; transform: translateY(0px); }
+}
+
+@keyframes topAppear {
+    from { opacity: 0; transform: translateY(100px); }
+    to { opacity: 1; transform: translateY(0px); }
+}
+
+.remove-scene {
+    animation: removeScene .5s ease-out forwards;
+}
+
+@keyframes removeScene {
+    from { opacity: 1; }
+    to { opacity: 0; }
 }
