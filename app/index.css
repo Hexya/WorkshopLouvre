@@ -7,13 +7,8 @@
     src: url('./assets/fonts/Poppins/Poppins-Medium.ttf');
 }
 /*** ELEMENT THREE ***/
-.dg, .ac {
-    z-index: 999 !important;
-}
-#stats {
-    position: fixed;
-    z-index: 999;
-}
+.dg, .ac {z-index: 999 !important;}
+#stats {position: fixed;z-index: 999;}
 
 /*** DEFAULT ***/
 * {
@@ -37,9 +32,16 @@ h1, p {
     align-items: center;
 }
 #main canvas {
-    /* -moz-filter: blur(2px);
-    -webkit-filter: blur(2px);
-    filter: blur(3px); */
+    transition: 2s;
+    filter: blur(4px);
+    -moz-filter: blur(4px);
+    -webkit-filter: blur(4px);
+}
+#main canvas.nonblurred {
+    transition: 2s;
+    filter: blur(0px);
+    -moz-filter: blur(0px);
+    -webkit-filter: blur(0px);
 }
 /*** TRANSITION SCENE ***/
 .scene-cont {
