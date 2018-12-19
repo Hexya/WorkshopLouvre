@@ -71,7 +71,7 @@ export default class App {
 
         this.camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.01, 10000 );
         this.camera.position.z = 10;
-        this.camera.position.y = 5;
+        this.camera.position.y = 0.2;
         //this.controls = new OrbitControls(this.camera)
 
         this.scene = new THREE.Scene();
@@ -92,9 +92,37 @@ export default class App {
                         child.material = new THREE.MeshPhongMaterial({color: 0xfafbfc});
                         child.castShadow = true; //default is false
                         child.receiveShadow = true; //default is false
-                        //console.log(child.name)
+                        // console.log(child.name)
 
                         child.scale.set(0.1,0.1,0.1);
+
+                        switch (child.name) {
+                            case 'Hair':
+                                child.position.x = Math.random()*20-10;
+                                child.position.z = Math.random()*20-10;
+                                break;
+                            case 'Head':
+                                child.position.x = Math.random()*20-10;
+                                child.position.z = Math.random()*20-10;
+                                break;
+                            case 'Chest':
+                                child.position.x = Math.random()*20-10;
+                                child.position.z = Math.random()*20-10;
+                                break;
+                            case 'Hip':
+                                child.position.x = Math.random()*20-10;
+                                child.position.z = Math.random()*20-10;
+                                break;
+                            case 'Leg':
+                                child.position.x = Math.random()*20-10;
+                                child.position.z = Math.random()*20-10;
+                                break;
+                            case 'Foot':
+                                child.position.x = Math.random()*20-10;
+                                child.position.z = Math.random()*20-10;
+                                break;
+                        }
+
                         child.position.x = Math.random()*20-10;
                         child.position.z = Math.random()*20-10;
                     }
@@ -265,7 +293,7 @@ export default class App {
     updateScene() {
         console.log("step:", step);
         switch (step) {
-            case 0:
+            case 0:switc
                 break;
             case 1:
                 this.tl.play()
@@ -376,7 +404,6 @@ export default class App {
                 .to(this.camera.position, 1.5,{
                     x: this.scene.children[6].children[5].position.x,
                     z: this.scene.children[6].children[5].position.z+2,
-                    y: 3,
                     ease:Power1.easeInOut
                     },
                     'step1+=0.5')
@@ -392,7 +419,6 @@ export default class App {
                 .to(this.camera.position, 1.5,{
                     x: this.scene.children[6].children[1].position.x,
                     z: this.scene.children[6].children[1].position.z+2,
-                    y: 3,
                     ease:Power1.easeInOut
                     },
                     'step2+=0.5')
@@ -408,7 +434,6 @@ export default class App {
                 .to(this.camera.position, 1.5,{
                     x: this.scene.children[6].children[3].position.x,
                     z: this.scene.children[6].children[3].position.z+2,
-                    y: 3,
                     ease:Power1.easeInOut
                     },
                     'step3+=0.5')     
@@ -424,7 +449,6 @@ export default class App {
                 .to(this.camera.position, 1.5,{
                     x: this.scene.children[6].children[0].position.x,
                     z: this.scene.children[6].children[0].position.z+2,
-                    y: 3,
                     ease:Power1.easeInOut
                     },
                     'step4+=0.5')
@@ -440,7 +464,6 @@ export default class App {
                 .to(this.camera.position, 1.5,{
                     x: this.scene.children[6].children[2].position.x,
                     z: this.scene.children[6].children[2].position.z+2,
-                    y: 3,
                     ease:Power1.easeInOut
                     },
                     'step5+=0.5')
@@ -456,7 +479,6 @@ export default class App {
                 .to(this.camera.position, 1.5,{
                     x: this.scene.children[6].children[4].position.x,
                     z: this.scene.children[6].children[4].position.z+2,
-                    y: 3,
                     ease:Power1.easeInOut
                     },
                     'step6+=0.5')
@@ -525,53 +547,53 @@ export default class App {
         hairPos.add(modelObj.children[5].position, 'y', -4, 4).listen();
         hairPos.add(modelObj.children[5].position, 'z', -10, 10).listen();
         let hairRotate = hairElem.addFolder('Hair Rotation');
-        hairRotate.add(modelObj.children[5].rotation, 'x', 0, 10).listen();
-        hairRotate.add(modelObj.children[5].rotation, 'y', 0, 10).listen();
-        hairRotate.add(modelObj.children[5].rotation, 'z', 0, 10).listen();
+        hairRotate.add(modelObj.children[5].rotation, 'x', -Math.PI, Math.PI).listen();
+        hairRotate.add(modelObj.children[5].rotation, 'y', -Math.PI, Math.PI).listen();
+        hairRotate.add(modelObj.children[5].rotation, 'z', -Math.PI, Math.PI).listen();
         let headElem = gui.addFolder('Head');
         let headPos = headElem.addFolder('Head position');
         headPos.add(modelObj.children[4].position, 'x', -10, 10).listen();
         headPos.add(modelObj.children[4].position, 'y', -4, 4).listen();
         headPos.add(modelObj.children[4].position, 'z', -10, 10).listen();
         let headRotate = headElem.addFolder('Head Rotation');
-        headRotate.add(modelObj.children[4].rotation, 'x', 0, 10).listen();
-        headRotate.add(modelObj.children[4].rotation, 'y', 0, 10).listen();
-        headRotate.add(modelObj.children[4].rotation, 'z', 0, 10).listen();
+        headRotate.add(modelObj.children[4].rotation, 'x', -Math.PI, Math.PI).listen();
+        headRotate.add(modelObj.children[4].rotation, 'y', -Math.PI, Math.PI).listen();
+        headRotate.add(modelObj.children[4].rotation, 'z', -Math.PI, Math.PI).listen();
         let chestElem = gui.addFolder('Chest');
         let chestPos = chestElem.addFolder('Chest position');
         chestPos.add(modelObj.children[0].position, 'x', -10, 10).listen();
         chestPos.add(modelObj.children[0].position, 'y', -4, 4).listen();
         chestPos.add(modelObj.children[0].position, 'z', -10, 10).listen();
         let chestRotate = chestElem.addFolder('Chest Rotation');
-        chestRotate.add(modelObj.children[0].rotation, 'x', 0, 10).listen();
-        chestRotate.add(modelObj.children[0].rotation, 'y', 0, 10).listen();
-        chestRotate.add(modelObj.children[0].rotation, 'z', 0, 10).listen();
+        chestRotate.add(modelObj.children[0].rotation, 'x', -Math.PI, Math.PI).listen();
+        chestRotate.add(modelObj.children[0].rotation, 'y', -Math.PI, Math.PI).listen();
+        chestRotate.add(modelObj.children[0].rotation, 'z', -Math.PI, Math.PI).listen();
         let hipElem = gui.addFolder('Hip');
         let hipPos = hipElem.addFolder('Hip position');
         hipPos.add(modelObj.children[1].position, 'x', -10, 10).listen();
         hipPos.add(modelObj.children[1].position, 'y', -4, 4).listen();
         hipPos.add(modelObj.children[1].position, 'z', -10, 10).listen();
         let hipRotate = hipElem.addFolder('Hip Rotation');
-        hipRotate.add(modelObj.children[1].rotation, 'x', 0, 10).listen();
-        hipRotate.add(modelObj.children[1].rotation, 'y', 0 , 10).listen();
-        hipRotate.add(modelObj.children[1].rotation, 'z', 0, 10).listen();
+        hipRotate.add(modelObj.children[1].rotation, 'x', -Math.PI, Math.PI).listen();
+        hipRotate.add(modelObj.children[1].rotation, 'y', -Math.PI, Math.PI).listen();
+        hipRotate.add(modelObj.children[1].rotation, 'z', -Math.PI, Math.PI).listen();
         let legElem = gui.addFolder('Leg');
         let legPos = legElem.addFolder('Leg position');
         legPos.add(modelObj.children[2].position, 'x', -10, 10).listen();
         legPos.add(modelObj.children[2].position, 'y', -4, 4).listen();
         legPos.add(modelObj.children[2].position, 'z', -10, 10).listen();
         let legRotate = legElem.addFolder('Leg Rotation');
-        legRotate.add(modelObj.children[2].rotation, 'x', 0, 10).listen();
-        legRotate.add(modelObj.children[2].rotation, 'y', 0, 10).listen();
-        legRotate.add(modelObj.children[2].rotation, 'z', 0, 10).listen();
+        legRotate.add(modelObj.children[2].rotation, 'x', -Math.PI, Math.PI).listen();
+        legRotate.add(modelObj.children[2].rotation, 'y', -Math.PI, Math.PI).listen();
+        legRotate.add(modelObj.children[2].rotation, 'z', -Math.PI, Math.PI).listen();
         let footElem = gui.addFolder('Foot');
         let footPos = footElem.addFolder('Foot position');
         footPos.add(modelObj.children[3].position, 'x', -10, 10).listen();
         footPos.add(modelObj.children[3].position, 'y', -4, 4).listen();
         footPos.add(modelObj.children[3].position, 'z', -10, 10).listen();
         let footRotate = footElem.addFolder('Foot Rotation');
-        footRotate.add(modelObj.children[3].rotation, 'x', 0, 10).listen();
-        footRotate.add(modelObj.children[3].rotation, 'y', 0, 10).listen();
-        footRotate.add(modelObj.children[3].rotation, 'z', 0, 10).listen();
+        footRotate.add(modelObj.children[3].rotation, 'x', -Math.PI, Math.PI).listen();
+        footRotate.add(modelObj.children[3].rotation, 'y', -Math.PI, Math.PI).listen();
+        footRotate.add(modelObj.children[3].rotation, 'z', -Math.PI, Math.PI).listen();
     }
 }
