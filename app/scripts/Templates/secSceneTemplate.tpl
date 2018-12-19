@@ -1,4 +1,9 @@
 module.exports = "<div class='init-scene main-container'>" +
+    "<img  class='back-svg' src='./app/assets/img/icone_menu.png'>" +
+    "<div class='nav-top'>" +
+        "<p>Chapitre I</p>" +
+        "<div class='bar'></div>" +
+    "</div>" +
     "<div class='desc-container left-container'>" +
         "<h1 class='desc-title'>LA DÉCOUVERTE</h1>" +
         "<p class='desc-content'>Après l'explosion, le navire coula au</br>" +
@@ -6,5 +11,9 @@ module.exports = "<div class='init-scene main-container'>" +
             "antiquités, il fit l'objet de fouilles</br>" +
             "archéologiques sous marines entre 1995</br>" +
             "et 1998.</p>" +
-        "</div>" +
+    "</div>" +
+    "<div class='nav-bottom'>" +
+        "<p>Chapitre III</p>" +
+        "<div class='bar'></div>" +
+    "</div>" +
     "</div>";
