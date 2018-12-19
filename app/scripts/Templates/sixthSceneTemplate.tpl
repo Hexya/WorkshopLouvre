@@ -1,4 +1,9 @@
 module.exports = "<div class='init-scene main-container'>" +
+    "<img  class='back-svg' src='./app/assets/img/icone_menu.png'>" +
+    "<div class='nav-top'>" +
+        "<p>Chapitre V</p>" +
+        "<div class='bar'></div>" +
+    "</div>" +
     "<div class='desc-container right-container'>" +
         "<h1 class='desc-title'>LA FIN</h1>" +
         "<p class='desc-content'>La tête et quelques fragments</br>" +
@@ -6,4 +11,8 @@ module.exports = "<div class='init-scene main-container'>" +
             "et 1998 seulement, lors de fouilles</br>" +
             "sous marines.</p>" +
         "</div>" +
+    "<div class='nav-bottom'>" +
+        "<p>Chapitre VII</p>" +
+        "<div class='bar'></div>" +
+    "</div>" +
     "</div>";

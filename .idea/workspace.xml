@@ -2,10 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b634048-1547-4531-b5d0-66d35266403d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/img/atlasFish_Back_black.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/img/atlasFish_Back_transp.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/img/icone_menu.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/img/icone_menu.svg" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app/index.css" afterPath="$PROJECT_DIR$/app/index.css" />
+      <change beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
       <change beforePath="$PROJECT_DIR$/app/scripts/SabineExp.js" afterPath="$PROJECT_DIR$/app/scripts/SabineExp.js" />
+      <change beforePath="$PROJECT_DIR$/app/scripts/Templates/fifthSceneTemplate.tpl" afterPath="$PROJECT_DIR$/app/scripts/Templates/fifthSceneTemplate.tpl" />
+      <change beforePath="$PROJECT_DIR$/app/scripts/Templates/firstSceneTemplate.tpl" afterPath="$PROJECT_DIR$/app/scripts/Templates/firstSceneTemplate.tpl" />
+      <change beforePath="$PROJECT_DIR$/app/scripts/Templates/fourthSceneTemplate.tpl" afterPath="$PROJECT_DIR$/app/scripts/Templates/fourthSceneTemplate.tpl" />
+      <change beforePath="$PROJECT_DIR$/app/scripts/Templates/secSceneTemplate.tpl" afterPath="$PROJECT_DIR$/app/scripts/Templates/secSceneTemplate.tpl" />
+      <change beforePath="$PROJECT_DIR$/app/scripts/Templates/seventhSceneTemplate.tpl" afterPath="$PROJECT_DIR$/app/scripts/Templates/seventhSceneTemplate.tpl" />
+      <change beforePath="$PROJECT_DIR$/app/scripts/Templates/sixthSceneTemplate.tpl" afterPath="$PROJECT_DIR$/app/scripts/Templates/sixthSceneTemplate.tpl" />
+      <change beforePath="$PROJECT_DIR$/app/scripts/Templates/thirdSceneTemplate.tpl" afterPath="$PROJECT_DIR$/app/scripts/Templates/thirdSceneTemplate.tpl" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,7 +29,7 @@
         <entry file="file://$PROJECT_DIR$/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="390">
-              <caret line="26" column="33" lean-forward="false" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+              <caret line="26" column="47" lean-forward="false" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -29,12 +38,11 @@
       <file leaf-file-name="SabineExp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/scripts/SabineExp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="215" column="60" lean-forward="true" selection-start-line="215" selection-start-column="60" selection-end-line="215" selection-end-column="60" />
+            <state relative-caret-position="369">
+              <caret line="532" column="76" lean-forward="true" selection-start-line="532" selection-start-column="76" selection-end-line="532" selection-end-column="76" />
               <folding>
-                <element signature="e#0#78#0" expanded="true" />
-                <element signature="e#170#221#0" expanded="true" />
-                <element signature="e#878#935#0" expanded="true" />
+                <element signature="e#172#223#0" expanded="true" />
+                <element signature="e#1278#1335#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -43,8 +51,8 @@
       <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="71">
-              <caret line="20" column="1" lean-forward="false" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+            <state relative-caret-position="271">
+              <caret line="133" column="0" lean-forward="false" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -54,17 +62,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>index.css</find>
-      <find>index.less</find>
-      <find>tempo</find>
-      <find>nextStep</find>
-      <find>initGsap</find>
-      <find>css</find>
-      <find>addEventListener</find>
-      <find>FIRST</find>
-      <find>SEC</find>
-      <find>FOURTH</find>
-      <find>FIFTH</find>
       <find>cls-1</find>
       <find>group</find>
       <find>Group</find>
@@ -81,9 +78,20 @@
       <find>this.update</find>
       <find>trans</find>
       <find>NAUFRAGE</find>
-      <find>blur</find>
       <find>dg</find>
       <find>step:</find>
+      <find>img</find>
+      <find>blur</find>
+      <find>aest</find>
+      <find>soundFile</find>
+      <find>rendere</find>
+      <find>loader</find>
+      <find>svg</find>
+      <find>loaded</find>
+      <find>children[6]</find>
+      <find>spriteAnimator</find>
+      <find>requestAnimationFrame</find>
+      <find>render()</find>
     </findStrings>
     <replaceStrings>
       <replace>timerStep</replace>
@@ -94,6 +102,8 @@
       <replace>SIXTH</replace>
       <replace>SEVENTH</replace>
       <replace>5</replace>
+      <replace>children[12]</replace>
+      <replace>children[7]</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -109,16 +119,16 @@
         <option value="$PROJECT_DIR$/app/scripts/testMtl.js" />
         <option value="$PROJECT_DIR$/app/index.js" />
         <option value="$PROJECT_DIR$/app/index.less" />
-        <option value="$PROJECT_DIR$/app/scripts/Templates/seventhSceneTemplate.tpl" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
+        <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/app/scripts/Templates/firstSceneTemplate.tpl" />
+        <option value="$PROJECT_DIR$/app/index.css" />
         <option value="$PROJECT_DIR$/app/scripts/Templates/secSceneTemplate.tpl" />
         <option value="$PROJECT_DIR$/app/scripts/Templates/thirdSceneTemplate.tpl" />
-        <option value="$PROJECT_DIR$/app/scripts/Templates/sixthSceneTemplate.tpl" />
         <option value="$PROJECT_DIR$/app/scripts/Templates/fourthSceneTemplate.tpl" />
         <option value="$PROJECT_DIR$/app/scripts/Templates/fifthSceneTemplate.tpl" />
-        <option value="$PROJECT_DIR$/app/index.css" />
-        <option value="$PROJECT_DIR$/app/index.html" />
+        <option value="$PROJECT_DIR$/app/scripts/Templates/sixthSceneTemplate.tpl" />
+        <option value="$PROJECT_DIR$/app/scripts/Templates/seventhSceneTemplate.tpl" />
         <option value="$PROJECT_DIR$/app/scripts/SabineExp.js" />
       </list>
     </option>
@@ -201,6 +211,27 @@
               <item name="SabineExp" type="b2602c69:ProjectViewProjectNode" />
               <item name="SabineExp" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="fonts" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SabineExp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SabineExp" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="img" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SabineExp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SabineExp" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sound" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SabineExp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SabineExp" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="scripts" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -224,9 +255,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/assets/img" />
       <recent name="$PROJECT_DIR$/app/assets/fonts/TragicMarker" />
       <recent name="$PROJECT_DIR$/app/assets/fonts" />
-      <recent name="$PROJECT_DIR$/app/assets/img" />
       <recent name="$PROJECT_DIR$/app/scripts/Templates" />
       <recent name="$PROJECT_DIR$/app/assets/model" />
     </key>
@@ -259,12 +290,12 @@
       <workItem from="1544608611611" duration="7396000" />
       <workItem from="1544689505940" duration="15346000" />
       <workItem from="1545038430082" duration="17410000" />
-      <workItem from="1545126529781" duration="27341000" />
+      <workItem from="1545126529781" duration="37157000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67493000" />
+    <option name="totallyTimeSpent" value="77309000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -323,9 +354,8 @@
         <state relative-caret-position="3285">
           <caret line="235" column="30" lean-forward="true" selection-start-line="235" selection-start-column="30" selection-end-line="235" selection-end-column="30" />
           <folding>
-            <element signature="e#0#78#0" expanded="true" />
-            <element signature="e#170#221#0" expanded="true" />
-            <element signature="e#878#935#0" expanded="true" />
+            <element signature="e#172#223#0" expanded="true" />
+            <element signature="e#1278#1335#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -343,9 +373,8 @@
         <state relative-caret-position="2250">
           <caret line="150" column="36" lean-forward="true" selection-start-line="150" selection-start-column="36" selection-end-line="150" selection-end-column="36" />
           <folding>
-            <element signature="e#0#78#0" expanded="true" />
-            <element signature="e#170#221#0" expanded="true" />
-            <element signature="e#878#935#0" expanded="true" />
+            <element signature="e#172#223#0" expanded="true" />
+            <element signature="e#1278#1335#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -372,9 +401,8 @@
         <state relative-caret-position="795">
           <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
           <folding>
-            <element signature="e#0#78#0" expanded="true" />
-            <element signature="e#170#221#0" expanded="true" />
-            <element signature="e#878#935#0" expanded="true" />
+            <element signature="e#172#223#0" expanded="true" />
+            <element signature="e#1278#1335#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -383,14 +411,6 @@
     <entry file="file://$PROJECT_DIR$/app/scripts/shaders/SphereShader/sFragment.frag" />
     <entry file="file://$PROJECT_DIR$/app/scripts/shaders/SphereShader/sVertex.vert" />
     <entry file="file://$PROJECT_DIR$/app/assets/model/Venus.obj" />
-    <entry file="file://$PROJECT_DIR$/app/scripts/Sound.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="253" column="85" lean-forward="false" selection-start-line="253" selection-start-column="85" selection-end-line="253" selection-end-column="85" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/model/SabineCut.obj">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -569,26 +589,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/Templates/firstSceneTemplate.tpl">
+    <entry file="file://$PROJECT_DIR$/app/scripts/Sound.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        <state relative-caret-position="263">
+          <caret line="253" column="85" lean-forward="false" selection-start-line="253" selection-start-column="85" selection-end-line="253" selection-end-column="85" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/Templates/secSceneTemplate.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="54" lean-forward="false" selection-start-line="5" selection-start-column="54" selection-end-line="5" selection-end-column="54" />
-          <folding />
-        </state>
+    <entry file="file://$PROJECT_DIR$/app/assets/img/icone_menu.svg">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/Templates/thirdSceneTemplate.tpl">
+    <entry file="file://$PROJECT_DIR$/app/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="48" lean-forward="true" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
+        <state relative-caret-position="271">
+          <caret line="133" column="0" lean-forward="false" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -596,39 +613,55 @@
     <entry file="file://$PROJECT_DIR$/app/scripts/Templates/fifthSceneTemplate.tpl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="1" column="37" lean-forward="false" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/Templates/seventhSceneTemplate.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="34" lean-forward="true" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+          <caret line="1" column="69" lean-forward="false" selection-start-line="1" selection-start-column="69" selection-end-line="1" selection-end-column="69" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/Templates/sixthSceneTemplate.tpl">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="69" lean-forward="false" selection-start-line="1" selection-start-column="69" selection-end-line="1" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/Templates/seventhSceneTemplate.tpl">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
-          <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+          <caret line="7" column="13" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/Templates/fourthSceneTemplate.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="59" lean-forward="true" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
+        <state relative-caret-position="15">
+          <caret line="1" column="69" lean-forward="false" selection-start-line="1" selection-start-column="69" selection-end-line="1" selection-end-column="69" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.css">
+    <entry file="file://$PROJECT_DIR$/app/scripts/Templates/thirdSceneTemplate.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="20" column="1" lean-forward="false" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+        <state relative-caret-position="15">
+          <caret line="1" column="69" lean-forward="false" selection-start-line="1" selection-start-column="69" selection-end-line="1" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/Templates/secSceneTemplate.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="69" lean-forward="false" selection-start-line="1" selection-start-column="69" selection-end-line="1" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/Templates/firstSceneTemplate.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="50" lean-forward="false" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
           <folding />
         </state>
       </provider>
@@ -636,19 +669,18 @@
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
-          <caret line="26" column="33" lean-forward="false" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+          <caret line="26" column="47" lean-forward="false" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/SabineExp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="215" column="60" lean-forward="true" selection-start-line="215" selection-start-column="60" selection-end-line="215" selection-end-column="60" />
+        <state relative-caret-position="369">
+          <caret line="532" column="76" lean-forward="true" selection-start-line="532" selection-start-column="76" selection-end-line="532" selection-end-column="76" />
           <folding>
-            <element signature="e#0#78#0" expanded="true" />
-            <element signature="e#170#221#0" expanded="true" />
-            <element signature="e#878#935#0" expanded="true" />
+            <element signature="e#172#223#0" expanded="true" />
+            <element signature="e#1278#1335#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -4,13 +4,16 @@
 }
 @font-face {
     font-family: 'Poppins';
-    src: url('./assets/fonts/Poppins/Poppins-Medium.ttf');
+    src: url('./assets/fonts/Poppins/Poppins-Light.ttf');
 }
 /*** ELEMENT THREE ***/
 .dg, .ac {z-index: 999 !important;}
 #stats {position: fixed;z-index: 999;}
 
 /*** DEFAULT ***/
+body {
+
+}
 * {
     margin: 0;
     padding: 0;
@@ -25,17 +28,48 @@ h1, p {
     position: absolute;
     height: 100vh;
     width: 100%;
-    background: rgba(255,0,255,0.4);
+    background: #80B6BC;
     z-index: 999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
-/*#main canvas {
+#main {
+    position: absolute;
+    top: 0;
+}
+.loader .loading-svg {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 126px;
+    width: 191px;
+}
+.loader .loading-svg {
+    opacity: 0.3;
+}
+.loader .loaded-svg {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 191px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    height: 0px;
+}
+.loader .load-progress {
+    font-family: Poppins;
+    position: absolute;
+    top: calc(45% + 90px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #2C777F;
+}
+#main canvas {
     filter: blur(3px);
     -moz-filter: blur(3px);
     -webkit-filter: blur(3px);
-}*/
+}
 /*** TRANSITION SCENE ***/
 .scene-cont {
     position: absolute;
@@ -92,6 +126,12 @@ h1, p {
 }
 
 /*** DESCRIPTION ***/
+.back-svg {
+    position: absolute;
+    height: 70px;
+    top: 5%;
+    left: 7%;
+}
 .desc-container {
     position: absolute;
     height: auto;
@@ -112,3 +152,48 @@ h1, p {
     font-size: 1.5em;
     font-weight: lighter;
 }
+
+
+/*** NAVIGATION ***/
+
+.nav-bottom, .nav-top {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    z-index: 99;
+}
+.nav-bottom {
+    bottom: 0;
+    flex-direction: column;
+}
+.nav-top {
+    top: 0;
+    flex-direction: column-reverse;
+}
+.nav-bottom svg, .nav-top svg {
+    width: 30px;
+    margin-bottom: -15px;
+    position: relative;
+}
+.nav-bottom svg .wheel, .nav-top svg .wheel {
+    animation: scroll 1s ease-out infinite;
+}
+@keyframes scroll {
+    0% {transform: translateY(0px)}
+    50% {transform: translateY(5px)}
+    100% {transform: translateY(0px)}
+}
+
+.nav-bottom p, .nav-top p {
+    margin-bottom: 10px;
+    font-family: Poppins;
+    color: #2C777F;
+}
+.nav-bottom .bar, .nav-top .bar {
+    height: 30px;
+    width: 2px;
+    background: #2C777F;
+}
+
