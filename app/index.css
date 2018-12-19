@@ -31,11 +31,11 @@ h1, p {
     justify-content: center;
     align-items: center;
 }
-#main canvas {
+/*#main canvas {
     filter: blur(3px);
     -moz-filter: blur(3px);
     -webkit-filter: blur(3px);
-}
+}*/
 /*** TRANSITION SCENE ***/
 .scene-cont {
     position: absolute;

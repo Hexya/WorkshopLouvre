@@ -2,9 +2,8 @@ import soundFile from '../assets/sound/AESTHETICS PLEASE - Run From Love.mp3';
 import Sound from './Sound.js';
 let OrbitControls = require('three-orbit-controls')(THREE)
 import objFile from '../assets/model/SabineXp.obj';
-import pngSequence from '../assets/img/atlas01_front.png';
 
-import imgSprite from '../assets/img/spriteAqua.png';
+import imgSprite from '../assets/img/atlasFish_Back.png';
 import daeModel from '../assets/model/try.dae';
 
 let firstSceneTemplate = require('./Templates/firstSceneTemplate.tpl');
@@ -33,7 +32,7 @@ import { TimelineMax, Power4 } from 'gsap';
 let step = 0;
 let currentStep = 0;
 let timerStep = 0;
-let spriteAnime;
+let spriteAnimator;
 let clock = new THREE.Clock();
 
 
@@ -198,13 +197,33 @@ export default class App {
         this.scene.add( this.targetMesh );
         
         //ANIM PLANE
-        let runnerTexture = new THREE.ImageUtils.loadTexture( imgSprite );
-        spriteAnime = new this.textureAnimator( runnerTexture, 20, 11, 190, 1000/24 ); // texture, #horiz, #vert, #total, duration.
-        console.log('HEY', spriteAnime)
-        let runnerMaterial = new THREE.MeshBasicMaterial( { color: 0xffffff, alphaMap: runnerTexture, side:THREE.DoubleSide, transparent:true } );
-        let runnerGeometry = new THREE.PlaneGeometry(9, 6, 32);
-        let runner = new THREE.Mesh(runnerGeometry, runnerMaterial);
-        this.scene.add(runner);
+        let textureLoader = new THREE.TextureLoader();
+        let spriteAnimTexture = textureLoader.load( imgSprite );
+        spriteAnimTexture.premultiplyAlpha = true;
+        spriteAnimTexture.needsUpdate = true;
+        spriteAnimator = new this.textureAnimator( spriteAnimTexture, 20, 12, 240, 1000/24 ); // texture, #horiz, #vert, #total, duration.
+        console.log("spriteAnimator :", spriteAnimator)
+        let spriteAnimMaterial = new THREE.MeshBasicMaterial( {
+            color: 0xffffff,
+            map: spriteAnimTexture,
+            side:THREE.DoubleSide,
+            transparent:true,
+            alphaTest:0.001
+        } );
+        spriteAnimMaterial.map.premultiplyAlpha = true;
+        spriteAnimMaterial.map.needsUpdate = true;
+        spriteAnimMaterial.blending = THREE.CustomBlending;
+        spriteAnimMaterial.blendEquation = THREE.AddEquation; // default is AddEquation
+        spriteAnimMaterial.blendSrc = THREE.SrcColorFactor;
+        spriteAnimMaterial.blendDst = THREE.SrcAlphaFactor;
+        
+        let spriteAnimGeometry = new THREE.PlaneGeometry(9, 6, 32);
+        let spriteAnim = new THREE.Mesh(spriteAnimGeometry, spriteAnimMaterial);
+
+        spriteAnim.position.y = 5;
+        spriteAnim.position.z = 5;
+
+        this.scene.add(spriteAnim);
 
 
         //RENDERER
@@ -292,6 +311,8 @@ export default class App {
 
     updateScene() {
         console.log("step:", step);
+        console.log("nextstep:", step + 1);
+        console.log("prevtstep:", step - 1 );
         switch (step) {
             case 0:
                 break;
@@ -515,7 +536,7 @@ export default class App {
         let time = Date.now()/1000;
 
         var delta = clock.getDelta();
-        spriteAnime.update(1000 * delta);
+        spriteAnimator.update(1000 * delta);
 
         this.dirLight.position.x = Math.sin(time)*6
         this.dirLight.position.y = 15
