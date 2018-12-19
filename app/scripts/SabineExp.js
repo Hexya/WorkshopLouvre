@@ -141,7 +141,6 @@ export default class App {
         this.dirLightHelper = new THREE.DirectionalLightHelper( this.dirLight, 10 );
         this.scene.add( this.dirLightHelper );
 
-
         //BACKGROUND
         let bgSize = 500;
 
@@ -181,6 +180,7 @@ export default class App {
         this.onWindowResize();
 
         this.renderer.setAnimationLoop( this.render.bind(this));
+        //document.querySelector('#main canvas').style.webkitFilter = "blur(3px)";
 
     }
 
@@ -257,6 +257,7 @@ export default class App {
                 break;
             case 1:
                 this.tl.play()
+                document.querySelector('#main canvas').style.webkitFilter = "blur(0px)";
                 this.toggleTpl('init-scene', 'first-scene', firstSceneTemplate)
                 console.log('first step')
                 break;

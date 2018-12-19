@@ -1,38 +1,75 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    background: #000;
-    font-family: sans-serif;
+@font-face {
+    font-family: 'TragicMarker';
+    src: url('./assets/fonts/TragicMarker/TragicMarker.ttf');
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('./assets/fonts/Poppins/Poppins-Medium.ttf');
+}
+/*** ELEMENT THREE ***/
+.dg, .ac {
+    z-index: 999 !important;
+}
+#stats {
+    position: fixed;
+    z-index: 999;
 }
 
-.main-heading {
-    color: white;
-    text-transform: uppercase;
+/*** DEFAULT ***/
+* {
+    margin: 0;
+    padding: 0;
 }
+h1, p {
+    font-family: TragicMarker;
+    color: #fff;
+}
+
+/*** LOADER ***/
 .loader {
     position: absolute;
     height: 100vh;
     width: 100%;
     background: rgba(255,0,255,0.4);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+#main canvas {
+    -moz-filter: blur(2px);
+    -webkit-filter: blur(2px);
+    filter: blur(3px);
+}
+/*** TRANSITION SCENE ***/
 .scene-cont {
     position: absolute;
     height: 100vh;
     width: 100%;
     display: none;
+    z-index: 90;
 }
 
 .init-scene, .first-scene, .sec-scene, .third-scene, .fourth-scene, .fifth-scene, sixth-scene, seventh-scene {
     animation: appearScene .5s ease-out forwards;
 
 }
+.remove-scene {
+    animation: removeScene .5s ease-out forwards;
+}
 @keyframes appearScene {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
+@keyframes removeScene {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+/*** SABINE ANIMATION ***/
 .init-scene svg {
-    position: absolute;
+    position: fixed;
     width: 70%;
     height: auto;
     top: 50%;
@@ -49,7 +86,6 @@ html, body {
 .bot-letter {
     animation: topAppear 2s ease-out forwards;
 }
-
 @keyframes bottomAppear {
     from { opacity: 0; transform: translateY(-100px); }
     to { opacity: 1; transform: translateY(0px); }
@@ -60,11 +96,24 @@ html, body {
     to { opacity: 1; transform: translateY(0px); }
 }
 
-.remove-scene {
-    animation: removeScene .5s ease-out forwards;
+/*** DESCRIPTION ***/
+.desc-container {
+    position: absolute;
+    height: auto;
+    top: 50%;
+    transform: translateY(-50%);
 }
-
-@keyframes removeScene {
-    from { opacity: 1; }
-    to { opacity: 0; }
+.right-container {
+    right: 7%;
+}
+.left-container {
+    left: 7%;
+}
+.desc-title {
+    font-size: 4em;
+    font-weight: lighter;
+}
+.desc-content {
+    font-size: 1.5em;
+    font-weight: lighter;
 }

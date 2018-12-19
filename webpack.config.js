@@ -82,7 +82,20 @@ module.exports = function(env) {
             },{
                 test:[/\.vert$/,/\.frag$/],
                 loader: 'webpack-glsl-loader'
-            }]
+            },{
+                test: /\.woff$/,
+                loader: "url-loader?limit=10000&mimetype=application/font-woff"
+            },{
+                test: /\.ttf$/,
+                loader: "url-loader?limit=10000&mimetype=application/octet-stream"
+            },{
+                test: /\.eot$/,
+                loader: "file-loader"
+            },{
+                test: /\.svg$/,
+                loader: "url-loader?limit=10000&mimetype=image/svg+xml"
+            }
+            ]
         },
         devtool: env == 'dev' ? 'cheap-eval-source-map' : '',
         plugins: plugins,
