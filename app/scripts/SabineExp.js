@@ -390,6 +390,7 @@ export default class App {
                 console.log('third step')
                 break;
             case 4:
+            this.controls = new OrbitControls(this.camera)
                 this.tl.play()
                 this.toggleTpl('third-scene', 'fourth-scene', fourthSceneTemplate)
                 console.log('fourth scene');
