@@ -367,15 +367,15 @@ export default class App {
 
                 .add('step1')
                 .to(this.targetMesh.position, 1.0,{
-                    x: this.scene.children[6].children[2].position.x,
-                    z: this.scene.children[6].children[2].position.z,
+                    x: this.scene.children[6].children[5].position.x,
+                    z: this.scene.children[6].children[5].position.z,
                     ease:Power1.easeInOut
 
                     },
                     'step1')
                 .to(this.camera.position, 1.5,{
-                    x: this.scene.children[6].children[2].position.x,
-                    z: this.scene.children[6].children[2].position.z+2,
+                    x: this.scene.children[6].children[5].position.x,
+                    z: this.scene.children[6].children[5].position.z+2,
                     y: 3,
                     ease:Power1.easeInOut
                     },
@@ -384,14 +384,14 @@ export default class App {
 
                 .add('step2')
                 .to(this.targetMesh.position,1.0,{
-                    x: this.scene.children[6].children[3].position.x,
-                    z: this.scene.children[6].children[3].position.z,
+                    x: this.scene.children[6].children[1].position.x,
+                    z: this.scene.children[6].children[1].position.z,
                     ease:Power1.easeInOut
                     },
                     'step2')
                 .to(this.camera.position, 1.5,{
-                    x: this.scene.children[6].children[3].position.x,
-                    z: this.scene.children[6].children[3].position.z+2,
+                    x: this.scene.children[6].children[1].position.x,
+                    z: this.scene.children[6].children[1].position.z+2,
                     y: 3,
                     ease:Power1.easeInOut
                     },
@@ -400,14 +400,14 @@ export default class App {
 
                 .add('step3')
                 .to(this.targetMesh.position,1.0,{
-                    x: this.scene.children[6].children[0].position.x,
-                    z: this.scene.children[6].children[0].position.z,
+                    x: this.scene.children[6].children[3].position.x,
+                    z: this.scene.children[6].children[3].position.z,
                     ease:Power1.easeInOut
                     },
                     'step3')
                 .to(this.camera.position, 1.5,{
-                    x: this.scene.children[6].children[0].position.x,
-                    z: this.scene.children[6].children[0].position.z+2,
+                    x: this.scene.children[6].children[3].position.x,
+                    z: this.scene.children[6].children[3].position.z+2,
                     y: 3,
                     ease:Power1.easeInOut
                     },
@@ -416,14 +416,14 @@ export default class App {
 
                 .add('step4')
                 .to(this.targetMesh.position,1.0,{
-                    x: this.scene.children[6].children[4].position.x,
-                    z: this.scene.children[6].children[4].position.z,
+                    x: this.scene.children[6].children[0].position.x,
+                    z: this.scene.children[6].children[0].position.z,
                     ease:Power1.easeInOut
                     },
                     'step4')     
                 .to(this.camera.position, 1.5,{
-                    x: this.scene.children[6].children[4].position.x,
-                    z: this.scene.children[6].children[4].position.z+2,
+                    x: this.scene.children[6].children[0].position.x,
+                    z: this.scene.children[6].children[0].position.z+2,
                     y: 3,
                     ease:Power1.easeInOut
                     },
@@ -432,14 +432,14 @@ export default class App {
 
                 .add('step5')
                 .to(this.targetMesh.position,1.0,{
-                    x: this.scene.children[6].children[5].position.x,
-                    z: this.scene.children[6].children[5].position.z,
+                    x: this.scene.children[6].children[2].position.x,
+                    z: this.scene.children[6].children[2].position.z,
                     ease:Power1.easeInOut
                     },
                     'step5')
                 .to(this.camera.position, 1.5,{
-                    x: this.scene.children[6].children[5].position.x,
-                    z: this.scene.children[6].children[5].position.z+2,
+                    x: this.scene.children[6].children[2].position.x,
+                    z: this.scene.children[6].children[2].position.z+2,
                     y: 3,
                     ease:Power1.easeInOut
                     },
@@ -448,14 +448,14 @@ export default class App {
                 
                 .add('step6')
                 .to(this.targetMesh.position,1.0,{
-                    x: this.scene.children[6].children[1].position.x,
-                    z: this.scene.children[6].children[1].position.z,
+                    x: this.scene.children[6].children[4].position.x,
+                    z: this.scene.children[6].children[4].position.z,
                     ease:Power1.easeInOut
                     },
                     'step6')
                 .to(this.camera.position, 1.5,{
-                    x: this.scene.children[6].children[1].position.x,
-                    z: this.scene.children[6].children[1].position.z+2,
+                    x: this.scene.children[6].children[4].position.x,
+                    z: this.scene.children[6].children[4].position.z+2,
                     y: 3,
                     ease:Power1.easeInOut
                     },
