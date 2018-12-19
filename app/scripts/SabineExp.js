@@ -2,9 +2,8 @@ import soundFile from '../assets/sound/AESTHETICS PLEASE - Run From Love.mp3';
 import Sound from './Sound.js';
 let OrbitControls = require('three-orbit-controls')(THREE)
 import objFile from '../assets/model/SabineXp.obj';
-import pngSequence from '../assets/img/atlas01_front.png';
 
-import imgSprite from '../assets/img/spriteAqua.png';
+import imgSprite from '../assets/img/atlasFish_Back.png';
 import daeModel from '../assets/model/try.dae';
 
 let firstSceneTemplate = require('./Templates/firstSceneTemplate.tpl');
@@ -33,7 +32,7 @@ import { TimelineMax, Power4 } from 'gsap';
 let step = 0;
 let currentStep = 0;
 let timerStep = 0;
-let spriteAnime;
+let spriteAnimator;
 let clock = new THREE.Clock();
 
 
@@ -158,13 +157,29 @@ export default class App {
         this.scene.add( this.targetMesh );
         
         //ANIM PLANE
-        let runnerTexture = new THREE.ImageUtils.loadTexture( imgSprite );
-        spriteAnime = new this.textureAnimator( runnerTexture, 20, 11, 190, 1000/24 ); // texture, #horiz, #vert, #total, duration.
-        console.log('HEY', spriteAnime)
-        let runnerMaterial = new THREE.MeshBasicMaterial( { color: 0xffffff, alphaMap: runnerTexture, side:THREE.DoubleSide, transparent:true } );
-        let runnerGeometry = new THREE.PlaneGeometry(9, 6, 32);
-        let runner = new THREE.Mesh(runnerGeometry, runnerMaterial);
-        this.scene.add(runner);
+        let textureLoader = new THREE.TextureLoader();
+        let spriteAnimTexture = textureLoader.load( imgSprite );
+        spriteAnimTexture.premultiplyAlpha = true;
+        spriteAnimator = new this.textureAnimator( spriteAnimTexture, 20, 12, 240, 1000/24 ); // texture, #horiz, #vert, #total, duration.
+        console.log("spriteAnimator :", spriteAnimator)
+        let spriteAnimMaterial = new THREE.MeshBasicMaterial( {
+            color: 0xffffff,
+            map: spriteAnimTexture,
+            side:THREE.DoubleSide,
+            transparent:true
+        } );
+        spriteAnimMaterial.blending = THREE.CustomBlending;
+        spriteAnimMaterial.blendEquation = THREE.MaxEquation; // default is AddEquation
+        // spriteAnimMaterial.blendSrc = THREE.DstAlphaFactor; 
+        // spriteAnimMaterial.blendDst = THREE.DstAlphaFactor;
+        
+        let spriteAnimGeometry = new THREE.PlaneGeometry(9, 6, 32);
+        let spriteAnim = new THREE.Mesh(spriteAnimGeometry, spriteAnimMaterial);
+
+        spriteAnim.position.y = 5;
+        spriteAnim.position.z = 5;
+
+        this.scene.add(spriteAnim);
 
 
         //RENDERER
@@ -475,7 +490,7 @@ export default class App {
         let time = Date.now()/1000;
 
         var delta = clock.getDelta();
-        spriteAnime.update(1000 * delta);
+        spriteAnimator.update(1000 * delta);
 
         this.dirLight.position.x = Math.sin(time)*6
         this.dirLight.position.y = 15
@@ -509,22 +524,22 @@ export default class App {
         grpScale.add(modelObj.scale, 'z', 0, 1).listen();
         let hairElem = gui.addFolder('Hair');
         let hairPos = hairElem.addFolder('Hair position');
-        hairPos.add(modelObj.children[2].position, 'x', -10, 10).listen();
-        hairPos.add(modelObj.children[2].position, 'y', -4, 4).listen();
-        hairPos.add(modelObj.children[2].position, 'z', -10, 10).listen();
+        hairPos.add(modelObj.children[5].position, 'x', -10, 10).listen();
+        hairPos.add(modelObj.children[5].position, 'y', -4, 4).listen();
+        hairPos.add(modelObj.children[5].position, 'z', -10, 10).listen();
         let hairRotate = hairElem.addFolder('Hair Rotation');
-        hairRotate.add(modelObj.children[2].rotation, 'x', 0, 10).listen();
-        hairRotate.add(modelObj.children[2].rotation, 'y', 0, 10).listen();
-        hairRotate.add(modelObj.children[2].rotation, 'z', 0, 10).listen();
+        hairRotate.add(modelObj.children[5].rotation, 'x', 0, 10).listen();
+        hairRotate.add(modelObj.children[5].rotation, 'y', 0, 10).listen();
+        hairRotate.add(modelObj.children[5].rotation, 'z', 0, 10).listen();
         let headElem = gui.addFolder('Head');
         let headPos = headElem.addFolder('Head position');
-        headPos.add(modelObj.children[3].position, 'x', -10, 10).listen();
-        headPos.add(modelObj.children[3].position, 'y', -4, 4).listen();
-        headPos.add(modelObj.children[3].position, 'z', -10, 10).listen();
+        headPos.add(modelObj.children[4].position, 'x', -10, 10).listen();
+        headPos.add(modelObj.children[4].position, 'y', -4, 4).listen();
+        headPos.add(modelObj.children[4].position, 'z', -10, 10).listen();
         let headRotate = headElem.addFolder('Head Rotation');
-        headRotate.add(modelObj.children[3].rotation, 'x', 0, 10).listen();
-        headRotate.add(modelObj.children[3].rotation, 'y', 0, 10).listen();
-        headRotate.add(modelObj.children[3].rotation, 'z', 0, 10).listen();
+        headRotate.add(modelObj.children[4].rotation, 'x', 0, 10).listen();
+        headRotate.add(modelObj.children[4].rotation, 'y', 0, 10).listen();
+        headRotate.add(modelObj.children[4].rotation, 'z', 0, 10).listen();
         let chestElem = gui.addFolder('Chest');
         let chestPos = chestElem.addFolder('Chest position');
         chestPos.add(modelObj.children[0].position, 'x', -10, 10).listen();
@@ -536,30 +551,30 @@ export default class App {
         chestRotate.add(modelObj.children[0].rotation, 'z', 0, 10).listen();
         let hipElem = gui.addFolder('Hip');
         let hipPos = hipElem.addFolder('Hip position');
-        hipPos.add(modelObj.children[4].position, 'x', -10, 10).listen();
-        hipPos.add(modelObj.children[4].position, 'y', -4, 4).listen();
-        hipPos.add(modelObj.children[4].position, 'z', -10, 10).listen();
+        hipPos.add(modelObj.children[1].position, 'x', -10, 10).listen();
+        hipPos.add(modelObj.children[1].position, 'y', -4, 4).listen();
+        hipPos.add(modelObj.children[1].position, 'z', -10, 10).listen();
         let hipRotate = hipElem.addFolder('Hip Rotation');
-        hipRotate.add(modelObj.children[4].rotation, 'x', 0, 10).listen();
-        hipRotate.add(modelObj.children[4].rotation, 'y', 0 , 10).listen();
-        hipRotate.add(modelObj.children[4].rotation, 'z', 0, 10).listen();
+        hipRotate.add(modelObj.children[1].rotation, 'x', 0, 10).listen();
+        hipRotate.add(modelObj.children[1].rotation, 'y', 0 , 10).listen();
+        hipRotate.add(modelObj.children[1].rotation, 'z', 0, 10).listen();
         let legElem = gui.addFolder('Leg');
         let legPos = legElem.addFolder('Leg position');
-        legPos.add(modelObj.children[5].position, 'x', -10, 10).listen();
-        legPos.add(modelObj.children[5].position, 'y', -4, 4).listen();
-        legPos.add(modelObj.children[5].position, 'z', -10, 10).listen();
+        legPos.add(modelObj.children[2].position, 'x', -10, 10).listen();
+        legPos.add(modelObj.children[2].position, 'y', -4, 4).listen();
+        legPos.add(modelObj.children[2].position, 'z', -10, 10).listen();
         let legRotate = legElem.addFolder('Leg Rotation');
-        legRotate.add(modelObj.children[5].rotation, 'x', 0, 10).listen();
-        legRotate.add(modelObj.children[5].rotation, 'y', 0, 10).listen();
-        legRotate.add(modelObj.children[5].rotation, 'z', 0, 10).listen();
+        legRotate.add(modelObj.children[2].rotation, 'x', 0, 10).listen();
+        legRotate.add(modelObj.children[2].rotation, 'y', 0, 10).listen();
+        legRotate.add(modelObj.children[2].rotation, 'z', 0, 10).listen();
         let footElem = gui.addFolder('Foot');
         let footPos = footElem.addFolder('Foot position');
-        footPos.add(modelObj.children[1].position, 'x', -10, 10).listen();
-        footPos.add(modelObj.children[1].position, 'y', -4, 4).listen();
-        footPos.add(modelObj.children[1].position, 'z', -10, 10).listen();
+        footPos.add(modelObj.children[3].position, 'x', -10, 10).listen();
+        footPos.add(modelObj.children[3].position, 'y', -4, 4).listen();
+        footPos.add(modelObj.children[3].position, 'z', -10, 10).listen();
         let footRotate = footElem.addFolder('Foot Rotation');
-        footRotate.add(modelObj.children[1].rotation, 'x', 0, 10).listen();
-        footRotate.add(modelObj.children[1].rotation, 'y', 0, 10).listen();
-        footRotate.add(modelObj.children[1].rotation, 'z', 0, 10).listen();
+        footRotate.add(modelObj.children[3].rotation, 'x', 0, 10).listen();
+        footRotate.add(modelObj.children[3].rotation, 'y', 0, 10).listen();
+        footRotate.add(modelObj.children[3].rotation, 'z', 0, 10).listen();
     }
 }

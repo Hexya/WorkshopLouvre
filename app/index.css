@@ -37,9 +37,9 @@ h1, p {
     align-items: center;
 }
 #main canvas {
-    -moz-filter: blur(2px);
+    /* -moz-filter: blur(2px);
     -webkit-filter: blur(2px);
-    filter: blur(3px);
+    filter: blur(3px); */
 }
 /*** TRANSITION SCENE ***/
 .scene-cont {
