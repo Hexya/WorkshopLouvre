@@ -3,7 +3,7 @@ import Sound from './Sound.js';
 let OrbitControls = require('three-orbit-controls')(THREE)
 import objFile from '../assets/model/SabineXp.obj';
 
-import imgSprite from '../assets/img/atlasFish_Back.png';
+import imgSprite from '../assets/img/atlasFish_Back_transp.png';
 import daeModel from '../assets/model/try.dae';
 
 let firstSceneTemplate = require('./Templates/firstSceneTemplate.tpl');
@@ -159,25 +159,22 @@ export default class App {
         //ANIM PLANE
         let textureLoader = new THREE.TextureLoader();
         let spriteAnimTexture = textureLoader.load( imgSprite );
-        spriteAnimTexture.premultiplyAlpha = true;
+        // spriteAnimTexture.premultiplyAlpha = true;
         spriteAnimator = new this.textureAnimator( spriteAnimTexture, 20, 12, 240, 1000/24 ); // texture, #horiz, #vert, #total, duration.
         console.log("spriteAnimator :", spriteAnimator)
-        let spriteAnimMaterial = new THREE.MeshBasicMaterial( {
-            color: 0xffffff,
+        let spriteAnimMaterial = new THREE.SpriteMaterial( {
             map: spriteAnimTexture,
-            side:THREE.DoubleSide,
-            transparent:true
+            transparent: true,
         } );
-        spriteAnimMaterial.blending = THREE.CustomBlending;
-        spriteAnimMaterial.blendEquation = THREE.MaxEquation; // default is AddEquation
+        // spriteAnimMaterial.blending = THREE.CustomBlending;
+        // spriteAnimMaterial.blendEquation = THREE.MaxEquation; // default is AddEquation
         // spriteAnimMaterial.blendSrc = THREE.DstAlphaFactor; 
         // spriteAnimMaterial.blendDst = THREE.DstAlphaFactor;
         
-        let spriteAnimGeometry = new THREE.PlaneGeometry(9, 6, 32);
-        let spriteAnim = new THREE.Mesh(spriteAnimGeometry, spriteAnimMaterial);
+        let spriteAnim = new THREE.Sprite( spriteAnimMaterial );
 
-        spriteAnim.position.y = 5;
-        spriteAnim.position.z = 5;
+        spriteAnim.position.y = this.camera.position.y;
+        spriteAnim.position.z = this.camera.position.z -1;
 
         this.scene.add(spriteAnim);
 
