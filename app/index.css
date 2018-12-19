@@ -65,10 +65,18 @@ h1, p {
     transform: translate(-50%, -50%);
     color: #2C777F;
 }
+
 #main canvas {
-    filter: blur(3px);
-    -moz-filter: blur(3px);
-    -webkit-filter: blur(3px);
+    transition: 2s;
+    filter: blur(4px);
+    -moz-filter: blur(4px);
+    -webkit-filter: blur(4px);
+}
+#main canvas.nonblurred {
+    transition: 2s;
+    filter: blur(0px);
+    -moz-filter: blur(0px);
+    -webkit-filter: blur(0px);
 }
 /*** TRANSITION SCENE ***/
 .scene-cont {

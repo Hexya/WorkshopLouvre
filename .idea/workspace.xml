@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b634048-1547-4531-b5d0-66d35266403d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/img/icone_menu.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/img/icone_menu.svg" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/index.css" afterPath="$PROJECT_DIR$/app/index.css" />
-      <change beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
       <change beforePath="$PROJECT_DIR$/app/scripts/SabineExp.js" afterPath="$PROJECT_DIR$/app/scripts/SabineExp.js" />
-      <change beforePath="$PROJECT_DIR$/app/scripts/Templates/fifthSceneTemplate.tpl" afterPath="$PROJECT_DIR$/app/scripts/Templates/fifthSceneTemplate.tpl" />
-      <change beforePath="$PROJECT_DIR$/app/scripts/Templates/firstSceneTemplate.tpl" afterPath="$PROJECT_DIR$/app/scripts/Templates/firstSceneTemplate.tpl" />
-      <change beforePath="$PROJECT_DIR$/app/scripts/Templates/fourthSceneTemplate.tpl" afterPath="$PROJECT_DIR$/app/scripts/Templates/fourthSceneTemplate.tpl" />
-      <change beforePath="$PROJECT_DIR$/app/scripts/Templates/secSceneTemplate.tpl" afterPath="$PROJECT_DIR$/app/scripts/Templates/secSceneTemplate.tpl" />
-      <change beforePath="$PROJECT_DIR$/app/scripts/Templates/seventhSceneTemplate.tpl" afterPath="$PROJECT_DIR$/app/scripts/Templates/seventhSceneTemplate.tpl" />
-      <change beforePath="$PROJECT_DIR$/app/scripts/Templates/sixthSceneTemplate.tpl" afterPath="$PROJECT_DIR$/app/scripts/Templates/sixthSceneTemplate.tpl" />
-      <change beforePath="$PROJECT_DIR$/app/scripts/Templates/thirdSceneTemplate.tpl" afterPath="$PROJECT_DIR$/app/scripts/Templates/thirdSceneTemplate.tpl" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -38,8 +27,8 @@
       <file leaf-file-name="SabineExp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/scripts/SabineExp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="532" column="76" lean-forward="true" selection-start-line="532" selection-start-column="76" selection-end-line="532" selection-end-column="76" />
+            <state relative-caret-position="326">
+              <caret line="737" column="16" lean-forward="false" selection-start-line="737" selection-start-column="16" selection-end-line="737" selection-end-column="16" />
               <folding>
                 <element signature="e#172#223#0" expanded="true" />
                 <element signature="e#1278#1335#0" expanded="true" />
@@ -51,8 +40,8 @@
       <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="133" column="0" lean-forward="false" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
+            <state relative-caret-position="885">
+              <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -62,7 +51,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>cls-1</find>
       <find>group</find>
       <find>Group</find>
       <find>renderer</find>
@@ -92,6 +80,7 @@
       <find>spriteAnimator</find>
       <find>requestAnimationFrame</find>
       <find>render()</find>
+      <find>scene.children[6]</find>
     </findStrings>
     <replaceStrings>
       <replace>timerStep</replace>
@@ -104,6 +93,7 @@
       <replace>5</replace>
       <replace>children[12]</replace>
       <replace>children[7]</replace>
+      <replace>scene.children[7]</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -122,13 +112,13 @@
         <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/app/scripts/Templates/firstSceneTemplate.tpl" />
-        <option value="$PROJECT_DIR$/app/index.css" />
         <option value="$PROJECT_DIR$/app/scripts/Templates/secSceneTemplate.tpl" />
         <option value="$PROJECT_DIR$/app/scripts/Templates/thirdSceneTemplate.tpl" />
         <option value="$PROJECT_DIR$/app/scripts/Templates/fourthSceneTemplate.tpl" />
         <option value="$PROJECT_DIR$/app/scripts/Templates/fifthSceneTemplate.tpl" />
         <option value="$PROJECT_DIR$/app/scripts/Templates/sixthSceneTemplate.tpl" />
         <option value="$PROJECT_DIR$/app/scripts/Templates/seventhSceneTemplate.tpl" />
+        <option value="$PROJECT_DIR$/app/index.css" />
         <option value="$PROJECT_DIR$/app/scripts/SabineExp.js" />
       </list>
     </option>
@@ -290,12 +280,12 @@
       <workItem from="1544608611611" duration="7396000" />
       <workItem from="1544689505940" duration="15346000" />
       <workItem from="1545038430082" duration="17410000" />
-      <workItem from="1545126529781" duration="37157000" />
+      <workItem from="1545126529781" duration="38189000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77309000" />
+    <option name="totallyTimeSpent" value="78341000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -602,14 +592,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="133" column="0" lean-forward="false" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/Templates/fifthSceneTemplate.tpl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -674,10 +656,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="885">
+          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/SabineExp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="532" column="76" lean-forward="true" selection-start-line="532" selection-start-column="76" selection-end-line="532" selection-end-column="76" />
+        <state relative-caret-position="326">
+          <caret line="737" column="16" lean-forward="false" selection-start-line="737" selection-start-column="16" selection-end-line="737" selection-end-column="16" />
           <folding>
             <element signature="e#172#223#0" expanded="true" />
             <element signature="e#1278#1335#0" expanded="true" />
