@@ -150,7 +150,7 @@ export default class App {
         let runnerTexture = new THREE.ImageUtils.loadTexture( imgSprite );
         spriteAnime = new this.textureAnimator( runnerTexture, 20, 11, 190, 1000/24 ); // texture, #horiz, #vert, #total, duration.
         console.log('HEY', spriteAnime)
-        let runnerMaterial = new THREE.MeshBasicMaterial( { color: 0xffffff, alphaMap: runnerTexture, side:THREE.DoubleSide, transparent:true } );
+        let runnerMaterial = new THREE.MeshBasicMaterial( { color: 0xffffff, alphaMap: runnerTexture, side:THREE.DoubleSide, transparent:true, alphaTest:0.01} );
         let runnerGeometry = new THREE.PlaneGeometry(9, 6, 32);
         let runner = new THREE.Mesh(runnerGeometry, runnerMaterial);
         this.scene.add(runner);
@@ -191,6 +191,7 @@ export default class App {
         this.onWindowResize();
 
         this.renderer.setAnimationLoop( this.render.bind(this));
+        //document.querySelector('#main canvas').style.webkitFilter = "blur(3px)";
 
     }
 
@@ -286,6 +287,7 @@ export default class App {
                 break;
             case 1:
                 this.tl.play()
+                document.querySelector('#main canvas').style.webkitFilter = "blur(0px)";
                 this.toggleTpl('init-scene', 'first-scene', firstSceneTemplate)
                 console.log('first step')
                 break;
