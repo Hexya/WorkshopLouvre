@@ -1,5 +1,5 @@
 module.exports = "<div class='init-scene main-container'>" +
-    "<img  class='back-svg' src='./app/assets/img/icone_menu.png'>" +
+    "<img  class='back-svg' src='/assets/img/icone_menu.png'>" +
     "<div class='desc-container right-container'>" +
         "<h1 class='desc-title'>SABINE</h1>" +
         "<p class='desc-content'>Femme de l'empereur romain Hadrien,il</br>" +

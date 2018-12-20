@@ -3,16 +3,13 @@ import Sound from './Sound.js';
 let OrbitControls = require('three-orbit-controls')(THREE)
 import objFile from '../assets/model/SabineXp.obj';
 
-import imgSprite1 from '../assets/img/Sprites/FISHB.png';
-import imgSprite2 from '../assets/img/Sprites/FISHF.png';
-import imgSprite3 from '../assets/img/Sprites/COURONNE.png';
-import imgSprite4 from '../assets/img/Sprites/CARTHAGE.png';
-import imgSprite5 from '../assets/img/Sprites/RECONSTRUCTON.png';
-import imgSprite6 from '../assets/img/Sprites/CARTHAGE.png';
-import imgSprite7 from '../assets/img/Sprites/COURONNE.png';
-
-
-import daeModel from '../assets/model/try.dae';
+import imgSprite1 from '../assets/img/Sprites/COURONNE.png';
+import imgSprite2 from '../assets/img/Sprites/CARTHAGE.png';
+import imgSprite3 from '../assets/img/Sprites/FIRE.png';
+import imgSprite4 from '../assets/img/Sprites/FRONTFISH.png';
+import imgSprite5 from '../assets/img/Sprites/BACKFISH.png';
+import imgSprite6 from '../assets/img/Sprites/RECONSTRUCTON.png';
+import imgSprite7 from '../assets/img/Sprites/LOUVRE.png';
 
 let firstSceneTemplate = require('./Templates/firstSceneTemplate.tpl');
 let secSceneTemplate = require('./Templates/secSceneTemplate.tpl');
@@ -268,6 +265,9 @@ export default class App {
         //ANIM PLANE
         let spriteAnimeTextures = [];
         let imgSprites = [imgSprite1, imgSprite2, imgSprite3, imgSprite4, imgSprite5, imgSprite6, imgSprite7]
+        let vertical = [19, 19, 8, 13, 16, 19, 18]
+        let horizontal = [4, 4, 13, 18, 18, 4, 4]
+        let totalImg = [76, 76, 104, 234, 288, 76, 72]
         let spriteAnimMaterial = []
         this.spriteAnim = [];
         this.spriteAnimator = [];
@@ -277,7 +277,7 @@ export default class App {
             spriteAnimeTextures[i].premultiplyAlpha = true;
             spriteAnimeTextures[i].needsUpdate = true;
 
-            this.spriteAnimator[i] = new this.textureAnimator(spriteAnimeTextures[i], 20, 12, 240, 1000 / 24); // texture, #horiz, #vert, #total, duration.
+            this.spriteAnimator[i] = new this.textureAnimator(spriteAnimeTextures[i], horizontal[i], vertical[i], totalImg[i], 1000 / 24); // texture, #horiz, #vert, #total, duration.
             //console.log("spriteAnimator :", spriteAnimator)
             spriteAnimMaterial[i] = new THREE.SpriteMaterial({
                 map: spriteAnimeTextures[i],
@@ -295,8 +295,10 @@ export default class App {
 
             this.spriteAnim[i] = new THREE.Sprite(spriteAnimMaterial[i]);
 
-            this.spriteAnim[i].scale.x = 0.01;
-            this.spriteAnim[i].scale.y = 0.01;
+            //this.spriteAnim[i].scale.x = 0.01;
+            //this.spriteAnim[i].scale.y = 0.01;
+            this.spriteAnim[i].scale.x = 5;
+            this.spriteAnim[i].scale.y = 5;
 
             this.spriteAnim[i].position.x = 0;
             this.spriteAnim[i].position.y = 0;
@@ -307,6 +309,35 @@ export default class App {
 
             this.scene.add(this.spriteAnim[i]);
         }
+        //COURONNE
+        this.spriteAnim[0].position.x = 0.5;
+        this.spriteAnim[0].position.y = 2.8;
+        this.spriteAnim[0].position.z = 3.9;
+        //CARTHAGE
+        this.spriteAnim[1].position.x = 5;
+        this.spriteAnim[1].position.y = 2;
+        this.spriteAnim[1].position.z = -14.1;
+        //FIRE
+        this.spriteAnim[2].position.x = -10;
+        this.spriteAnim[2].position.y = 2.8;
+        this.spriteAnim[2].position.z = -2.9;
+        //FISH BACK
+        this.spriteAnim[3].position.x = -5.1;
+        this.spriteAnim[3].position.y = 0;
+        this.spriteAnim[3].position.z = -8.5;
+        //FISH FRONT
+        this.spriteAnim[4].position.x = -6;
+        this.spriteAnim[4].position.y = 0;
+        this.spriteAnim[4].position.z = -9.6;
+        //RECONSTRUCTION
+        this.spriteAnim[5].position.x = 3.9;
+        this.spriteAnim[5].position.y = 2;
+        this.spriteAnim[5].position.z = 3.9;
+        //LOUVRE
+        this.spriteAnim[6].position.x = 1.6;
+        this.spriteAnim[6].position.y = 0.5;
+        this.spriteAnim[6].position.z = -2.86;
+
         console.log(this.spriteAnim)
 
         //RENDERER
@@ -828,7 +859,21 @@ export default class App {
 
         var delta = clock.getDelta();
 
-        //UPDATE SPRITE
+        let prevStep = step - 1;
+        if(step < 7 && step > 0) {
+            if (step <= 3 && step > 0) {
+                this.spriteAnimator[prevStep].update(1000 * delta);
+            }
+            if (step == 4) {
+                this.spriteAnimator[prevStep].update(1000 * delta);
+                this.spriteAnimator[step].update(1000 * delta);
+            }
+            if (step > 4) {
+                this.spriteAnimator[step].update(1000 * delta);
+            }
+        }
+
+        /*//UPDATE SPRITE
         let prevStep = step - 1;
         if(step < 7 && step > 0) {
             this.spriteAnim[prevStep].scale.x = 0.01;
@@ -837,18 +882,18 @@ export default class App {
             this.spriteAnim[step].scale.y = 5;
             this.spriteAnimator[step].update(1000 * delta);
         }
-        if(step == 1) {
-            this.spriteAnim[0].scale.x = 5;
-            this.spriteAnim[0].scale.y = 5;
-            this.spriteAnimator[0].update(1000 * delta);
+        if(step == 4) {
+            this.spriteAnim[5].scale.x = 5;
+            this.spriteAnim[5].scale.y = 5;
+            this.spriteAnimator[5].update(1000 * delta);
         } else {
-            this.spriteAnim[0].scale.x = 0.01;
-            this.spriteAnim[0].scale.y = 0.01;
+            this.spriteAnim[5].scale.x = 0.01;
+            this.spriteAnim[5].scale.y = 0.01;
         }
         if(step == 7) {
             this.spriteAnim[prevStep].scale.x = 0.01;
             this.spriteAnim[prevStep].scale.y = 0.01;
-        }
+        }*/
 
         // this.dirLight.position.x = Math.sin(time)*6
         // this.dirLight.position.y = 15
@@ -952,5 +997,63 @@ export default class App {
                 this.scene.children[12].children[4].position.z-4,
                 this.scene.children[12].children[4].position.z+4
             ).listen();
+
+        let sprite1 = gui.addFolder('Sprite')
+        let sprite1Pos = sprite1.addFolder('Sprite 1 position')
+        sprite1Pos.add(this.spriteAnim[0].position, 'x', -50, 50).listen()
+        sprite1Pos.add(this.spriteAnim[0].position, 'y', -50, 50).listen()
+        sprite1Pos.add(this.spriteAnim[0].position, 'z', -50, 50).listen()
+        let sprite1Rot = sprite1.addFolder('Sprite 1 rotation')
+        sprite1Rot.add(this.spriteAnim[0].position, 'x', -50, 50).listen()
+        sprite1Rot.add(this.spriteAnim[0].position, 'y', -50, 50).listen()
+        sprite1Rot.add(this.spriteAnim[0].position, 'z', -50, 50).listen()
+        let sprite2Pos = sprite1.addFolder('Sprite 2 position')
+        sprite2Pos.add(this.spriteAnim[1].position, 'x', -50, 50).listen()
+        sprite2Pos.add(this.spriteAnim[1].position, 'y', -50, 50).listen()
+        sprite2Pos.add(this.spriteAnim[1].position, 'z', -50, 50).listen()
+        let sprite2Rot = sprite1.addFolder('Sprite 2 rotation')
+        sprite2Rot.add(this.spriteAnim[1].position, 'x', -50, 50).listen()
+        sprite2Rot.add(this.spriteAnim[1].position, 'y', -50, 50).listen()
+        sprite2Rot.add(this.spriteAnim[1].position, 'z', -50, 50).listen()
+        let sprite3Pos = sprite1.addFolder('Sprite 3 position')
+        sprite3Pos.add(this.spriteAnim[2].position, 'x', -50, 50).listen()
+        sprite3Pos.add(this.spriteAnim[2].position, 'y', -50, 50).listen()
+        sprite3Pos.add(this.spriteAnim[2].position, 'z', -50, 50).listen()
+        let sprite3Rot = sprite1.addFolder('Sprite 3 rotation')
+        sprite3Rot.add(this.spriteAnim[2].position, 'x', -50, 50).listen()
+        sprite3Rot.add(this.spriteAnim[2].position, 'y', -50, 50).listen()
+        sprite3Rot.add(this.spriteAnim[2].position, 'z', -50, 50).listen()
+        let sprite4Pos = sprite1.addFolder('Sprite 4 position')
+        sprite4Pos.add(this.spriteAnim[3].position, 'x', -50, 50).listen()
+        sprite4Pos.add(this.spriteAnim[3].position, 'y', -50, 50).listen()
+        sprite4Pos.add(this.spriteAnim[3].position, 'z', -50, 50).listen()
+        let sprite4Rot = sprite1.addFolder('Sprite 4 rotation')
+        sprite4Rot.add(this.spriteAnim[3].position, 'x', -50, 50).listen()
+        sprite4Rot.add(this.spriteAnim[3].position, 'y', -50, 50).listen()
+        sprite4Rot.add(this.spriteAnim[3].position, 'z', -50, 50).listen()
+        let sprite5Pos = sprite1.addFolder('Sprite 5 position')
+        sprite5Pos.add(this.spriteAnim[4].position, 'x', -50, 50).listen()
+        sprite5Pos.add(this.spriteAnim[4].position, 'y', -50, 50).listen()
+        sprite5Pos.add(this.spriteAnim[4].position, 'z', -50, 50).listen()
+        let sprite5Rot = sprite1.addFolder('Sprite 5 rotation')
+        sprite5Rot.add(this.spriteAnim[4].position, 'x', -50, 50).listen()
+        sprite5Rot.add(this.spriteAnim[4].position, 'y', -50, 50).listen()
+        sprite5Rot.add(this.spriteAnim[4].position, 'z', -50, 50).listen()
+        let sprite6Pos = sprite1.addFolder('Sprite 6 position')
+        sprite6Pos.add(this.spriteAnim[5].position, 'x', -50, 50).listen()
+        sprite6Pos.add(this.spriteAnim[5].position, 'y', -50, 50).listen()
+        sprite6Pos.add(this.spriteAnim[5].position, 'z', -50, 50).listen()
+        let sprite6Rot = sprite1.addFolder('Sprite 6 rotation')
+        sprite6Rot.add(this.spriteAnim[5].position, 'x', -50, 50).listen()
+        sprite6Rot.add(this.spriteAnim[5].position, 'y', -50, 50).listen()
+        sprite6Rot.add(this.spriteAnim[5].position, 'z', -50, 50).listen()
+        let sprite7Pos = sprite1.addFolder('Sprite 7 position')
+        sprite7Pos.add(this.spriteAnim[6].position, 'x', -50, 50).listen()
+        sprite7Pos.add(this.spriteAnim[6].position, 'y', -50, 50).listen()
+        sprite7Pos.add(this.spriteAnim[6].position, 'z', -50, 50).listen()
+        let sprite7Rot = sprite1.addFolder('Sprite 7 rotation')
+        sprite7Rot.add(this.spriteAnim[6].position, 'x', -50, 50).listen()
+        sprite7Rot.add(this.spriteAnim[6].position, 'y', -50, 50).listen()
+        sprite7Rot.add(this.spriteAnim[6].position, 'z', -50, 50).listen()
     }
 }

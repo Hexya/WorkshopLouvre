@@ -33,7 +33,7 @@ module.exports = function(env) {
             chunksSortMode: 'dependency'
         }),
     ];
-    if (env == 'dev') {
+    /*if (env == 'dev') {
 
 
     }
@@ -46,7 +46,7 @@ module.exports = function(env) {
                 warnings: false,
             },
         }));
-    }
+    }*/
 
     return {
         context: path.resolve(__dirname, 'app'),
