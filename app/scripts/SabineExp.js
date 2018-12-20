@@ -3,13 +3,14 @@ import Sound from './Sound.js';
 let OrbitControls = require('three-orbit-controls')(THREE)
 import objFile from '../assets/model/SabineXp.obj';
 
-import imgSprite1 from '../assets/img/atlasFish_Back_transp.png';
-import imgSprite2 from '../assets/img/atlasFish_Back_transp.png';
-import imgSprite3 from '../assets/img/atlasFish_Back_transp.png';
-import imgSprite4 from '../assets/img/atlasFish_Back_transp.png';
-import imgSprite5 from '../assets/img/atlasFish_Back_transp.png';
-import imgSprite6 from '../assets/img/atlasFish_Back_transp.png';
-import imgSprite7 from '../assets/img/atlasFish_Back_transp.png';
+import imgSprite1 from '../assets/img/Sprites/FISHB.png';
+import imgSprite2 from '../assets/img/Sprites/FISHF.png';
+import imgSprite3 from '../assets/img/Sprites/COURONNE.png';
+import imgSprite4 from '../assets/img/Sprites/CARTHAGE.png';
+import imgSprite5 from '../assets/img/Sprites/RECONSTRUCTON.png';
+import imgSprite6 from '../assets/img/Sprites/CARTHAGE.png';
+import imgSprite7 from '../assets/img/Sprites/COURONNE.png';
+
 
 import daeModel from '../assets/model/try.dae';
 
@@ -269,7 +270,7 @@ export default class App {
         let spriteAnimMaterial = []
         let spriteAnim = [];
         this.spriteAnimator = [];
-        for(let i=0; i<2; i++) {
+        for(let i=0; i<7; i++) {
             let textureLoader = new THREE.TextureLoader();
             spriteAnimeTextures[i] = textureLoader.load(imgSprites[i]);
             spriteAnimeTextures[i].premultiplyAlpha = true;
@@ -491,25 +492,25 @@ export default class App {
 
                 .add('step1') // Hair Scene
                 .to(this.targetMesh.position, 1.0,{
-                    x: this.scene.children[7].children[5].position.x+0.5,
-                    y: this.scene.children[7].children[5].position.y+2,
-                    z: this.scene.children[7].children[5].position.z,
+                    x: this.scene.children[12].children[5].position.x+0.5,
+                    y: this.scene.children[12].children[5].position.y+2,
+                    z: this.scene.children[12].children[5].position.z,
                     ease:Power1.easeInOut
                     },
                     'step1')
                 .to(this.camera.position, 1.5,{
-                    x: this.scene.children[7].children[5].position.x-0.5,
+                    x: this.scene.children[12].children[5].position.x-0.5,
                     y: 2,
-                    z: this.scene.children[7].children[5].position.z+1.5,
+                    z: this.scene.children[12].children[5].position.z+1.5,
                     ease:Power1.easeInOut
                     },
                     'step1+=0.5')
-                .to(this.scene.children[7].children[5].position, 1.3,{ // Hair float position
-                    y: this.scene.children[7].children[5].position.y+2,
+                .to(this.scene.children[12].children[5].position, 1.3,{ // Hair float position
+                    y: this.scene.children[12].children[5].position.y+2,
                     ease:Power1.easeInOut
                     },
                     'step1+=0.5')
-                .to(this.scene.children[7].children[5].rotation, 1.9,{ // Hair float rotation
+                .to(this.scene.children[12].children[5].rotation, 1.9,{ // Hair float rotation
                     x: 0.1,
                     y: Math.PI*2,
                     z: 0,
@@ -520,38 +521,38 @@ export default class App {
 
                 .add('step2') // Hip scene
                 .to(this.targetMesh.position,1.0,{
-                    x: this.scene.children[7].children[1].position.x-0.5,
-                    y: this.scene.children[7].children[1].position.y+1,
-                    z: this.scene.children[7].children[1].position.z,
+                    x: this.scene.children[12].children[1].position.x-0.5,
+                    y: this.scene.children[12].children[1].position.y+1,
+                    z: this.scene.children[12].children[1].position.z,
                     ease:Power1.easeInOut
                     },
                     'step2')
                 .to(this.camera.position, 1.5,{
-                    x: this.scene.children[7].children[1].position.x-1,
+                    x: this.scene.children[12].children[1].position.x-1,
                     y: 2.5,
-                    z: this.scene.children[7].children[1].position.z+3,
+                    z: this.scene.children[12].children[1].position.z+3,
                     ease:Power1.easeInOut
                     },
                     'step2+=0.5')
-                .to(this.scene.children[7].children[5].position, 1.0,{ // Hair back to ground position
-                    y: this.scene.children[7].children[5].position.y,
+                .to(this.scene.children[12].children[5].position, 1.0,{ // Hair back to ground position
+                    y: this.scene.children[12].children[5].position.y,
                     ease:Power1.easeInOut
                     },
                     'step2')
-                .to(this.scene.children[7].children[5].rotation, 1.6,{ // Hair back to ground rotation
-                    y: this.scene.children[7].children[5].rotation.y,
-                    z: this.scene.children[7].children[5].rotation.z,
+                .to(this.scene.children[12].children[5].rotation, 1.6,{ // Hair back to ground rotation
+                    y: this.scene.children[12].children[5].rotation.y,
+                    z: this.scene.children[12].children[5].rotation.z,
                     ease:Power1.easeInOut
                     },
                     'step2')
-                .to(this.scene.children[7].children[1].position, 1.3,{ // Hip float position
-                    y: this.scene.children[7].children[1].position.y+1,
+                .to(this.scene.children[12].children[1].position, 1.3,{ // Hip float position
+                    y: this.scene.children[12].children[1].position.y+1,
                     ease:Power1.easeInOut
                     },
                     'step2+=0.5')
-                .to(this.scene.children[7].children[1].rotation, 1.9,{ // Hip float rotation
-                    y: this.scene.children[7].children[1].rotation.y + Math.PI*2 - 0.2,
-                    z: this.scene.children[7].children[1].rotation.z,
+                .to(this.scene.children[12].children[1].rotation, 1.9,{ // Hip float rotation
+                    y: this.scene.children[12].children[1].rotation.y + Math.PI*2 - 0.2,
+                    z: this.scene.children[12].children[1].rotation.z,
                     ease:Power1.easeInOut
                     },
                     'step2+=0.5')
@@ -559,37 +560,37 @@ export default class App {
 
                 .add('step3') // Foot scene
                 .to(this.targetMesh.position,1.0,{
-                    x: this.scene.children[7].children[3].position.x+0.5,
-                    y: this.scene.children[7].children[3].position.y+1,
-                    z: this.scene.children[7].children[3].position.z,
+                    x: this.scene.children[12].children[3].position.x+0.5,
+                    y: this.scene.children[12].children[3].position.y+1,
+                    z: this.scene.children[12].children[3].position.z,
                     ease:Power1.easeInOut
                     },
                     'step3')
                 .to(this.camera.position, 1.5,{
-                    x: this.scene.children[7].children[3].position.x,
-                    z: this.scene.children[7].children[3].position.z+5,
+                    x: this.scene.children[12].children[3].position.x,
+                    z: this.scene.children[12].children[3].position.z+5,
                     ease:Power1.easeInOut
                     },
                     'step3+=0.5')
-                .to(this.scene.children[7].children[1].position, 1.0,{ // Hip back to ground position
-                    y: this.scene.children[7].children[1].position.y,
+                .to(this.scene.children[12].children[1].position, 1.0,{ // Hip back to ground position
+                    y: this.scene.children[12].children[1].position.y,
                     ease:Power1.easeInOut
                     },
                     'step3')
-                .to(this.scene.children[7].children[1].rotation, 1.6,{ // Hip back to ground rotation
-                    y: this.scene.children[7].children[1].rotation.y,
-                    z: this.scene.children[7].children[1].rotation.z,
+                .to(this.scene.children[12].children[1].rotation, 1.6,{ // Hip back to ground rotation
+                    y: this.scene.children[12].children[1].rotation.y,
+                    z: this.scene.children[12].children[1].rotation.z,
                     ease:Power1.easeInOut
                     },
                     'step3')
-                .to(this.scene.children[7].children[3].position, 1.3,{ // Foot float position
-                    y: this.scene.children[7].children[3].position.y+1,
+                .to(this.scene.children[12].children[3].position, 1.3,{ // Foot float position
+                    y: this.scene.children[12].children[3].position.y+1,
                     ease:Power1.easeInOut
                     },
                     'step3+=0.5')
-                .to(this.scene.children[7].children[3].rotation, 1.9,{ // Foot float rotation
-                    y: this.scene.children[7].children[3].rotation.y + Math.PI*2 - 0.2,
-                    z: this.scene.children[7].children[3].rotation.z,
+                .to(this.scene.children[12].children[3].rotation, 1.9,{ // Foot float rotation
+                    y: this.scene.children[12].children[3].rotation.y + Math.PI*2 - 0.2,
+                    z: this.scene.children[12].children[3].rotation.z,
                     ease:Power1.easeInOut
                     },
                     'step3+=0.5')
@@ -597,37 +598,37 @@ export default class App {
 
                 .add('step4') // Chest scene
                 .to(this.targetMesh.position, 1.0,{
-                    x: this.scene.children[7].children[0].position.x+0.5,
-                    y: this.scene.children[7].children[0].position.y+1,
-                    z: this.scene.children[7].children[0].position.z,
+                    x: this.scene.children[12].children[0].position.x+0.5,
+                    y: this.scene.children[12].children[0].position.y+1,
+                    z: this.scene.children[12].children[0].position.z,
                     ease:Power1.easeInOut
                     },
                     'step4')
                 .to(this.camera.position, 1.5,{
-                    x: this.scene.children[7].children[0].position.x,
-                    z: this.scene.children[7].children[0].position.z+2,
+                    x: this.scene.children[12].children[0].position.x,
+                    z: this.scene.children[12].children[0].position.z+2,
                     ease:Power1.easeInOut
                     },
                     'step4+=0.5')
-                .to(this.scene.children[7].children[3].position, 1.0,{ // Foot back to ground position
-                    y: this.scene.children[7].children[3].position.y,
+                .to(this.scene.children[12].children[3].position, 1.0,{ // Foot back to ground position
+                    y: this.scene.children[12].children[3].position.y,
                     ease:Power1.easeInOut
                     },
                     'step4')
-                .to(this.scene.children[7].children[3].rotation, 1.6,{ // Foot back to ground rotation
-                    y: this.scene.children[7].children[3].rotation.y,
-                    z: this.scene.children[7].children[3].rotation.z,
+                .to(this.scene.children[12].children[3].rotation, 1.6,{ // Foot back to ground rotation
+                    y: this.scene.children[12].children[3].rotation.y,
+                    z: this.scene.children[12].children[3].rotation.z,
                     ease:Power1.easeInOut
                     },
                     'step4')
-                .to(this.scene.children[7].children[0].position, 1.3,{ // Chest float position
-                    y: this.scene.children[7].children[0].position.y+1,
+                .to(this.scene.children[12].children[0].position, 1.3,{ // Chest float position
+                    y: this.scene.children[12].children[0].position.y+1,
                     ease:Power1.easeInOut
                     },
                     'step4+=0.5')
-                .to(this.scene.children[7].children[0].rotation, 1.9,{ // Chest float rotation
-                    y: this.scene.children[7].children[0].rotation.y + Math.PI*2 - 0.2,
-                    z: this.scene.children[7].children[0].rotation.z,
+                .to(this.scene.children[12].children[0].rotation, 1.9,{ // Chest float rotation
+                    y: this.scene.children[12].children[0].rotation.y + Math.PI*2 - 0.2,
+                    z: this.scene.children[12].children[0].rotation.z,
                     ease:Power1.easeInOut
                     },
                     'step4+=0.5')
@@ -635,37 +636,37 @@ export default class App {
 
                 .add('step5') // Leg scene
                 .to(this.targetMesh.position, 1.0,{
-                    x: this.scene.children[7].children[2].position.x-0.5,
-                    y: this.scene.children[7].children[2].position.y+1,
-                    z: this.scene.children[7].children[2].position.z,
+                    x: this.scene.children[12].children[2].position.x-0.5,
+                    y: this.scene.children[12].children[2].position.y+1,
+                    z: this.scene.children[12].children[2].position.z,
                     ease:Power1.easeInOut
                     },
                     'step5')
                 .to(this.camera.position, 1.5,{
-                    x: this.scene.children[7].children[2].position.x,
-                    z: this.scene.children[7].children[2].position.z+2,
+                    x: this.scene.children[12].children[2].position.x,
+                    z: this.scene.children[12].children[2].position.z+2,
                     ease:Power1.easeInOut
                     },
                     'step5+=0.5')
-                .to(this.scene.children[7].children[0].position, 1.0,{ // Chest back to ground position
-                    y: this.scene.children[7].children[0].position.y,
+                .to(this.scene.children[12].children[0].position, 1.0,{ // Chest back to ground position
+                    y: this.scene.children[12].children[0].position.y,
                     ease:Power1.easeInOut
                     },
                     'step5')
-                .to(this.scene.children[7].children[0].rotation, 1.6,{ // Chest back to ground rotation
-                    y: this.scene.children[7].children[0].rotation.y,
-                    z: this.scene.children[7].children[0].rotation.z,
+                .to(this.scene.children[12].children[0].rotation, 1.6,{ // Chest back to ground rotation
+                    y: this.scene.children[12].children[0].rotation.y,
+                    z: this.scene.children[12].children[0].rotation.z,
                     ease:Power1.easeInOut
                     },
                     'step5')
-                .to(this.scene.children[7].children[2].position, 1.3,{ // Leg float position
-                    y: this.scene.children[7].children[2].position.y+1,
+                .to(this.scene.children[12].children[2].position, 1.3,{ // Leg float position
+                    y: this.scene.children[12].children[2].position.y+1,
                     ease:Power1.easeInOut
                     },
                     'step5+=0.5')
-                .to(this.scene.children[7].children[2].rotation, 1.9,{ // Leg float rotation
-                    y: this.scene.children[7].children[2].rotation.y + Math.PI*2 - 0.2,
-                    z: this.scene.children[7].children[2].rotation.z,
+                .to(this.scene.children[12].children[2].rotation, 1.9,{ // Leg float rotation
+                    y: this.scene.children[12].children[2].rotation.y + Math.PI*2 - 0.2,
+                    z: this.scene.children[12].children[2].rotation.z,
                     ease:Power1.easeInOut
                     },
                     'step5+=0.5')
@@ -673,37 +674,37 @@ export default class App {
                 
                 .add('step6') // Head scene
                 .to(this.targetMesh.position, 1.0,{
-                    x: this.scene.children[7].children[4].position.x+0.5,
-                    y: this.scene.children[7].children[4].position.y+1,
-                    z: this.scene.children[7].children[4].position.z,
+                    x: this.scene.children[12].children[4].position.x+0.5,
+                    y: this.scene.children[12].children[4].position.y+1,
+                    z: this.scene.children[12].children[4].position.z,
                     ease:Power1.easeInOut
                     },
                     'step6')
                 .to(this.camera.position, 1.5,{
-                    x: this.scene.children[7].children[4].position.x,
-                    z: this.scene.children[7].children[4].position.z+2,
+                    x: this.scene.children[12].children[4].position.x,
+                    z: this.scene.children[12].children[4].position.z+2,
                     ease:Power1.easeInOut
                     },
                     'step6+=0.5')
-                .to(this.scene.children[7].children[2].position, 1.0,{ // Leg back to ground position
-                    y: this.scene.children[7].children[2].position.y,
+                .to(this.scene.children[12].children[2].position, 1.0,{ // Leg back to ground position
+                    y: this.scene.children[12].children[2].position.y,
                     ease:Power1.easeInOut
                     },
                     'step6')
-                .to(this.scene.children[7].children[2].rotation, 1.6,{ // Leg back to ground rotation
-                    y: this.scene.children[7].children[2].rotation.y,
-                    z: this.scene.children[7].children[2].rotation.z,
+                .to(this.scene.children[12].children[2].rotation, 1.6,{ // Leg back to ground rotation
+                    y: this.scene.children[12].children[2].rotation.y,
+                    z: this.scene.children[12].children[2].rotation.z,
                     ease:Power1.easeInOut
                     },
                     'step6')
-                .to(this.scene.children[7].children[4].position, 1.3,{ // Head float position
-                    y: this.scene.children[7].children[4].position.y+1,
+                .to(this.scene.children[12].children[4].position, 1.3,{ // Head float position
+                    y: this.scene.children[12].children[4].position.y+1,
                     ease:Power1.easeInOut
                     },
                     'step6+=0.5')
-                .to(this.scene.children[7].children[4].rotation, 1.9,{ // Head float rotation
-                    y: this.scene.children[7].children[4].rotation.y + Math.PI*2 - 0.2,
-                    z: this.scene.children[7].children[4].rotation.z,
+                .to(this.scene.children[12].children[4].rotation, 1.9,{ // Head float rotation
+                    y: this.scene.children[12].children[4].rotation.y + Math.PI*2 - 0.2,
+                    z: this.scene.children[12].children[4].rotation.z,
                     ease:Power1.easeInOut
                     },
                     'step6+=0.5')
@@ -736,7 +737,7 @@ export default class App {
         var delta = clock.getDelta();
 
         //UPDATE
-        //this.spriteAnimator[step].update(1000 * delta);
+        this.spriteAnimator[step].update(1000 * delta);
 
         // this.dirLight.position.x = Math.sin(time)*6
         // this.dirLight.position.y = 15
@@ -829,16 +830,16 @@ export default class App {
         let Camera = gui.addFolder('Camera');
         let CameraPos = Camera.addFolder('Camera Position');
         CameraPos.add(this.camera.position, 'x',
-                this.scene.children[7].children[1].position.x-4,
-                this.scene.children[7].children[1].position.x+4
+                this.scene.children[12].children[1].position.x-4,
+                this.scene.children[12].children[1].position.x+4
             ).listen();
         CameraPos.add(this.camera.position, 'y',
-                this.scene.children[7].children[1].position.y-4,
-                this.scene.children[7].children[1].position.y+4
+                this.scene.children[12].children[1].position.y-4,
+                this.scene.children[12].children[1].position.y+4
             ).listen();
         CameraPos.add(this.camera.position, 'z',
-                this.scene.children[7].children[1].position.z-4,
-                this.scene.children[7].children[1].position.z+4
+                this.scene.children[12].children[1].position.z-4,
+                this.scene.children[12].children[1].position.z+4
             ).listen();
     }
 }

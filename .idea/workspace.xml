@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b634048-1547-4531-b5d0-66d35266403d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/index.css" afterPath="$PROJECT_DIR$/app/index.css" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/scripts/SabineExp.js" afterPath="$PROJECT_DIR$/app/scripts/SabineExp.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,11 +27,12 @@
       <file leaf-file-name="SabineExp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/scripts/SabineExp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="737" column="16" lean-forward="false" selection-start-line="737" selection-start-column="16" selection-end-line="737" selection-end-column="16" />
+            <state relative-caret-position="149">
+              <caret line="733" column="27" lean-forward="true" selection-start-line="733" selection-start-column="27" selection-end-line="733" selection-end-column="27" />
               <folding>
                 <element signature="e#172#223#0" expanded="true" />
-                <element signature="e#1278#1335#0" expanded="true" />
+                <element signature="e#1243#1300#0" expanded="true" />
+                <element signature="e#3182#3214#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -51,8 +52,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>group</find>
-      <find>Group</find>
       <find>renderer</find>
       <find>6</find>
       <find>model</find>
@@ -81,6 +80,8 @@
       <find>requestAnimationFrame</find>
       <find>render()</find>
       <find>scene.children[6]</find>
+      <find>render</find>
+      <find>children[7]</find>
     </findStrings>
     <replaceStrings>
       <replace>timerStep</replace>
@@ -91,9 +92,9 @@
       <replace>SIXTH</replace>
       <replace>SEVENTH</replace>
       <replace>5</replace>
-      <replace>children[12]</replace>
       <replace>children[7]</replace>
       <replace>scene.children[7]</replace>
+      <replace>children[12]</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -216,6 +217,14 @@
               <item name="SabineExp" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="img" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Sprites" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SabineExp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SabineExp" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="sound" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -280,12 +289,12 @@
       <workItem from="1544608611611" duration="7396000" />
       <workItem from="1544689505940" duration="15346000" />
       <workItem from="1545038430082" duration="17410000" />
-      <workItem from="1545126529781" duration="38189000" />
+      <workItem from="1545126529781" duration="39067000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78341000" />
+    <option name="totallyTimeSpent" value="79219000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -345,7 +354,8 @@
           <caret line="235" column="30" lean-forward="true" selection-start-line="235" selection-start-column="30" selection-end-line="235" selection-end-column="30" />
           <folding>
             <element signature="e#172#223#0" expanded="true" />
-            <element signature="e#1278#1335#0" expanded="true" />
+            <element signature="e#1243#1300#0" expanded="true" />
+            <element signature="e#3182#3214#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -364,7 +374,8 @@
           <caret line="150" column="36" lean-forward="true" selection-start-line="150" selection-start-column="36" selection-end-line="150" selection-end-column="36" />
           <folding>
             <element signature="e#172#223#0" expanded="true" />
-            <element signature="e#1278#1335#0" expanded="true" />
+            <element signature="e#1243#1300#0" expanded="true" />
+            <element signature="e#3182#3214#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -392,7 +403,8 @@
           <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
           <folding>
             <element signature="e#172#223#0" expanded="true" />
-            <element signature="e#1278#1335#0" expanded="true" />
+            <element signature="e#1243#1300#0" expanded="true" />
+            <element signature="e#3182#3214#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -666,11 +678,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/SabineExp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="737" column="16" lean-forward="false" selection-start-line="737" selection-start-column="16" selection-end-line="737" selection-end-column="16" />
+        <state relative-caret-position="149">
+          <caret line="733" column="27" lean-forward="true" selection-start-line="733" selection-start-column="27" selection-end-line="733" selection-end-column="27" />
           <folding>
             <element signature="e#172#223#0" expanded="true" />
-            <element signature="e#1278#1335#0" expanded="true" />
+            <element signature="e#1243#1300#0" expanded="true" />
+            <element signature="e#3182#3214#0" expanded="false" />
           </folding>
         </state>
       </provider>
