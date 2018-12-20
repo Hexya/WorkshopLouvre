@@ -1,27 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7b634048-1547-4531-b5d0-66d35266403d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/assets/img/atlas01_front.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/assets/img/atlas01_front_mini.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/assets/img/atlasFish_Back.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/assets/img/atlasFish_Back_black.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/assets/img/atlasFish_Back_transp.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/assets/img/soccer1.webm" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/assets/img/spriteAqua.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/assets/img/ttXm6.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
-      <change beforePath="$PROJECT_DIR$/app/scripts/SabineExp.js" afterPath="$PROJECT_DIR$/app/scripts/SabineExp.js" />
-      <change beforePath="$PROJECT_DIR$/app/scripts/Templates/fifthSceneTemplate.tpl" afterPath="$PROJECT_DIR$/app/scripts/Templates/fifthSceneTemplate.tpl" />
-      <change beforePath="$PROJECT_DIR$/app/scripts/Templates/firstSceneTemplate.tpl" afterPath="$PROJECT_DIR$/app/scripts/Templates/firstSceneTemplate.tpl" />
-      <change beforePath="$PROJECT_DIR$/app/scripts/Templates/fourthSceneTemplate.tpl" afterPath="$PROJECT_DIR$/app/scripts/Templates/fourthSceneTemplate.tpl" />
-      <change beforePath="$PROJECT_DIR$/app/scripts/Templates/secSceneTemplate.tpl" afterPath="$PROJECT_DIR$/app/scripts/Templates/secSceneTemplate.tpl" />
-      <change beforePath="$PROJECT_DIR$/app/scripts/Templates/seventhSceneTemplate.tpl" afterPath="$PROJECT_DIR$/app/scripts/Templates/seventhSceneTemplate.tpl" />
-      <change beforePath="$PROJECT_DIR$/app/scripts/Templates/thirdSceneTemplate.tpl" afterPath="$PROJECT_DIR$/app/scripts/Templates/thirdSceneTemplate.tpl" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" afterPath="$PROJECT_DIR$/webpack.config.js" />
-    </list>
+    <list default="true" id="7b634048-1547-4531-b5d0-66d35266403d" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,11 +11,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="18" lean-forward="true" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+            <state relative-caret-position="390">
+              <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -44,8 +24,8 @@
       <file leaf-file-name="webpack.config.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webpack.config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="48" column="7" lean-forward="false" selection-start-line="48" selection-start-column="7" selection-end-line="48" selection-end-column="7" />
+            <state relative-caret-position="-300">
+              <caret line="7" column="32" lean-forward="true" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -61,16 +41,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SabineExp.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SabineExp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/scripts/SabineExp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2068">
-              <caret line="262" column="42" lean-forward="false" selection-start-line="262" selection-start-column="42" selection-end-line="262" selection-end-column="42" />
+            <state relative-caret-position="-11676">
+              <caret line="263" column="42" lean-forward="false" selection-start-line="263" selection-start-column="42" selection-end-line="263" selection-end-column="42" />
               <folding>
                 <element signature="e#0#78#0" expanded="true" />
                 <element signature="e#170#221#0" expanded="true" />
                 <element signature="e#1192#1249#0" expanded="true" />
-                <element signature="e#3165#3197#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -130,9 +109,9 @@
       <find>-10, 10</find>
       <find>animator</find>
       <find>soccer</find>
-      <find>UglifyJSPlugin</find>
       <find>icone_menu</find>
       <find>icone_men</find>
+      <find>UglifyJSPlugin</find>
     </findStrings>
     <replaceStrings>
       <replace>timerStep</replace>
@@ -306,12 +285,12 @@
       <workItem from="1544608611611" duration="7396000" />
       <workItem from="1544689505940" duration="15346000" />
       <workItem from="1545038430082" duration="17410000" />
-      <workItem from="1545126529781" duration="48931000" />
+      <workItem from="1545126529781" duration="49120000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89083000" />
+    <option name="totallyTimeSpent" value="89272000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -372,7 +351,6 @@
             <element signature="e#0#78#0" expanded="true" />
             <element signature="e#170#221#0" expanded="true" />
             <element signature="e#1192#1249#0" expanded="true" />
-            <element signature="e#3165#3197#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -393,7 +371,6 @@
             <element signature="e#0#78#0" expanded="true" />
             <element signature="e#170#221#0" expanded="true" />
             <element signature="e#1192#1249#0" expanded="true" />
-            <element signature="e#3165#3197#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -423,7 +400,6 @@
             <element signature="e#0#78#0" expanded="true" />
             <element signature="e#170#221#0" expanded="true" />
             <element signature="e#1192#1249#0" expanded="true" />
-            <element signature="e#3165#3197#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -691,32 +667,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="48" column="7" lean-forward="false" selection-start-line="48" selection-start-column="7" selection-end-line="48" selection-end-column="7" />
+        <state relative-caret-position="-300">
+          <caret line="7" column="32" lean-forward="true" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/SabineExp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2068">
-          <caret line="262" column="42" lean-forward="false" selection-start-line="262" selection-start-column="42" selection-end-line="262" selection-end-column="42" />
+        <state relative-caret-position="-11676">
+          <caret line="263" column="42" lean-forward="false" selection-start-line="263" selection-start-column="42" selection-end-line="263" selection-end-column="42" />
           <folding>
             <element signature="e#0#78#0" expanded="true" />
             <element signature="e#170#221#0" expanded="true" />
             <element signature="e#1192#1249#0" expanded="true" />
-            <element signature="e#3165#3197#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="18" lean-forward="true" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
