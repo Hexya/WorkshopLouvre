@@ -1,7 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7b634048-1547-4531-b5d0-66d35266403d" name="Default" comment="" />
+    <list default="true" id="7b634048-1547-4531-b5d0-66d35266403d" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/img/EndElem/icone_boussole.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/img/EndElem/icone_move.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/img/EndElem/icone_zoom_moins.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/img/EndElem/icone_zoom_plus.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/sound/ambiantSound.mp3" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app/assets/model/14.dae" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/assets/model/15.dae" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/assets/model/700_FO110291988_9e2ccea708ed0814e8e0cc0d0a8793f2.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/assets/model/SabineCut.mtl" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/assets/model/SabineCut.obj" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/assets/model/SabineOrigin.blend" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/assets/model/SabineOrigin.mtl" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/assets/model/SabineOrigin.obj" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/assets/model/SabineUpdate.mtl" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/assets/model/SabineUpdate.obj" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/assets/model/SabineUpdated.mtl" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/assets/model/SabineUpdated.obj" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/assets/model/coupon-de-tissu-crepe-de-viscose-couleur-rose-bonbon.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/assets/model/materials.mtl" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/assets/model/model.obj" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/assets/model/rose.mtl" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/assets/model/rose.obj" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/assets/model/test.mtl" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/assets/model/test.obj" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/assets/model/try.dae" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/assets/model/tryCOption.mtl" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/assets/model/tryCOption.obj" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/assets/model/tryColor.mtl" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/assets/model/tryColor.obj" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/assets/sound/AESTHETICS PLEASE - Run From Love.mp3" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/index.css" afterPath="$PROJECT_DIR$/app/index.css" />
+      <change beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
+      <change beforePath="$PROJECT_DIR$/app/scripts/SabineExp.js" afterPath="$PROJECT_DIR$/app/scripts/SabineExp.js" />
+      <change beforePath="$PROJECT_DIR$/app/scripts/Templates/seventhSceneTemplate.tpl" afterPath="$PROJECT_DIR$/app/scripts/Templates/seventhSceneTemplate.tpl" />
+      <change beforePath="$PROJECT_DIR$/app/scripts/Templates/sixthSceneTemplate.tpl" afterPath="$PROJECT_DIR$/app/scripts/Templates/sixthSceneTemplate.tpl" />
+      <change beforePath="$PROJECT_DIR$/app/scripts/testMtl.js" afterPath="" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,8 +52,18 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+            <state relative-caret-position="225">
+              <caret line="15" column="18" lean-forward="true" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="seventhSceneTemplate.tpl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scripts/Templates/seventhSceneTemplate.tpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -24,18 +72,8 @@
       <file leaf-file-name="webpack.config.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webpack.config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-300">
-              <caret line="7" column="32" lean-forward="true" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="25" column="28" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="28" />
+            <state relative-caret-position="240">
+              <caret line="16" column="28" lean-forward="true" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -44,26 +82,12 @@
       <file leaf-file-name="SabineExp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/scripts/SabineExp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-11676">
-              <caret line="263" column="42" lean-forward="false" selection-start-line="263" selection-start-column="42" selection-end-line="263" selection-end-column="42" />
+            <state relative-caret-position="363">
+              <caret line="389" column="67" lean-forward="true" selection-start-line="389" selection-start-column="67" selection-end-line="389" selection-end-column="67" />
               <folding>
-                <element signature="e#0#78#0" expanded="true" />
-                <element signature="e#170#221#0" expanded="true" />
-                <element signature="e#1192#1249#0" expanded="true" />
+                <element signature="e#91#142#0" expanded="true" />
+                <element signature="e#1113#1170#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="0">
-                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                <folding />
-              </first_editor>
-              <second_editor />
             </state>
           </provider>
         </entry>
@@ -71,8 +95,8 @@
       <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="885">
-              <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+            <state relative-caret-position="256">
+              <caret line="181" column="20" lean-forward="true" selection-start-line="181" selection-start-column="20" selection-end-line="181" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -82,12 +106,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>trans</find>
-      <find>NAUFRAGE</find>
-      <find>dg</find>
-      <find>step:</find>
-      <find>img</find>
-      <find>blur</find>
       <find>aest</find>
       <find>soundFile</find>
       <find>rendere</find>
@@ -111,7 +129,13 @@
       <find>soccer</find>
       <find>icone_menu</find>
       <find>icone_men</find>
+      <find>scene</find>
+      <find>Aes</find>
+      <find>.dae</find>
+      <find>transition</find>
       <find>UglifyJSPlugin</find>
+      <find>camera</find>
+      <find>more</find>
     </findStrings>
     <replaceStrings>
       <replace>timerStep</replace>
@@ -146,12 +170,12 @@
         <option value="$PROJECT_DIR$/app/scripts/Templates/thirdSceneTemplate.tpl" />
         <option value="$PROJECT_DIR$/app/scripts/Templates/fourthSceneTemplate.tpl" />
         <option value="$PROJECT_DIR$/app/scripts/Templates/fifthSceneTemplate.tpl" />
+        <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/app/scripts/Templates/sixthSceneTemplate.tpl" />
+        <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/app/scripts/Templates/seventhSceneTemplate.tpl" />
         <option value="$PROJECT_DIR$/app/index.css" />
-        <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/app/scripts/SabineExp.js" />
-        <option value="$PROJECT_DIR$/app/index.html" />
       </list>
     </option>
   </component>
@@ -236,6 +260,27 @@
               <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="img" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="SabineExp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SabineExp" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="img" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="EndElem" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SabineExp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SabineExp" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="scripts" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SabineExp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SabineExp" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="scripts" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Templates" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -250,11 +295,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/assets/img/EndElem" />
+      <recent name="$PROJECT_DIR$/app/assets/sound" />
       <recent name="$PROJECT_DIR$/dist/assets/img" />
       <recent name="$PROJECT_DIR$/app/assets/img" />
       <recent name="$PROJECT_DIR$/app/assets/fonts/TragicMarker" />
-      <recent name="$PROJECT_DIR$/app/assets/fonts" />
-      <recent name="$PROJECT_DIR$/app/scripts/Templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -285,22 +330,23 @@
       <workItem from="1544608611611" duration="7396000" />
       <workItem from="1544689505940" duration="15346000" />
       <workItem from="1545038430082" duration="17410000" />
-      <workItem from="1545126529781" duration="49120000" />
+      <workItem from="1545126529781" duration="55963000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89272000" />
+    <option name="totallyTimeSpent" value="96115000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42374617" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16479017" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22039072" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -327,34 +373,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="32" lean-forward="false" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/SabineExp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3285">
-          <caret line="235" column="30" lean-forward="true" selection-start-line="235" selection-start-column="30" selection-end-line="235" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#78#0" expanded="true" />
-            <element signature="e#170#221#0" expanded="true" />
-            <element signature="e#1192#1249#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -368,9 +386,8 @@
         <state relative-caret-position="2250">
           <caret line="150" column="36" lean-forward="true" selection-start-line="150" selection-start-column="36" selection-end-line="150" selection-end-column="36" />
           <folding>
-            <element signature="e#0#78#0" expanded="true" />
-            <element signature="e#170#221#0" expanded="true" />
-            <element signature="e#1192#1249#0" expanded="true" />
+            <element signature="e#91#142#0" expanded="true" />
+            <element signature="e#1113#1170#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -397,9 +414,8 @@
         <state relative-caret-position="795">
           <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
           <folding>
-            <element signature="e#0#78#0" expanded="true" />
-            <element signature="e#170#221#0" expanded="true" />
-            <element signature="e#1192#1249#0" expanded="true" />
+            <element signature="e#91#142#0" expanded="true" />
+            <element signature="e#1113#1170#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -445,18 +461,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/LoaderObj.js" />
-    <entry file="file://$PROJECT_DIR$/app/scripts/testMtl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1980">
-          <caret line="132" column="66" lean-forward="true" selection-start-line="132" selection-start-column="66" selection-end-line="132" selection-end-column="66" />
-          <folding>
-            <element signature="e#0#78#0" expanded="false" />
-            <element signature="e#170#218#0" expanded="false" />
-            <element signature="e#305#362#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/css-loader/lib/processCss.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="237">
@@ -592,22 +596,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/Templates/sixthSceneTemplate.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="69" lean-forward="false" selection-start-line="1" selection-start-column="69" selection-end-line="1" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/Templates/seventhSceneTemplate.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="13" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/Templates/fourthSceneTemplate.tpl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -640,14 +628,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
-          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -659,38 +639,84 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/app/scripts/testMtl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="25" column="28" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="28" />
+        <state relative-caret-position="1815">
+          <caret line="132" column="66" lean-forward="true" selection-start-line="132" selection-start-column="66" selection-end-line="132" selection-end-column="66" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="23" column="27" lean-forward="true" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/Templates/sixthSceneTemplate.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="29" lean-forward="true" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/img/EndElem/icone_boussole.svg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/img/EndElem/icone_zoom_moins.svg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/img/EndElem/icone_zoom_plus.svg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+        <state relative-caret-position="225">
+          <caret line="15" column="18" lean-forward="true" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-300">
-          <caret line="7" column="32" lean-forward="true" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+        <state relative-caret-position="240">
+          <caret line="16" column="28" lean-forward="true" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/Templates/seventhSceneTemplate.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="181" column="20" lean-forward="true" selection-start-line="181" selection-start-column="20" selection-end-line="181" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/SabineExp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-11676">
-          <caret line="263" column="42" lean-forward="false" selection-start-line="263" selection-start-column="42" selection-end-line="263" selection-end-column="42" />
+        <state relative-caret-position="363">
+          <caret line="389" column="67" lean-forward="true" selection-start-line="389" selection-start-column="67" selection-end-line="389" selection-end-column="67" />
           <folding>
-            <element signature="e#0#78#0" expanded="true" />
-            <element signature="e#170#221#0" expanded="true" />
-            <element signature="e#1192#1249#0" expanded="true" />
+            <element signature="e#91#142#0" expanded="true" />
+            <element signature="e#1113#1170#0" expanded="true" />
           </folding>
         </state>
       </provider>

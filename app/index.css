@@ -12,7 +12,8 @@
 
 /*** DEFAULT ***/
 body {
-
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 * {
     margin: 0;
@@ -22,7 +23,10 @@ h1, p {
     font-family: TragicMarker;
     color: #fff;
 }
-
+audio {
+    position: absolute;
+    z-index: -1;
+}
 /*** LOADER ***/
 .loader {
     position: absolute;
@@ -146,6 +150,9 @@ h1, p {
     top: 50%;
     transform: translateY(-50%);
 }
+.up-container {
+    top: 37%;
+}
 .right-container {
     right: 7%;
 }
@@ -161,9 +168,60 @@ h1, p {
     font-weight: lighter;
 }
 
+/*** END SCENE ***/
+.more-zoom, .less-zoom {
+    position: absolute;
+    right: 118px;
+    width: 40px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: .1s;
+}
+.more-zoom:hover, .less-zoom:hover {
+    background: rgba(255,255,255,0.25);
+    transition: .1s;
+}
+.more-zoom {
+    bottom: 390px;
+}
+.less-zoom {
+    bottom: 330px;
+}
+.zoom-btn {
+    height: auto;
+}
+.circle-nav {
+    position: absolute;
+    bottom: 50px;
+    height: 230px;
+    width: 270px;
+    right: 10px;
+}
+.boussole-img {
+    height: auto;
+}
+.move-cont {
+    position: absolute;
+    top: 71px;
+    left: 84px;
+    height: 116px;
+    width: 116px;
+    animation: rotateBasis 6s ease-out infinite;
+}
+.move-img {
+    position: absolute;
+    top: -9px;
+    left: 6px;
+    height: 110px;
+}
+
+@keyframes rotateBasis {
+    40% { transform: rotate(0deg)}
+    60% { transform: rotate(330deg)}
+    80% { transform: rotate(0deg)}
+}
 
 /*** NAVIGATION ***/
-
 .nav-bottom, .nav-top {
     position: absolute;
     left: 50%;
