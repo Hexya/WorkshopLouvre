@@ -1,5 +1,5 @@
 module.exports = "<div class='init-scene main-container'>" +
-    "<img  class='back-svg' src='/assets/img/icone_menu.png'>" +
+    "<img  class='back-svg' src='./assets/img/icone_menu.png'>" +
     "<div class='nav-top'>" +
         "<p>Chapitre I</p>" +
         "<div class='bar'></div>" +

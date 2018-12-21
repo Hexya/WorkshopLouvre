@@ -1,4 +1,3 @@
-import soundFile from '../assets/sound/AESTHETICS PLEASE - Run From Love.mp3';
 import Sound from './Sound.js';
 let OrbitControls = require('three-orbit-controls')(THREE)
 import objFile from '../assets/model/SabineXp.obj';
@@ -78,7 +77,7 @@ export default class App {
         }
 
         // Sound
-        this.play = new LoadSound();
+        //this.play = new LoadSound();
 
         //THREE SCENE
         this.container = document.querySelector( '#main' );
@@ -258,7 +257,7 @@ export default class App {
         this.scene.add( this.groundMesh );
 
         // Target Sphere
-        let targetGeo = new THREE.SphereGeometry( 0.02, 16, 16 );
+        let targetGeo = new THREE.SphereGeometry( 0.00002, 0.0016, 0.0016 );
         let targetMat = new THREE.MeshBasicMaterial( { color: 0xff2020, opacity: 0.2, transparent: true} );
         this.targetMesh = new THREE.Mesh( targetGeo, targetMat );
         this.scene.add( this.targetMesh );
@@ -464,10 +463,30 @@ export default class App {
                 this.controls = new OrbitControls(this.camera)
                 this.tl.play()
                 this.toggleTpl('sixth-scene', 'seventh-scene', seventhSceneTemplate)
+                setTimeout(()=> {
+                    document.querySelector('.more-zoom').addEventListener('mouseover', this.mouseZoom.bind(this))
+                    document.querySelector('.less-zoom').addEventListener('mouseover', this.mouseUnZoom.bind(this))
+                },1000);
                 console.log('seventh step');
                 break;
         }
     }
+
+    mouseZoom() {
+        this.camera.position.z -= 0.1;
+        let continious = setTimeout(() => {this.mouseZoom();}, 10);
+        document.querySelector('.more-zoom').addEventListener('mouseout', function() {
+        clearInterval(continious);
+        });
+    }
+    mouseUnZoom() {
+        this.camera.position.z += 0.1;
+        let continious = setTimeout(() => {this.mouseUnZoom();}, 10);
+        document.querySelector('.less-zoom').addEventListener('mouseout', function() {
+            clearInterval(continious);
+        });
+    }
+
     reverseScene() {
         console.log("step:", step);
         switch (step) {
