@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7b634048-1547-4531-b5d0-66d35266403d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/scripts/SabineExp.js" afterPath="$PROJECT_DIR$/app/scripts/SabineExp.js" />
-      <change beforePath="$PROJECT_DIR$/app/scripts/Templates/fifthSceneTemplate.tpl" afterPath="$PROJECT_DIR$/app/scripts/Templates/fifthSceneTemplate.tpl" />
-      <change beforePath="$PROJECT_DIR$/app/scripts/Templates/firstSceneTemplate.tpl" afterPath="$PROJECT_DIR$/app/scripts/Templates/firstSceneTemplate.tpl" />
-      <change beforePath="$PROJECT_DIR$/app/scripts/Templates/fourthSceneTemplate.tpl" afterPath="$PROJECT_DIR$/app/scripts/Templates/fourthSceneTemplate.tpl" />
-      <change beforePath="$PROJECT_DIR$/app/scripts/Templates/secSceneTemplate.tpl" afterPath="$PROJECT_DIR$/app/scripts/Templates/secSceneTemplate.tpl" />
-      <change beforePath="$PROJECT_DIR$/app/scripts/Templates/seventhSceneTemplate.tpl" afterPath="$PROJECT_DIR$/app/scripts/Templates/seventhSceneTemplate.tpl" />
-      <change beforePath="$PROJECT_DIR$/app/scripts/Templates/sixthSceneTemplate.tpl" afterPath="$PROJECT_DIR$/app/scripts/Templates/sixthSceneTemplate.tpl" />
-      <change beforePath="$PROJECT_DIR$/app/scripts/Templates/thirdSceneTemplate.tpl" afterPath="$PROJECT_DIR$/app/scripts/Templates/thirdSceneTemplate.tpl" />
-    </list>
+    <list default="true" id="7b634048-1547-4531-b5d0-66d35266403d" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,11 +11,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="seventhSceneTemplate.tpl" pinned="false" current-in-tab="true">
+      <file leaf-file-name="seventhSceneTemplate.tpl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/Templates/seventhSceneTemplate.tpl">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
-              <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+              <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fifthSceneTemplate.tpl" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/scripts/Templates/fifthSceneTemplate.tpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="34" lean-forward="false" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -225,31 +225,6 @@
               <item name="scripts" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Templates" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
-            <path>
-              <item name="SabineExp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SabineExp" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="dist" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="SabineExp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SabineExp" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="dist" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="SabineExp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SabineExp" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="dist" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="img" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="SabineExp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SabineExp" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="dist" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sound" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -299,12 +274,12 @@
       <workItem from="1544608611611" duration="7396000" />
       <workItem from="1544689505940" duration="15346000" />
       <workItem from="1545038430082" duration="17410000" />
-      <workItem from="1545126529781" duration="57036000" />
+      <workItem from="1545126529781" duration="57729000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97188000" />
+    <option name="totallyTimeSpent" value="97881000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -609,14 +584,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/Templates/fifthSceneTemplate.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="34" lean-forward="false" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/Templates/fourthSceneTemplate.tpl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -676,7 +643,15 @@
     <entry file="file://$PROJECT_DIR$/app/scripts/Templates/seventhSceneTemplate.tpl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
-          <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/Templates/fifthSceneTemplate.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="34" lean-forward="false" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
           <folding />
         </state>
       </provider>
