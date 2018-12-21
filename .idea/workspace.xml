@@ -2,43 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b634048-1547-4531-b5d0-66d35266403d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/img/EndElem/icone_boussole.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/img/EndElem/icone_move.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/img/EndElem/icone_zoom_moins.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/img/EndElem/icone_zoom_plus.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/sound/ambiantSound.mp3" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/assets/model/14.dae" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/assets/model/15.dae" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/assets/model/700_FO110291988_9e2ccea708ed0814e8e0cc0d0a8793f2.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/assets/model/SabineCut.mtl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/assets/model/SabineCut.obj" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/assets/model/SabineOrigin.blend" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/assets/model/SabineOrigin.mtl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/assets/model/SabineOrigin.obj" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/assets/model/SabineUpdate.mtl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/assets/model/SabineUpdate.obj" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/assets/model/SabineUpdated.mtl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/assets/model/SabineUpdated.obj" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/assets/model/coupon-de-tissu-crepe-de-viscose-couleur-rose-bonbon.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/assets/model/materials.mtl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/assets/model/model.obj" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/assets/model/rose.mtl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/assets/model/rose.obj" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/assets/model/test.mtl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/assets/model/test.obj" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/assets/model/try.dae" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/assets/model/tryCOption.mtl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/assets/model/tryCOption.obj" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/assets/model/tryColor.mtl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/assets/model/tryColor.obj" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/assets/sound/AESTHETICS PLEASE - Run From Love.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/index.css" afterPath="$PROJECT_DIR$/app/index.css" />
-      <change beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
       <change beforePath="$PROJECT_DIR$/app/scripts/SabineExp.js" afterPath="$PROJECT_DIR$/app/scripts/SabineExp.js" />
+      <change beforePath="$PROJECT_DIR$/app/scripts/Templates/fifthSceneTemplate.tpl" afterPath="$PROJECT_DIR$/app/scripts/Templates/fifthSceneTemplate.tpl" />
+      <change beforePath="$PROJECT_DIR$/app/scripts/Templates/firstSceneTemplate.tpl" afterPath="$PROJECT_DIR$/app/scripts/Templates/firstSceneTemplate.tpl" />
+      <change beforePath="$PROJECT_DIR$/app/scripts/Templates/fourthSceneTemplate.tpl" afterPath="$PROJECT_DIR$/app/scripts/Templates/fourthSceneTemplate.tpl" />
+      <change beforePath="$PROJECT_DIR$/app/scripts/Templates/secSceneTemplate.tpl" afterPath="$PROJECT_DIR$/app/scripts/Templates/secSceneTemplate.tpl" />
       <change beforePath="$PROJECT_DIR$/app/scripts/Templates/seventhSceneTemplate.tpl" afterPath="$PROJECT_DIR$/app/scripts/Templates/seventhSceneTemplate.tpl" />
       <change beforePath="$PROJECT_DIR$/app/scripts/Templates/sixthSceneTemplate.tpl" afterPath="$PROJECT_DIR$/app/scripts/Templates/sixthSceneTemplate.tpl" />
-      <change beforePath="$PROJECT_DIR$/app/scripts/testMtl.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/scripts/Templates/thirdSceneTemplate.tpl" afterPath="$PROJECT_DIR$/app/scripts/Templates/thirdSceneTemplate.tpl" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -49,41 +21,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="18" lean-forward="true" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="seventhSceneTemplate.tpl" pinned="false" current-in-tab="false">
+      <file leaf-file-name="seventhSceneTemplate.tpl" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/scripts/Templates/seventhSceneTemplate.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            <state relative-caret-position="135">
+              <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="webpack.config.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webpack.config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="28" lean-forward="true" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SabineExp.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SabineExp.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/SabineExp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="389" column="67" lean-forward="true" selection-start-line="389" selection-start-column="67" selection-end-line="389" selection-end-column="67" />
+            <state relative-caret-position="2869">
+              <caret line="907" column="36" lean-forward="false" selection-start-line="907" selection-start-column="36" selection-end-line="907" selection-end-column="36" />
               <folding>
                 <element signature="e#91#142#0" expanded="true" />
                 <element signature="e#1113#1170#0" expanded="true" />
@@ -96,7 +48,7 @@
         <entry file="file://$PROJECT_DIR$/app/index.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="256">
-              <caret line="181" column="20" lean-forward="true" selection-start-line="181" selection-start-column="20" selection-end-line="181" selection-end-column="20" />
+              <caret line="181" column="20" lean-forward="false" selection-start-line="181" selection-start-column="20" selection-end-line="181" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -165,17 +117,17 @@
         <option value="$PROJECT_DIR$/app/scripts/testMtl.js" />
         <option value="$PROJECT_DIR$/app/index.js" />
         <option value="$PROJECT_DIR$/app/index.less" />
+        <option value="$PROJECT_DIR$/webpack.config.js" />
+        <option value="$PROJECT_DIR$/app/index.html" />
+        <option value="$PROJECT_DIR$/app/index.css" />
+        <option value="$PROJECT_DIR$/app/scripts/SabineExp.js" />
+        <option value="$PROJECT_DIR$/app/scripts/Templates/seventhSceneTemplate.tpl" />
+        <option value="$PROJECT_DIR$/app/scripts/Templates/sixthSceneTemplate.tpl" />
+        <option value="$PROJECT_DIR$/app/scripts/Templates/fifthSceneTemplate.tpl" />
+        <option value="$PROJECT_DIR$/app/scripts/Templates/fourthSceneTemplate.tpl" />
         <option value="$PROJECT_DIR$/app/scripts/Templates/firstSceneTemplate.tpl" />
         <option value="$PROJECT_DIR$/app/scripts/Templates/secSceneTemplate.tpl" />
         <option value="$PROJECT_DIR$/app/scripts/Templates/thirdSceneTemplate.tpl" />
-        <option value="$PROJECT_DIR$/app/scripts/Templates/fourthSceneTemplate.tpl" />
-        <option value="$PROJECT_DIR$/app/scripts/Templates/fifthSceneTemplate.tpl" />
-        <option value="$PROJECT_DIR$/webpack.config.js" />
-        <option value="$PROJECT_DIR$/app/scripts/Templates/sixthSceneTemplate.tpl" />
-        <option value="$PROJECT_DIR$/app/index.html" />
-        <option value="$PROJECT_DIR$/app/scripts/Templates/seventhSceneTemplate.tpl" />
-        <option value="$PROJECT_DIR$/app/index.css" />
-        <option value="$PROJECT_DIR$/app/scripts/SabineExp.js" />
       </list>
     </option>
   </component>
@@ -264,14 +216,6 @@
               <item name="SabineExp" type="b2602c69:ProjectViewProjectNode" />
               <item name="SabineExp" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="img" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="EndElem" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="SabineExp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SabineExp" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="scripts" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -280,6 +224,31 @@
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="scripts" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Templates" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SabineExp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SabineExp" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="dist" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SabineExp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SabineExp" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="dist" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SabineExp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SabineExp" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="dist" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="img" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SabineExp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SabineExp" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="dist" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sound" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -295,11 +264,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/dist/assets" />
+      <recent name="$PROJECT_DIR$/dist/assets/img" />
       <recent name="$PROJECT_DIR$/app/assets/img/EndElem" />
       <recent name="$PROJECT_DIR$/app/assets/sound" />
-      <recent name="$PROJECT_DIR$/dist/assets/img" />
       <recent name="$PROJECT_DIR$/app/assets/img" />
-      <recent name="$PROJECT_DIR$/app/assets/fonts/TragicMarker" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -330,12 +299,12 @@
       <workItem from="1544608611611" duration="7396000" />
       <workItem from="1544689505940" duration="15346000" />
       <workItem from="1545038430082" duration="17410000" />
-      <workItem from="1545126529781" duration="55963000" />
+      <workItem from="1545126529781" duration="57036000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96115000" />
+    <option name="totallyTimeSpent" value="97188000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -346,7 +315,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16479017" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2517912" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22039072" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -373,33 +342,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/SabineExp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2250">
-          <caret line="150" column="36" lean-forward="true" selection-start-line="150" selection-start-column="36" selection-end-line="150" selection-end-column="36" />
-          <folding>
-            <element signature="e#91#142#0" expanded="true" />
-            <element signature="e#1113#1170#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/LoaderObj.js" />
     <entry file="file://$PROJECT_DIR$/app/index.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -588,46 +530,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/Templates/fifthSceneTemplate.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="69" lean-forward="false" selection-start-line="1" selection-start-column="69" selection-end-line="1" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/Templates/fourthSceneTemplate.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="69" lean-forward="false" selection-start-line="1" selection-start-column="69" selection-end-line="1" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/Templates/thirdSceneTemplate.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="69" lean-forward="false" selection-start-line="1" selection-start-column="69" selection-end-line="1" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/Templates/secSceneTemplate.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="69" lean-forward="false" selection-start-line="1" selection-start-column="69" selection-end-line="1" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/Templates/firstSceneTemplate.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="50" lean-forward="false" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -651,14 +553,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="23" column="27" lean-forward="true" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/Templates/sixthSceneTemplate.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="29" lean-forward="true" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -689,15 +583,7 @@
     <entry file="file://$PROJECT_DIR$/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="16" column="28" lean-forward="true" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/Templates/seventhSceneTemplate.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <caret line="16" column="28" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -705,19 +591,93 @@
     <entry file="file://$PROJECT_DIR$/app/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
-          <caret line="181" column="20" lean-forward="true" selection-start-line="181" selection-start-column="20" selection-end-line="181" selection-end-column="20" />
+          <caret line="181" column="20" lean-forward="false" selection-start-line="181" selection-start-column="20" selection-end-line="181" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/assets/img/EndElem/icone_move.svg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/Templates/sixthSceneTemplate.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="34" lean-forward="false" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/Templates/fifthSceneTemplate.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="34" lean-forward="false" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/Templates/fourthSceneTemplate.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="34" lean-forward="false" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/Templates/firstSceneTemplate.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="34" lean-forward="false" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/Templates/secSceneTemplate.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="34" lean-forward="false" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/assets/img/LOGO.svg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/Templates/thirdSceneTemplate.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="23" lean-forward="true" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/SabineExp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="389" column="67" lean-forward="true" selection-start-line="389" selection-start-column="67" selection-end-line="389" selection-end-column="67" />
+        <state relative-caret-position="2869">
+          <caret line="907" column="36" lean-forward="false" selection-start-line="907" selection-start-column="36" selection-end-line="907" selection-end-column="36" />
           <folding>
             <element signature="e#91#142#0" expanded="true" />
             <element signature="e#1113#1170#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/Templates/seventhSceneTemplate.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
