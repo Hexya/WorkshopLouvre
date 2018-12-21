@@ -268,7 +268,7 @@ export default class App {
         let vertical = [29, 19, 8, 14, 17, 19, 19]
         let horizontal = [4, 4, 13, 18, 18, 4, 4]
         let totalImg = [113, 76, 102, 234, 288, 74, 72]
-        let spriteAnimMaterial = []
+        this.spriteAnimMaterial = []
         this.spriteAnim = [];
         this.spriteAnimator = [];
         for(let i=0; i<7; i++) {
@@ -279,21 +279,21 @@ export default class App {
 
             this.spriteAnimator[i] = new this.textureAnimator(spriteAnimeTextures[i], horizontal[i], vertical[i], totalImg[i], 1000 / 24); // texture, #horiz, #vert, #total, duration.
             //console.log("spriteAnimator :", spriteAnimator)
-            spriteAnimMaterial[i] = new THREE.SpriteMaterial({
+            this.spriteAnimMaterial[i] = new THREE.SpriteMaterial({
                 map: spriteAnimeTextures[i],
                 side: THREE.DoubleSide,
                 transparent: true,
                 alphaTest: 0.001,
-                opacity: 1
+                opacity: 0
             });
-            spriteAnimMaterial[i].map.premultiplyAlpha = true;
-            spriteAnimMaterial[i].map.needsUpdate = true;
-            spriteAnimMaterial[i].blending = THREE.CustomBlending;
-            spriteAnimMaterial[i].blendEquation = THREE.AddEquation; // default is AddEquation
-            spriteAnimMaterial[i].blendSrc = THREE.SrcAlphaFactor;
-            spriteAnimMaterial[i].blendDst = THREE.OneFactor;
+            this.spriteAnimMaterial[i].map.premultiplyAlpha = true;
+            this.spriteAnimMaterial[i].map.needsUpdate = true;
+            this.spriteAnimMaterial[i].blending = THREE.CustomBlending;
+            this.spriteAnimMaterial[i].blendEquation = THREE.AddEquation; // default is AddEquation
+            this.spriteAnimMaterial[i].blendSrc = THREE.SrcAlphaFactor;
+            this.spriteAnimMaterial[i].blendDst = THREE.OneFactor;
 
-            this.spriteAnim[i] = new THREE.Sprite(spriteAnimMaterial[i]);
+            this.spriteAnim[i] = new THREE.Sprite(this.spriteAnimMaterial[i]);
 
             // this.spriteAnim[i].scale.x = 2;
             // this.spriteAnim[i].scale.y = 2;
@@ -309,7 +309,7 @@ export default class App {
         this.spriteAnim[1].position.x = 4.1;
         this.spriteAnim[1].position.y = 2;
         this.spriteAnim[1].position.z = -9;
-        this.spriteAnim[1].scale.set(3.5,2,1);
+        this.spriteAnim[1].scale.set(3.3,2,1);
         //FIRE
         this.spriteAnim[2].position.x = -9.4;
         this.spriteAnim[2].position.y = 2.5;
@@ -331,10 +331,10 @@ export default class App {
         this.spriteAnim[5].position.z = 4.8;
         this.spriteAnim[5].scale.set(2.8, 2, 1);
         //LOUVRE
-        this.spriteAnim[6].position.x = 1.33;
-        this.spriteAnim[6].position.y = 0.33;
-        this.spriteAnim[6].position.z = 1;
-        this.spriteAnim[6].scale.set(2.8, 2, 1);
+        this.spriteAnim[6].position.x = -1.5;
+        this.spriteAnim[6].position.y = 0.73;
+        this.spriteAnim[6].position.z = 1.9;
+        this.spriteAnim[6].scale.set(1.4, 1, 1);
 
         console.log(this.spriteAnim)
 
@@ -576,6 +576,10 @@ export default class App {
                     ease:Power1.easeInOut
                     },
                     'step1+=0.5')
+                .to(this.spriteAnimMaterial[0], 1.9,{ //fade in
+                    opacity: 1
+                    },
+                    'step1+=2.3')
                 .addPause()
 
                 .add('step2') // Hip scene
@@ -615,6 +619,14 @@ export default class App {
                     ease:Power1.easeInOut
                     },
                     'step2+=0.5')
+                .to(this.spriteAnimMaterial[0], 0.9,{ // fade out
+                    opacity: 0
+                    },
+                    'step2')
+                .to(this.spriteAnimMaterial[1], 1.9,{ // fade in
+                    opacity: 1
+                    },
+                    'step2+=2.3')
                 .addPause()
 
                 .add('step3') // Foot scene
@@ -654,6 +666,14 @@ export default class App {
                     ease:Power1.easeInOut
                     },
                     'step3+=0.5')
+                .to(this.spriteAnimMaterial[1], 0.9,{ // fade out
+                    opacity: 0
+                    },
+                    'step3')
+                .to(this.spriteAnimMaterial[2], 1.9,{ // fade in
+                    opacity: 1
+                    },
+                    'step3+=2.3')
                 .addPause()
 
                 .add('step4') // Chest scene
@@ -693,6 +713,18 @@ export default class App {
                     ease:Power1.easeInOut
                     },
                     'step4+=0.5')
+                .to(this.spriteAnimMaterial[2], 0.9,{ // fade out
+                    opacity: 0
+                    },
+                    'step4')
+                .to(this.spriteAnimMaterial[3], 1.9,{ // fade in
+                    opacity: 1
+                    },
+                    'step4+=2.3')
+                .to(this.spriteAnimMaterial[4], 1.9,{ // fade in
+                    opacity: 1
+                    },
+                    'step4+=2.3')
                 .addPause()
 
                 .add('step5') // Leg scene
@@ -733,6 +765,18 @@ export default class App {
                     ease:Power1.easeInOut
                     },
                     'step5+=0.5')
+                .to(this.spriteAnimMaterial[3], 0.9,{ // fade out
+                    opacity: 0
+                    },
+                    'step5')
+                .to(this.spriteAnimMaterial[4], 0.9,{ // fade out
+                    opacity: 0
+                    },
+                    'step5')
+                .to(this.spriteAnimMaterial[5], 1.9,{ // fade in
+                    opacity: 1
+                    },
+                    'step5+=2.3')
                 .addPause()
                 
                 .add('step6') // Head scene
@@ -744,7 +788,7 @@ export default class App {
                     },
                     'step6')
                 .to(this.camera.position, 1.5,{
-                    x: this.scene.children[11].children[4].position.x-0.3,
+                    x: this.scene.children[11].children[4].position.x-0.1,
                     y: this.scene.children[11].children[4].position.y+0.8,
                     z: this.scene.children[11].children[4].position.z+1.3,
                     ease:Power1.easeInOut
@@ -772,6 +816,14 @@ export default class App {
                     ease:Power1.easeInOut
                     },
                     'step6+=0.5')
+                .to(this.spriteAnimMaterial[5], 0.9,{ // fade out
+                    opacity: 0
+                    },
+                    'step6')
+                .to(this.spriteAnimMaterial[6], 1.9,{ // fade in
+                    opacity: 1
+                    },
+                    'step6+=2.3')
                 .addPause()
 
                 .add('step7') // Final scene
@@ -856,6 +908,10 @@ export default class App {
                     ease:Power1.easeInOut
                     },
                     'step7+=1.1')
+                .to(this.spriteAnimMaterial[6], 0.9,{ // fade out
+                    opacity: 0
+                    },
+                    'step7')
                 .addPause()
     }
 
@@ -1051,8 +1107,8 @@ export default class App {
         sprite6Pos.add(this.spriteAnim[5].position, 'y', 1.2, 1.6).listen()
         sprite6Pos.add(this.spriteAnim[5].position, 'z', 3.5, 5.5).listen()
         let sprite7Pos = sprite1.addFolder('Sprite 7 position')
-        sprite7Pos.add(this.spriteAnim[6].position, 'x', -15, 15).listen()
-        sprite7Pos.add(this.spriteAnim[6].position, 'y', -15, 15).listen()
-        sprite7Pos.add(this.spriteAnim[6].position, 'z', -15, 15).listen()
+        sprite7Pos.add(this.spriteAnim[6].position, 'x', -1.5, 0.5).listen()
+        sprite7Pos.add(this.spriteAnim[6].position, 'y', -0.5, 1.5).listen()
+        sprite7Pos.add(this.spriteAnim[6].position, 'z', 0.1, 2.5).listen()
     }
 }
