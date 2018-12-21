@@ -5,11 +5,11 @@ module.exports = "<div class='init-scene main-container'>" +
         "<div class='bar'></div>" +
     "</div>" +
     "<div class='desc-container right-container'>" +
-        "<h1 class='desc-title'>INCENDIE</h1>" +
+        "<h1 class='desc-title'>L'INCENDIE</h1>" +
         "<p class='desc-content'>1876 incendie dans le port de Toulon, le</br>" +
             "Magenta prend feu.</br>" +
-            "D'où ses mystérieuses taches sombres</br>" +
-            "sur tout le corps.</p>" +
+            "Les mystérieuses tâches sombres sur tout</br>" +
+            "le corps en sont les stigmates.</p>" +
         "</div>" +
     "<div class='nav-bottom'>" +
         "<p>Chapitre IV</p>" +

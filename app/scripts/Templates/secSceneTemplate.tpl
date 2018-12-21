@@ -6,11 +6,11 @@ module.exports = "<div class='init-scene main-container'>" +
     "</div>" +
     "<div class='desc-container left-container'>" +
         "<h1 class='desc-title'>LA DÉCOUVERTE</h1>" +
-        "<p class='desc-content'>Après l'explosion, le navire coula au</br>" +
-            "large de Toulon avec une partie de ses</br>" +
-            "antiquités, il fit l'objet de fouilles</br>" +
-            "archéologiques sous marines entre 1995</br>" +
-            "et 1998.</p>" +
+        "<p class='desc-content'>1874, dans le Sérapeum de Carthage, la mission</br>" +
+            "Pricot de Sainte-Marie découvre cette statue</br>" +
+            "à son effigie. Jean-Baptiste Evariste Charles Pricot</br>" +
+            "de Sainte Marie, l'un des pionniers de l'archéologie</br>" +
+            "dans la Régence de Tunis Mène l'expédition</p>" +
     "</div>" +
     "<div class='nav-bottom'>" +
         "<p>Chapitre III</p>" +

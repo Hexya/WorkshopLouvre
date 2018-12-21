@@ -5,12 +5,12 @@ module.exports = "<div class='init-scene main-container'>" +
         "<div class='bar'></div>" +
     "</div>" +
     "<div class='desc-container right-container up-container'>" +
-        "<h1 class='desc-title'>LA FIN</h1>" +
-        "<p class='desc-content'>La tête et quelques fragments</br>" +
-            "manquants sont retrouvés entre 1995</br>" +
-            "et 1998 seulement, lors de fouilles</br>" +
-            "sous marines.</p>" +
-        "</div>" +
+        "<h1 class='desc-title'>L'EXPOSITION</h1>" +
+        "<p class='desc-content'>1998, la tête et quelques fragments manquants</br>" +
+            "sont retrouvés, Sabine n'est pleinement</br>" +
+            "reconstitué que plus tard, elle est aujourd'hui</br>" +
+            "visible au Louvre, à la Petite Galerie.</p>" +
+    "</div>" +
     "<div class='nav-bottom'>" +
         "<p>Chapitre VII</p>" +
         "<div class='bar'></div>" +
