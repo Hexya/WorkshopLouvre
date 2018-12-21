@@ -6,8 +6,8 @@ import objFile from '../assets/model/SabineXp.obj';
 import imgSprite1 from '../assets/img/Sprites/COURONNE.png';
 import imgSprite2 from '../assets/img/Sprites/CARTHAGE.png';
 import imgSprite3 from '../assets/img/Sprites/FIRE.png';
-import imgSprite4 from '../assets/img/Sprites/FRONTFISH.png';
-import imgSprite5 from '../assets/img/Sprites/BACKFISH.png';
+import imgSprite4 from '../assets/img/Sprites/BACKFISH.png';
+import imgSprite5 from '../assets/img/Sprites/FRONTFISH.png';
 import imgSprite6 from '../assets/img/Sprites/RECONSTRUCTON.png';
 import imgSprite7 from '../assets/img/Sprites/LOUVRE.png';
 
@@ -259,16 +259,16 @@ export default class App {
 
         // Target Sphere
         let targetGeo = new THREE.SphereGeometry( 0.02, 16, 16 );
-        let targetMat = new THREE.MeshBasicMaterial( { color: 0xff2020} );
+        let targetMat = new THREE.MeshBasicMaterial( { color: 0xff2020, opacity: 0.2, transparent: true} );
         this.targetMesh = new THREE.Mesh( targetGeo, targetMat );
         this.scene.add( this.targetMesh );
         
         //ANIM PLANE
         let spriteAnimeTextures = [];
         let imgSprites = [imgSprite1, imgSprite2, imgSprite3, imgSprite4, imgSprite5, imgSprite6, imgSprite7]
-        let vertical = [19, 19, 8, 13, 16, 19, 18]
+        let vertical = [29, 19, 8, 14, 17, 19, 19]
         let horizontal = [4, 4, 13, 18, 18, 4, 4]
-        let totalImg = [76, 76, 104, 234, 288, 76, 72]
+        let totalImg = [113, 76, 102, 234, 288, 74, 72]
         let spriteAnimMaterial = []
         this.spriteAnim = [];
         this.spriteAnimator = [];
@@ -284,7 +284,8 @@ export default class App {
                 map: spriteAnimeTextures[i],
                 side: THREE.DoubleSide,
                 transparent: true,
-                alphaTest: 0.001
+                alphaTest: 0.001,
+                opacity: 1
             });
             spriteAnimMaterial[i].map.premultiplyAlpha = true;
             spriteAnimMaterial[i].map.needsUpdate = true;
@@ -293,51 +294,48 @@ export default class App {
             spriteAnimMaterial[i].blendSrc = THREE.SrcAlphaFactor;
             spriteAnimMaterial[i].blendDst = THREE.OneFactor;
 
-
             this.spriteAnim[i] = new THREE.Sprite(spriteAnimMaterial[i]);
 
-            //this.spriteAnim[i].scale.x = 0.01;
-            //this.spriteAnim[i].scale.y = 0.01;
-            this.spriteAnim[i].scale.x = 5;
-            this.spriteAnim[i].scale.y = 5;
-
-            this.spriteAnim[i].position.x = 0;
-            this.spriteAnim[i].position.y = 0;
-            this.spriteAnim[i].position.z = 5;
-
-            //spriteAnim[i].position.y = this.camera.position.y;
-            //spriteAnim[i].position.z = this.camera.position.z - 1;
+            // this.spriteAnim[i].scale.x = 2;
+            // this.spriteAnim[i].scale.y = 2;
 
             this.scene.add(this.spriteAnim[i]);
         }
         //COURONNE
-        this.spriteAnim[0].position.x = 0.5;
-        this.spriteAnim[0].position.y = 2.8;
-        this.spriteAnim[0].position.z = 3.9;
+        this.spriteAnim[0].position.x = -3.15;
+        this.spriteAnim[0].position.y = 2.19;
+        this.spriteAnim[0].position.z = 7.1;
+        this.spriteAnim[0].scale.set(1.48,0.96,1);
         //CARTHAGE
-        this.spriteAnim[1].position.x = 5;
+        this.spriteAnim[1].position.x = 4.1;
         this.spriteAnim[1].position.y = 2;
-        this.spriteAnim[1].position.z = -14.1;
+        this.spriteAnim[1].position.z = -9;
+        this.spriteAnim[1].scale.set(3.5,2,1);
         //FIRE
-        this.spriteAnim[2].position.x = -10;
-        this.spriteAnim[2].position.y = 2.8;
-        this.spriteAnim[2].position.z = -2.9;
+        this.spriteAnim[2].position.x = -9.4;
+        this.spriteAnim[2].position.y = 2.5;
+        this.spriteAnim[2].position.z = -2.4;
+        this.spriteAnim[2].scale.set(3.3,2.3,1);
         //FISH BACK
-        this.spriteAnim[3].position.x = -5.1;
-        this.spriteAnim[3].position.y = 0;
-        this.spriteAnim[3].position.z = -8.5;
+        this.spriteAnim[3].position.x = -5.6;
+        this.spriteAnim[3].position.y = 2.2;
+        this.spriteAnim[3].position.z = -8.9;
+        this.spriteAnim[3].scale.set(2.5,2,1);
         //FISH FRONT
-        this.spriteAnim[4].position.x = -6;
-        this.spriteAnim[4].position.y = 0;
-        this.spriteAnim[4].position.z = -9.6;
+        this.spriteAnim[4].position.x = -4.8;
+        this.spriteAnim[4].position.y = 2.3;
+        this.spriteAnim[4].position.z = -7.4;
+        this.spriteAnim[4].scale.set(1.8, 1.45, 1);
         //RECONSTRUCTION
-        this.spriteAnim[5].position.x = 3.9;
-        this.spriteAnim[5].position.y = 2;
-        this.spriteAnim[5].position.z = 3.9;
+        this.spriteAnim[5].position.x = 2.9;
+        this.spriteAnim[5].position.y = 1.25;
+        this.spriteAnim[5].position.z = 4.8;
+        this.spriteAnim[5].scale.set(2.8, 2, 1);
         //LOUVRE
-        this.spriteAnim[6].position.x = 1.6;
-        this.spriteAnim[6].position.y = 0.5;
-        this.spriteAnim[6].position.z = -2.86;
+        this.spriteAnim[6].position.x = 1.33;
+        this.spriteAnim[6].position.y = 0.33;
+        this.spriteAnim[6].position.z = 1;
+        this.spriteAnim[6].scale.set(2.8, 2, 1);
 
         console.log(this.spriteAnim)
 
@@ -388,7 +386,7 @@ export default class App {
                 var currentColumn = this.currentTile % this.tilesHorizontal;
                 texture.offset.x = currentColumn / this.tilesHorizontal;
                 var currentRow = Math.floor(this.currentTile / this.tilesHorizontal);
-                texture.offset.y = currentRow / this.tilesVertical;
+                texture.offset.y = tilesVert - currentRow / this.tilesVertical;
             }
         };
     }
@@ -1010,60 +1008,32 @@ export default class App {
 
         let sprite1 = gui.addFolder('Sprite')
         let sprite1Pos = sprite1.addFolder('Sprite 1 position')
-        sprite1Pos.add(this.spriteAnim[0].position, 'x', -50, 50).listen()
-        sprite1Pos.add(this.spriteAnim[0].position, 'y', -50, 50).listen()
-        sprite1Pos.add(this.spriteAnim[0].position, 'z', -50, 50).listen()
-        let sprite1Rot = sprite1.addFolder('Sprite 1 rotation')
-        sprite1Rot.add(this.spriteAnim[0].position, 'x', -50, 50).listen()
-        sprite1Rot.add(this.spriteAnim[0].position, 'y', -50, 50).listen()
-        sprite1Rot.add(this.spriteAnim[0].position, 'z', -50, 50).listen()
+        sprite1Pos.add(this.spriteAnim[0].position, 'x', -4.5, -2.5).listen()
+        sprite1Pos.add(this.spriteAnim[0].position, 'y', 1.5, 3.5).listen()
+        sprite1Pos.add(this.spriteAnim[0].position, 'z', 5.5, 7.5).listen()
         let sprite2Pos = sprite1.addFolder('Sprite 2 position')
-        sprite2Pos.add(this.spriteAnim[1].position, 'x', -50, 50).listen()
-        sprite2Pos.add(this.spriteAnim[1].position, 'y', -50, 50).listen()
-        sprite2Pos.add(this.spriteAnim[1].position, 'z', -50, 50).listen()
-        let sprite2Rot = sprite1.addFolder('Sprite 2 rotation')
-        sprite2Rot.add(this.spriteAnim[1].position, 'x', -50, 50).listen()
-        sprite2Rot.add(this.spriteAnim[1].position, 'y', -50, 50).listen()
-        sprite2Rot.add(this.spriteAnim[1].position, 'z', -50, 50).listen()
+        sprite2Pos.add(this.spriteAnim[1].position, 'x', 2.6, 5.5).listen()
+        sprite2Pos.add(this.spriteAnim[1].position, 'y', 1.1, 3.5).listen()
+        sprite2Pos.add(this.spriteAnim[1].position, 'z', -10.5, -8.2).listen()
         let sprite3Pos = sprite1.addFolder('Sprite 3 position')
-        sprite3Pos.add(this.spriteAnim[2].position, 'x', -50, 50).listen()
-        sprite3Pos.add(this.spriteAnim[2].position, 'y', -50, 50).listen()
-        sprite3Pos.add(this.spriteAnim[2].position, 'z', -50, 50).listen()
-        let sprite3Rot = sprite1.addFolder('Sprite 3 rotation')
-        sprite3Rot.add(this.spriteAnim[2].position, 'x', -50, 50).listen()
-        sprite3Rot.add(this.spriteAnim[2].position, 'y', -50, 50).listen()
-        sprite3Rot.add(this.spriteAnim[2].position, 'z', -50, 50).listen()
+        sprite3Pos.add(this.spriteAnim[2].position, 'x', -10.5, -6.5).listen()
+        sprite3Pos.add(this.spriteAnim[2].position, 'y', 1.2, 3.2).listen()
+        sprite3Pos.add(this.spriteAnim[2].position, 'z', -2.9, -0.5).listen()
         let sprite4Pos = sprite1.addFolder('Sprite 4 position')
-        sprite4Pos.add(this.spriteAnim[3].position, 'x', -50, 50).listen()
-        sprite4Pos.add(this.spriteAnim[3].position, 'y', -50, 50).listen()
-        sprite4Pos.add(this.spriteAnim[3].position, 'z', -50, 50).listen()
-        let sprite4Rot = sprite1.addFolder('Sprite 4 rotation')
-        sprite4Rot.add(this.spriteAnim[3].position, 'x', -50, 50).listen()
-        sprite4Rot.add(this.spriteAnim[3].position, 'y', -50, 50).listen()
-        sprite4Rot.add(this.spriteAnim[3].position, 'z', -50, 50).listen()
+        sprite4Pos.add(this.spriteAnim[3].position, 'x', -8.5, -5.5).listen()
+        sprite4Pos.add(this.spriteAnim[3].position, 'y', 1.5, 2.5).listen()
+        sprite4Pos.add(this.spriteAnim[3].position, 'z', -11.5, -7.5).listen()
         let sprite5Pos = sprite1.addFolder('Sprite 5 position')
-        sprite5Pos.add(this.spriteAnim[4].position, 'x', -50, 50).listen()
-        sprite5Pos.add(this.spriteAnim[4].position, 'y', -50, 50).listen()
-        sprite5Pos.add(this.spriteAnim[4].position, 'z', -50, 50).listen()
-        let sprite5Rot = sprite1.addFolder('Sprite 5 rotation')
-        sprite5Rot.add(this.spriteAnim[4].position, 'x', -50, 50).listen()
-        sprite5Rot.add(this.spriteAnim[4].position, 'y', -50, 50).listen()
-        sprite5Rot.add(this.spriteAnim[4].position, 'z', -50, 50).listen()
+        sprite5Pos.add(this.spriteAnim[4].position, 'x', -5.9, -4.5).listen()
+        sprite5Pos.add(this.spriteAnim[4].position, 'y', 1.5, 3.5).listen()
+        sprite5Pos.add(this.spriteAnim[4].position, 'z', -8.5, -7.2).listen()
         let sprite6Pos = sprite1.addFolder('Sprite 6 position')
-        sprite6Pos.add(this.spriteAnim[5].position, 'x', -50, 50).listen()
-        sprite6Pos.add(this.spriteAnim[5].position, 'y', -50, 50).listen()
-        sprite6Pos.add(this.spriteAnim[5].position, 'z', -50, 50).listen()
-        let sprite6Rot = sprite1.addFolder('Sprite 6 rotation')
-        sprite6Rot.add(this.spriteAnim[5].position, 'x', -50, 50).listen()
-        sprite6Rot.add(this.spriteAnim[5].position, 'y', -50, 50).listen()
-        sprite6Rot.add(this.spriteAnim[5].position, 'z', -50, 50).listen()
+        sprite6Pos.add(this.spriteAnim[5].position, 'x', 1.5, 4.5).listen()
+        sprite6Pos.add(this.spriteAnim[5].position, 'y', 1.2, 1.6).listen()
+        sprite6Pos.add(this.spriteAnim[5].position, 'z', 3.5, 5.5).listen()
         let sprite7Pos = sprite1.addFolder('Sprite 7 position')
-        sprite7Pos.add(this.spriteAnim[6].position, 'x', -50, 50).listen()
-        sprite7Pos.add(this.spriteAnim[6].position, 'y', -50, 50).listen()
-        sprite7Pos.add(this.spriteAnim[6].position, 'z', -50, 50).listen()
-        let sprite7Rot = sprite1.addFolder('Sprite 7 rotation')
-        sprite7Rot.add(this.spriteAnim[6].position, 'x', -50, 50).listen()
-        sprite7Rot.add(this.spriteAnim[6].position, 'y', -50, 50).listen()
-        sprite7Rot.add(this.spriteAnim[6].position, 'z', -50, 50).listen()
+        sprite7Pos.add(this.spriteAnim[6].position, 'x', -15, 15).listen()
+        sprite7Pos.add(this.spriteAnim[6].position, 'y', -15, 15).listen()
+        sprite7Pos.add(this.spriteAnim[6].position, 'z', -15, 15).listen()
     }
 }
