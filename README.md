@@ -1,4 +1,4 @@
-# Three.js Boilerplate
+# Louvre Sabine exp
 
 ## Setup
 
